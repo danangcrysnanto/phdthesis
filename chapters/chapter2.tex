@@ -1,40 +1,18 @@
-\documentclass[12 pt]{article}
+\documentclass[../main.tex]{subfiles}
 
-%bibliography
-\usepackage[a4paper,width=150mm,top=40mm,bottom=25mm]{geometry}
-
-\usepackage{setspace}
-\usepackage{graphicx}
-
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhead{}
-\rhead{CHAPTER 2. ANALYSIS OF THE LOCAL GRAPHS}
-\fancyfoot{}
-\rfoot{\thepage}
-\usepackage{multirow}
-\usepackage{lscape}
-
-\usepackage[round]{natbib}
-\bibliographystyle{abbrvnat}
-%\addbibresource{test.bib}
-
-\usepackage{hyperref}
-\usepackage{xcolor}
-\urlstyle{tt}
-\hypersetup{
-    colorlinks,
-    linkcolor={red!70!black},
-    citecolor={blue!70!black},
-    urlcolor={magenta!70!black}
-}
-
-
-\title{Accurate sequence variant genotyping in cattle using variation-aware genome graphs}
-\author{Danang Crysnanto}
-\date{\today}
-
+%\title{Accurate sequence variant genotyping in cattle using variation-aware genome graphs}
+%\author{Danang Crysnanto}
+%\date{\today}
+\graphicspath{{figure/}{../figure/}}
 \begin{document}
+
+\onehalfspacing
+
+In this chapter, I assessed the feasibility of the genome graphs in cattle genome. I assessed \emph{Graphtyper} software for variant genotyping in cattle.  \emph{Graphtyper} performed two round of genotyping. The first is to discover variants from linear
+genome. And the second round used the variants discovered in the first round to construct a local genome graph and used it to refine the genotypes. I discovered that \textit{graph genotyping} using \textit{Graphtyper} is highly accurate in cattle and outperform current approaches e.g., \textit{SAMtools, \emph{GATK}} that are based on linear reference. My work is the first to apply \textit{graph genome} for sequence variant genotyping in the livestock genome.  I implemented the graph genotyping pipeline and is now publicly available at \\  
+\url{https://github.com/danangcrysnanto/Graph-genotyping-paper-pipelines}.
+
+\newpage
 
 \begin{center}
 \LARGE\bf{Accurate sequence variant genotyping in cattle using variation-aware genome graphs}
@@ -53,13 +31,6 @@ $^2$ Chair of Animal Breeding, TU München, Freising, Germany.
 
 \vspace{2 cm}
 
-\onehalfspacing
-
-In this chapter, I assessed the feasibility of the genome graphs in cattle genome. I assessed \emph{Graphtyper} software for variant genotyping in cattle.  \emph{Graphtyper} performed two round of genotyping. The first is to discover variants from linear
-genome. And the second round used the variants discovered in the first round to construct a local genome graph and used it to refine the genotypes. I discovered that \textit{graph genotyping} using \textit{Graphtyper} is highly accurate in cattle and outperform current approaches e.g., \textit{SAMtools, \emph{GATK}} that are based on linear reference. My work is the first to apply \textit{graph genome} for sequence variant genotyping in the livestock genome.  I implemented the graph genotyping pipeline and is now publicly available at \\  
-\url{https://github.com/danangcrysnanto/Graph-genotyping-paper-pipelines}. 
-
-
 \vspace{5 cm}
 
 \bigskip
@@ -68,11 +39,6 @@ genome. And the second round used the variants discovered in the first round to 
 \normalsize
 \newpage
 
-%First document. This is a simple example, with no 
-%extra parameters or packages included.
-%What I can do \emph{test this} \textbf{abcdf}.
-%Test citation \citep{rice2020}.
-%Second approach is \cite{Rosen2020}
 \begin{abstract}   
 \onehalfspacing
 
@@ -154,7 +120,7 @@ Following  quality  control  (removal  of  adapter  sequences  and  low-quality 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{figure/paper1/main_figure/Figure1.pdf}
+    \includegraphics[width=\textwidth]{paper1/main_figure/Figure1.pdf}
     \caption[Pipeline methods]{\textbf{Schematic representation of the three sequence variant discovery and genotyping methods evaluated.} \\
     \small{According to the best practice recommendations for sequence variant discovery using \emph{GATK}, the VQSR module should be applied to distinguish between true and false positive variants. Because this approach requires a truth set of variants, which is not (publicly) available for cattle, the VQSR module was not considered in our evaluation}}
     \label{fig:loca}
@@ -272,14 +238,19 @@ An intersection of 15,901,526 biallelic SNPs was common to all sequence-variant 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{figure/paper1/main_figure/Figure2.pdf}
+    \includegraphics[width=\textwidth]{paper1/main_figure/Figure2.pdf}
     \caption{Number of biallelic SNPs (\textbf{a}) and indels (\textbf{b}) identified in 49 Original Braunvieh cattle using three sequence variant genotyping methods. Blue horizontal bars represent the total number of sites discovered for each method. Vertical bars indicate private and common variants detected by the methods evaluated}
     \label{fig:varoverlap}
 \end{figure}
 
+%\bibliography{references/chapter2_ref}
+
 \singlespacing
 \footnotesize
 
-\bibliography{combined_ref}
+\bibliographystyle{abbrvnat}
+\bibliography{references/chapter2_ref}
+%\printbibliography[title=References]
+
 
 \end{document}

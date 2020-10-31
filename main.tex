@@ -1,0 +1,51 @@
+\documentclass[12 pt]{report}
+
+%bibliography
+\usepackage[a4paper,width=150mm,top=40mm,bottom=25mm]{geometry}
+
+\usepackage{setspace}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\leftmark}
+\fancyfoot{}
+\rfoot{\thepage}
+\usepackage{multirow}
+\usepackage{lscape}
+\usepackage{subfiles}
+\graphicspath{{figure/}{../figure/}}
+
+\usepackage[round]{natbib}
+%\usepackage[natbib=true, style=authoryear]{biblatex}
+%\bibliography{references/chapter2_ref}
+%\bibliographystyle{abbrvnat}
+\usepackage{chapterbib}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\urlstyle{tt}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!70!black},
+    citecolor={blue!70!black},
+    urlcolor={magenta!70!black}
+}
+
+\renewcommand{\bibname}{References}
+
+\begin{document}
+
+\input{chapters/intro_dept.tex}
+
+\chapter{Analysis of the local graphs}
+\label{chap:locgraph}
+\onehalfspacing
+\subfile{chapters/chapter2}
+
+%\singlespacing
+%\footnotesize
+%
+%\bibliography{references/chapter2_ref}
+\end{document}
