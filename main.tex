@@ -1,4 +1,4 @@
-\documentclass[12 pt]{report}
+\documentclass[12 pt, a4paper, notitlepage]{report}
 
 %bibliography
 \usepackage[a4paper,width=150mm,top=40mm,bottom=25mm]{geometry}
@@ -13,6 +13,7 @@
 \fancyfoot{}
 \rfoot{\thepage}
 \usepackage{multirow}
+\usepackage{colortbl}
 \usepackage{lscape}
 \usepackage{subfiles}
 \graphicspath{{figure/}{../figure/}}
@@ -23,8 +24,11 @@
 %\bibliographystyle{abbrvnat}
 \usepackage{chapterbib}
 
+
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{pdflscape}
+\usepackage{enumerate}
 \urlstyle{tt}
 \hypersetup{
     colorlinks,
@@ -34,18 +38,70 @@
 }
 
 \renewcommand{\bibname}{References}
+\renewcommand{\contentsname}{Table of Contents}
+
 
 \begin{document}
 
-\input{chapters/intro_dept.tex}
+\newcommand*{\BuildingFromMainFile}{}
 
-\chapter{Analysis of the local graphs}
+\subfile{chapters/intro_dept.tex}
+
+\pagenumbering{roman}
+
+
+
+\setcounter{tocdepth}{1}
+\hypersetup{linkcolor=black}
+\tableofcontents
+\addcontentsline{toc}{chapter}{Abstract}
+\newpage
+
+\listoffigures 
+\addcontentsline{toc}{chapter}{List of Figures}
+\newpage
+
+\listoftables 
+\addcontentsline{toc}{chapter}{List of Tables}
+\newpage
+
+\thispagestyle{plain}
+\section*{\centering{\Large{Abstract}}}
+\addcontentsline{toc}{chapter}{Abstract}
+
+\hypersetup{linkcolor={red!70!black}}
+
+English abstract
+
+\newpage
+
+\thispagestyle{plain}
+\section*{\centering{\Large{Zusammenfassung}}}
+\addcontentsline{toc}{chapter}{Zusammenfassung}
+
+Deutsch abstract
+
+\newpage
+
+\pagenumbering{arabic}
+
+
+\chapter{Analysis of the cohort-specific graphs}
+\subsection*{Preface: Bridging text between Chapter 1 and Chapter 2}
 \label{chap:locgraph}
+In this chapter, I assessed the feasibility of the genome graphs in cattle genome. I assessed \emph{Graphtyper} software for variant genotyping in cattle.  \emph{Graphtyper} performed two round of genotyping. The first is to discover variants from linear
+genome. And the second round used the variants discovered in the first round to construct a local genome graph and used it to refine the genotypes. I discovered that \textit{graph genotyping} using \textit{Graphtyper} is highly accurate in cattle and outperform current approaches e.g., \textit{SAMtools, \emph{GATK}} that are based on linear reference. My work is the first to apply \textit{graph genome} for sequence variant genotyping in the livestock genome.  I implemented the graph genotyping pipeline and it is now publicly available at \\  
+\url{https://github.com/danangcrysnanto/Graph-genotyping-paper-pipelines}.
 \onehalfspacing
-\subfile{chapters/chapter2}
+\include{chapters/chapter2}
 
 %\singlespacing
-%\footnotesize
-%
 %\bibliography{references/chapter2_ref}
+
+
+\chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:locgraph}}}
+\addcontentsline{toc}{chapter}{Supplementary Materials Chapter \ref{chap:locgraph}}
+\singlespacing
+\fancyhead[C]{APPENDICES}
+\include{chapters/supp_chap2}
 \end{document}

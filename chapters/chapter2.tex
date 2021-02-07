@@ -1,18 +1,16 @@
-\documentclass[../main.tex]{subfiles}
+\ifdefined\BuildingFromMainFile
+\else
+   \documentclass[../main.tex]{subfiles}
+   \begin{document}
+\fi
+
 
 %\title{Accurate sequence variant genotyping in cattle using variation-aware genome graphs}
 %\author{Danang Crysnanto}
 %\date{\today}
 \graphicspath{{figure/}{../figure/}}
-\begin{document}
 
 \onehalfspacing
-
-In this chapter, I assessed the feasibility of the genome graphs in cattle genome. I assessed \emph{Graphtyper} software for variant genotyping in cattle.  \emph{Graphtyper} performed two round of genotyping. The first is to discover variants from linear
-genome. And the second round used the variants discovered in the first round to construct a local genome graph and used it to refine the genotypes. I discovered that \textit{graph genotyping} using \textit{Graphtyper} is highly accurate in cattle and outperform current approaches e.g., \textit{SAMtools, \emph{GATK}} that are based on linear reference. My work is the first to apply \textit{graph genome} for sequence variant genotyping in the livestock genome.  I implemented the graph genotyping pipeline and is now publicly available at \\  
-\url{https://github.com/danangcrysnanto/Graph-genotyping-paper-pipelines}.
-
-\newpage
 
 \begin{center}
 \LARGE\bf{Accurate sequence variant genotyping in cattle using variation-aware genome graphs}
@@ -41,7 +39,7 @@ $^2$ Chair of Animal Breeding, TU München, Freising, Germany.
 
 \begin{abstract}   
 \onehalfspacing
-
+\small
 \textbf{Background}: The genotyping of sequence variants typically involves as a first step the alignment of sequencing reads to a linear reference genome. 
 Because a linear reference genome represents only a small fraction of sequence variation within a species, reference allele bias may occur at highly polymorphic or diverged regions of the genome. Graph-based methods facilitate to compare sequencing reads to a variation-aware genome graph that incorporates a collection of non-redundant DNA sequences that segregate within a species. We compared accuracy and sensitivity of graph-based sequence variant genotyping using the \emph{Graphtyper} software to two widely used methods, i.e., \emph{GATK} and \emph{SAMtools}, that rely on linear reference genomes using whole-genomes sequencing data of 49 Original Braunvieh cattle.   
 \medskip
@@ -61,11 +59,11 @@ Because a linear reference genome represents only a small fraction of sequence v
 \section{Introduction}
 
 \doublespacing 
-
+\normalsize
 The sequencing of important ancestors of many cattle breeds revealed millions of sequence variants that are polymorphic in dairy and beef populations \citep{Hoff2017,Stothard2015,Boussaha2016,Jansen2013}. In order to compile an exhaustive catalog of polymorphic sites that segregate in Bos taurus, the 1000 Bull Genomes consortium was established \citep{Daetwyler2014,Hayes2019}. 
 The 1000 Bull Genomes Project imputation reference panel facilitates to infer sequence variant genotypes for large cohorts of genotyped animals thus enabling genomic investigations at nucleotide resolution \citep{Daetwyler2014,Pausch2017,Bouwman2018,Raymond2018}.
 
-Sequence variant discovery and genotyping typically involves two steps that are carried out successively \citep{nielsen2011genotype,guo2014three,goodwin2016coming,pfeifer2017next}: first, raw sequencing data are generated, trimmed and filtered to remove adapter sequences and bases with low sequencing quality, respectively, and aligned towards a linear reference genome using, e.g., \emph{Bowtie} \citep{langmead2012fast} or the Burrows-Wheeler Alignment (\emph{BWA}) software \citep{li2009fast}. The aligned reads are subsequently compared to the nucleotide sequence of a reference genome in order to discover and genotype polymorphic sites using, e.g., \emph{SAMtools} \citep{li2009sequence} or the Genome Analysis Toolkit (\emph{GATK}) \citep{mckenna2010genome,van2013fastq,poplin2018scaling}. Variant discovery may be performed either in single- or multi-sample mode. The accuracy (i.e., ability to correctly genotype sequence variants) and sensitivity (i.e., ability to detect true sequence variants) of sequence variant discovery is higher using multi-sample than single-sample approaches particularly when the sequencing depth is low \citep{liu2013variant,cheng2014assessing,baes2014evaluation,kumar2014evaluation,depristo2011framework}. However, the genotyping of sequence variants from multiple samples simultaneously is a computationally intensive task, particularly when the sequenced cohort is large and diverse and had been sequenced at high coverage \citep{poplin2018scaling}. The multi-sample sequence variant genotyping approach that has been implemented in the \emph{SAMtools} software has to be restarted for the entire cohort once new samples are added. \emph{GATK} implements two different approaches to multi-sample variant discovery, i.e., the UnifiedGenotyper and HaplotypeCaller modules, with the latter relying on intermediate files in gVCF format that include probabilistic data on variant and non-variant sites for each sequenced sample. Applying the HaplotypeCaller module allows for separating variant discovery within samples from the estimation of genotype likelihoods across samples. Once new samples are added to an existing cohort, only the latter needs to be performed for the entire cohort, thus enabling computationally efficient parallelization of sequence variant genotyping in a large number of samples.  
+Sequence variant discovery and genotyping typically involves two steps that are carried out successively \citep{nielsen2011genotype,guo2014three,goodwin2016coming,pfeifer2017next}: first, raw sequencing data are generated, trimmed and filtered to remove adapter sequences and bases with low sequencing quality, respectively, and aligned towards a linear reference genome using, e.g., \emph{Bowtie} \citep{langmead2012fast} or the Burrows-Wheeler Alignment (\emph{BWA}) software \citep{li2009fast}. The aligned reads are subsequently compared to the nucleotide sequence of a reference genome in order to discover and genotype polymorphic sites using, e.g., \emph{SAMtools} \citep{li2009sequence} or the Genome Analysis Toolkit (\emph{GATK}) \citep{mckenna2010genome,van2013fastq,poplin2018scaling}. Variant discovery may be performed either in single- or multi-sample mode. The accuracy (i.e., ability to correctly genotype sequence variants) and sensitivity (i.e., ability to detect true sequence variants) of sequence variant discovery is higher using multi-sample than single-sample approaches particularly when the sequencing depth is low \citep{liu2013variant,cheng2014assessing,baes2014evaluation,kumar2014evaluation,depristo2011framework}. However, the genotyping of sequence variants from multiple samples simultaneously is a computationally intensive task, particularly when the sequenced cohort is large and diverse and had been sequenced at high coverage \citep{poplin2018scaling}. The multi-sample sequence variant genotyping approach that has been implemented in the \emph{SAMtools} software has to be restarted for the entire cohort once new samples are added.\emph{GATK} implements two different approaches to multi-sample variant discovery, i.e., the UnifiedGenotyper and HaplotypeCaller modules, with the latter relying on intermediate files in gVCF format that include probabilistic data on variant and non-variant sites for each sequenced sample. Applying the HaplotypeCaller module allows for separating variant discovery within samples from the estimation of genotype likelihoods across samples. Once new samples are added to an existing cohort, only the latter needs to be performed for the entire cohort, thus enabling computationally efficient parallelization of sequence variant genotyping in a large number of samples.  
 
 Genome graph-based methods consider non-linear reference sequences for variant discovery \citep{rakocevic2019fast,eggertsson2017graphtyper,novak2017genome,garrison2018variation,sibbesen2018accurate}. A variation-aware genome graph may incorporate distinct (population-specific) reference sequences and known sequence variants. Recently, the \emph{Graphtyper} software has been developed in order to facilitate sequence variant discovery from a genome graph that has been constructed and iteratively augmented using variation of the sequenced cohort \citep{eggertsson2017graphtyper}. So far, sequence variant genotyping using variation-aware genome graphs has not been evaluated in cattle.
 
@@ -74,6 +72,7 @@ An unbiased evaluation of the accuracy and sensitivity of sequence variant genot
 In this study, we compare sequence variant discovery and genotyping from a variation-aware genome graph using \emph{Graphtyper} to two state-of-the-art methods (\emph{GATK}, \emph{SAMtools}) that rely on linear reference genomes in 49 Original Braunvieh cattle. We compare sequence variant to microarray-derived genotypes in order to assess accuracy and sensitivity of sequence variant genotyping for each of the three methods evaluated.
 
 \section{Methods}
+\label{chap2:met}
 
 \paragraph{Selection of animals} 
 
@@ -87,11 +86,11 @@ All samples were sequenced on either an Illumina HiSeq 2500 (30 animals) or an I
 
 We followed the best practice guidelines recommended for variant discovery and genotyping using \emph{GATK} (version 4.0.6) with default parameters for all commands \citep{mckenna2010genome,vander2018best,depristo2011framework}. First, genotype likelihoods were calculated separately for each sequenced animal using \emph{GATK HaplotypeCaller} \citep{vander2018best}, which resulted in files in gVCF (genomic Variant Call Format) format for each sample \citep{danecek2011variant}. The gVCF files from the 49 samples were consolidated using \emph{GATK} GenomicsDBImport. Subsequently, \emph{GATK GenotypeGVCFs} was applied to genotype polymorphic sequence variants for all samples simultaneously.
 
-\emph{Graphtyper} (version 1.3) was run in a multi-sample mode as recommended in Eggertsson et al. \citep{eggertsson2017graphtyper}. Because the original implementation of \emph{Graphtyper} is limited to the analysis of the human chromosome complement, we cloned the \emph{Graphtyper GitHub} repository (\url{https://github.com/DecodeGenetics/graphtyper}), modified the source code to allow analysis of the cattle chromosome complement, and compiled the program from the modified source code (see Additional file 1). The \emph{Graphtyper} workflow consisted of four steps that were executed successively. First, sequence variants were identified from the read alignments that were produced using \emph{BWA mem} (see above). Second, these cohort-specific variants were used to augment the UMD3.1 reference genome and construct the variation-aware genome graph. Third, the sequencing reads were locally realigned against the variation-aware graph. A clean variation graph was produced by removing unobserved haplotypes paths from the raw graph. In the final step, genotypes were identified from the realigned reads in the clean graph. The  \emph{Graphtyper} pipeline was run in segments of 1 million bp and whenever the program failed to genotype variants for a particular segment either because it ran out of memory or exceeded the allocated runtime of 12 h, the interval was subdivided into smaller segments (10 kb).
+\emph{Graphtyper} (version 1.3) was run in a multi-sample mode as recommended in Eggertsson et al. \citep{eggertsson2017graphtyper}. Because the original implementation of \emph{Graphtyper} is limited to the analysis of the human chromosome complement, we cloned the \emph{Graphtyper GitHub} repository (\url{https://github.com/DecodeGenetics/graphtyper}), modified the source code to allow analysis of the cattle chromosome complement, and compiled the program from the modified source code (see \ref{supp_mat:21}). The \emph{Graphtyper} workflow consisted of four steps that were executed successively. First, sequence variants were identified from the read alignments that were produced using \emph{BWA mem} (see above). Second, these cohort-specific variants were used to augment the UMD3.1 reference genome and construct the variation-aware genome graph. Third, the sequencing reads were locally realigned against the variation-aware graph. A clean variation graph was produced by removing unobserved haplotypes paths from the raw graph. In the final step, genotypes were identified from the realigned reads in the clean graph. The  \emph{Graphtyper} pipeline was run in segments of 1 million bp and whenever the program failed to genotype variants for a particular segment either because it ran out of memory or exceeded the allocated runtime of 12 h, the interval was subdivided into smaller segments (10 kb).
 
-Our implementation of  \emph{SAMtools}mpileup (version 1.8) \citep{li2011statistical} was run in a multi-sample mode to calculate genotype likelihoods from the aligned reads for all samples simultaneously. The parameters -E and -t were used to recalculate (and apply) base alignment quality and produce per-sample genotype annotations, respectively. Next, the estimated genotype likelihoods were converted into genotypes using BCFtools call using the -v and -m flags to output variable sites only, and permit sites to have more than two alternative alleles, respectively.
+Our implementation of \emph{SAMtools mpileup} (version 1.8) \citep{li2011statistical} was run in a multi-sample mode to calculate genotype likelihoods from the aligned reads for all samples simultaneously. The parameters -E and -t were used to recalculate (and apply) base alignment quality and produce per-sample genotype annotations, respectively. Next, the estimated genotype likelihoods were converted into genotypes using BCFtools call using the -v and -m flags to output variable sites only, and permit sites to have more than two alternative alleles, respectively.
 
-We implemented all pipelines using Snakemake (version 5.2.0) [46]. The scripts for the pipelines are available via \emph{Github} repository \\
+We implemented all pipelines using Snakemake (version 5.2.0) \citep{koster2012snakemake}. The scripts for the pipelines are available via \emph{Github} repository \\
 \url{https://github.com/danangcrysnanto/Graph-genotyping-paper-pipelines}
 
 \paragraph{Sequence variant filtering and genotype refinement}
@@ -107,7 +106,7 @@ To ensure consistent variant representation across the different sequence varian
 
 Mendelian inconsistencies were calculated as the proportion of variants showing opposing homozygous genotypes in nine parent–offspring pairs that were included in the 49 sequenced animals. For this comparison, we considered only the sites for which the genotypes of both sire and son were not missing.
 
-All    49    sequenced    cattle    were    also    genotyped    using  either  the  Illumina  BovineHD  (N  =  29)  or  the  BovineSNP50 (N = 20) Bead chip that comprise 777,962 and  54,001  SNPs,  respectively.  The  average  genotyping  rate  at  autosomal  SNPs  was  98.91\%.  In  order  to  assess  the  quality  of  sequence  variant  genotyping,  the  genotypes  detected  by  the  different  variant  calling  methods  were compared  to  the  array-called  genotypes  in  terms  of  genotype  concordance,  non-reference  sensitivity  and  non-reference discrepancy \citep{depristo2011framework,linderman2014analytical}, and for more details on  the  metrics  (see  Additional  file 2).  Non-parametric  Kruskal–Wallis   tests   followed   by   pairwise   Wilcoxon   signed-rank tests were applied to determine if any of the three  metrics  differed  significantly  between  the  three  tools evaluated.
+All    49    sequenced    cattle    were    also    genotyped    using  either  the  Illumina  BovineHD  (N  =  29)  or  the  BovineSNP50 (N = 20) Bead chip that comprise 777,962 and  54,001  SNPs,  respectively.  The  average  genotyping  rate  at  autosomal  SNPs  was  98.91\%.  In  order  to  assess  the  quality  of  sequence  variant  genotyping,  the  genotypes  detected  by  the  different  variant  calling  methods  were compared  to  the  array-called  genotypes  in  terms  of  genotype  concordance,  non-reference  sensitivity  and  non-reference discrepancy \citep{depristo2011framework,linderman2014analytical}, and for more details on  the  metrics  (see  \ref{supp_mat:22}).  Non-parametric  Kruskal–Wallis   tests   followed   by   pairwise   Wilcoxon   signed-rank tests were applied to determine if any of the three  metrics  differed  significantly  between  the  three  tools evaluated.
 
 
 \paragraph{Computing environment and statistical analysis}
@@ -116,9 +115,9 @@ All computations were performed on the ETH Zurich Leonhard Open Cluster with acc
 
 \section{Results}
 
-Following  quality  control  (removal  of  adapter  sequences  and  low-quality  bases),  we  aligned  more  than  13  billion  paired-end  reads  (2 × 125  and  2 × 150  bp)  from  49  Original  Braunvieh  cattle  to  the  UMD3.1  assembly  of  the  bovine  genome.  On  average,  98.44\%  (91.06–99.59\%)  of  the  reads  mapped  to  the  reference  genome  and  4.26\%  (2.0–10.91\%) of these were flagged as duplicates and not considered for further analyses. Sequencing depth ranged from  6.00  to  37.78  with  an  average  depth  per  animal  of  12.75  and  was  above  12-fold  for  31  samples.  Although  the  realignment  of  sequencing  reads  around  indels  is  no  longer  required  when  sequence  variants  are  genotyped  using  the  latest  version  of  \emph{GATK}  (v  4),  it  is  still  recommended  to  improve  the  genotyping  of  indels  by  using \emph{SAMtools}. To ensure a fair comparison of the three tools evaluated,  we  realigned  the  reads  around  indels  on  all  BAM files and used the re-aligned files as a starting point for our comparisons (Fig. \ref{fig:loca}). The sequencing read data of 49 cattle were deposited at European Nucleotide Archive (ENA) (\url{http://www.ebi.ac.uk/ena})  under  primary  accession PRJEB28191. \\
+Following  quality  control  (removal  of  adapter  sequences  and  low-quality  bases),  we  aligned  more  than  13  billion  paired-end  reads  (2 × 125  and  2 × 150  bp)  from  49  Original  Braunvieh  cattle  to  the  UMD3.1  assembly  of  the  bovine  genome.  On  average,  98.44\%  (91.06–99.59\%)  of  the  reads  mapped  to  the  reference  genome  and  4.26\%  (2.0–10.91\%) of these were flagged as duplicates and not considered for further analyses. Sequencing depth ranged from  6.00  to  37.78  with  an  average  depth  per  animal  of  12.75  and  was  above  12-fold  for  31  samples.  Although  the  realignment  of  sequencing  reads  around  indels  is  no  longer  required  when  sequence  variants  are  genotyped  using  the  latest  version  of  \emph{GATK}  (v  4),  it  is  still  recommended  to  improve  the  genotyping  of  indels  by  using \emph{SAMtools}. To ensure a fair comparison of the three tools evaluated,  we  realigned  the  reads  around  indels  on  all  BAM files and used the re-aligned files as a starting point for our comparisons (Fig. \ref{fig:loca}). The sequencing read data of 49 cattle were deposited at European Nucleotide Archive (ENA) (\url{http://www.ebi.ac.uk/ena}) under primary accession PRJEB28191. \\
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper1/main_figure/Figure1.pdf}
     \caption[Pipeline methods]{\textbf{Schematic representation of the three sequence variant discovery and genotyping methods evaluated.} \\
@@ -128,11 +127,9 @@ Following  quality  control  (removal  of  adapter  sequences  and  low-quality 
 
 \subsection*{Sequence variant discovery and genotyping}
 
-Polymorphic  sites  (SNPs,  indels)  were  discovered  and  genotyped in the 49 animals using either \emph{GATK} (version 4), \emph{Graphtyper}  (version  1.3)  or  \emph{SAMtools}  (version  1.8).  All software programs were run using default parameters and  workflow  descriptions  for  variant  discovery  (Fig. \ref{fig:loca} and  also  see  Methods).  Only  autosomal  sequence  variants  were  considered  to  evaluate  the  accuracy  and  sen-sitivity  of  sequence  variant  genotyping.  Because  variant  filtering has a strong impact on the accuracy and sensitivity of sequence variant genotyping \citep{carson2014effective,jun2015efficient}, we evaluated both  the  raw  variants  that  were  detected  using  default  parameters  for  variant  discovery  (Fig. \ref{fig:loca})  and  variants  that  remained  after  applying  filtering  criteria  that  are  commonly  used  but  may  differ  slightly  between  different software tools. Note that \emph{GATK} was run by using the suggested filtering parameters, when application of Variant Quality Score Recalibration (VQSR) is not possible.
+Polymorphic  sites  (SNPs,  indels)  were  discovered  and  genotyped in the 49 animals using either \emph{GATK} (version 4), \emph{Graphtyper} (version  1.3)  or  \emph{SAMtools} (version  1.8). All software programs were run using default parameters and  workflow  descriptions  for  variant  discovery  (Fig. \ref{fig:loca} and  also  see \nameref{chap2:met}). Only autosomal sequence variants were considered  to  evaluate  the  accuracy  and  sen-sitivity  of sequence  variant genotyping. Because variant filtering has a strong impact on the accuracy and sensitivity of sequence variant genotyping \citep{carson2014effective,jun2015efficient}, we evaluated both  the  raw  variants  that  were  detected  using  default  parameters  for  variant  discovery  (Fig. \ref{fig:loca})  and  variants  that  remained  after  applying  filtering  criteria  that  are  commonly  used  but  may  differ  slightly  between  different software tools. Note that \emph{GATK} was run by using the suggested filtering parameters, when application of Variant Quality Score Recalibration (VQSR) is not possible.
 
-Using default parameters for variant discovery for each of the software programs evaluated, 21,140,196, 20,262,913, and 20,668,459 polymorphic sites were discovered using \emph{GATK},  \emph{Graphtyper} and SAMtools, respectively (Table \ref{tab:varcount}). The vast majority (86.79, 89.42 and 85.11\%) of the detected variants were biallelic SNPs. Of the 18,594,182, 18,120,724 and 17,592,038 SNPs detected using \emph{GATK},  \emph{Graphtyper} and SAMtools, respectively, 7.46, 8.31 and 5.02\% were novel, i.e., they were not among the 102,091,847 polymorphic sites of the most recent version (150) of the Bovine dbSNP database. The Ti/Tv ratio of the detected SNPs was equal to 2.09, 2.07 and 2.05 using \emph{GATK},  \emph{Graphtyper} and SAMtools, respectively. Using \emph{GATK} revealed four times more multiallelic SNPs (246,220) than either  \emph{SAMtools}or  \emph{Graphtyper}.
-
-
+Using default parameters for variant discovery for each of the software programs evaluated, 21,140,196, 20,262,913, and 20,668,459 polymorphic sites were discovered using \emph{GATK}, \emph{Graphtyper} and \emph{SAMtools}, respectively (Table \ref{tab:varcount}). The vast majority (86.79, 89.42 and 85.11\%) of the detected variants were biallelic SNPs. Of the 18,594,182, 18,120,724 and 17,592,038 SNPs detected using \emph{GATK},  \emph{Graphtyper} and \emph{SAMtools}, respectively, 7.46, 8.31 and 5.02\% were novel, i.e., they were not among the 102,091,847 polymorphic sites of the most recent version (150) of the Bovine dbSNP database. The Ti/Tv ratio of the detected SNPs was equal to 2.09, 2.07 and 2.05 using \emph{GATK}, \emph{Graphtyper} and SAMtools, respectively. Using \emph{GATK} revealed four times more multiallelic SNPs (246,220) than either \emph{SAMtools} or \emph{Graphtyper}.
 
 \begin{landscape}
 \begin{table}
@@ -190,12 +187,21 @@ Using default parameters for variant discovery for each of the software programs
 
 \newpage
 
-We identified 2,478,489, 2,044,585, and 3,076,421 indels using GATK, Graphtyper, and SAMtools, respectively, and 26.78\%, 29.15\%, and 41.75\% of them were novel. SAMtools revealed the largest number and highest proportion (14.9\%) of indels. Between 12 and 14\% of the detected indels were multiallelic. While Graphtyper and GATK identified more (12\%) deletions than insertions, the proportions were almost the same using SAMtools.
+We identified 2,478,489, 2,044,585, and 3,076,421 indels using \emph{GATK}, \emph{Graphtyper}, and \emph{SAMtools}, respectively, and 26.78\%, 29.15\%, and 41.75\% of them were novel. 
+\emph{SAMtools} revealed the largest number and highest proportion (14.9\%) of indels. 
+Between 12 and 14\% of the detected indels were multiallelic. 
+While \emph{Graphtyper} and \emph{GATK} identified more (12\%) deletions than insertions, the proportions were almost the same using SAMtools.
 
-On average, each Original Braunvieh cattle carried between 7 and 8 million variants that differed from the UMD3.1 reference genome. Of these, between 2.4 and 2.6 million SNPs were homozygous for the alternate allele, between 3.8 and 4.7 million SNPs were heterozygous and between 0.7 and 1 million were indels (Table \ref{tab:varhet}).
+On average, each Original Braunvieh cattle carried between 7 and 8 million variants that differed from the UMD3.1 reference genome. 
+Of these, between 2.4 and 2.6 million SNPs were homozygous for the alternate allele, between 3.8 and 4.7 million SNPs were heterozygous and between 0.7 and 1 million were indels (Table \ref{tab:varhet}). An intersection of 15,901,526 biallelic SNPs was common to all sequence-variant discovery tools evaluated Fig \ref{fig:varoverlap}a, i.e., between 85.51 and 90.39\% of the detected SNPs of each tool, and 466,029 (2.93\%, Ti/Tv: 1.81) of them were novel, i.e., they were not present in dbSNP 150. 
+The Ti/Tv-ratio of the common SNPs was 2.22. 
+\emph{SAMtools} had the largest number of SNPs in common with the other two tools (90.39\%). The number of private SNPs, i.e., SNPs that were detected by one but not the other tools was largest for \emph{GATK} and smallest for \emph{Graphtyper}.
 
-An intersection of 15,901,526 biallelic SNPs was common to all sequence-variant discovery tools evaluated (Fig. 2a), i.e., between 85.51 and 90.39\% of the detected SNPs of each tool, and 466,029 (2.93\%, Ti/Tv: 1.81) of them were novel, i.e., they were not present in dbSNP 150. The Ti/Tv-ratio of the common SNPs was 2.22. SAMtools had the largest number of SNPs in common with the other two tools (90.39\%). The number of private SNPs, i.e., SNPs that were detected by one but not the other tools was largest for GATK and smallest for Graphtyper.
-
+In total, 1,299,467 biallelic indels Fig \ref{fig:varoverlap}b were common to all evaluated tools and 98,931 (13.13\%) of these were novel, 
+i.e., they were not present in dbSNP 150. The intersection among the three tools was considerably smaller for indels than for SNPs. 
+\emph{Graphtyper} had the highest proportion of indels in common with the other tools (74.11\%). 
+\emph{SAMtools} discovered the largest number (2,704,413) of biallelic indels and most of them (41.26\%) were not detected using either \emph{GATK} or \emph{Graphtyper}. 
+\emph{GATK} (21.2\%) and \emph{Graphtyper} (12.38\%) discovered fewer private indels than \emph{SAMtools}.
 
 \newpage
 
@@ -235,15 +241,195 @@ An intersection of 15,901,526 biallelic SNPs was common to all sequence-variant 
 \end{landscape}
 
 \newpage
-
-\begin{figure}[h]
+\begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper1/main_figure/Figure2.pdf}
     \caption{Number of biallelic SNPs (\textbf{a}) and indels (\textbf{b}) identified in 49 Original Braunvieh cattle using three sequence variant genotyping methods. Blue horizontal bars represent the total number of sites discovered for each method. Vertical bars indicate private and common variants detected by the methods evaluated}
     \label{fig:varoverlap}
 \end{figure}
 
+\newpage
+
+\subsection*{Sequence variant genotyping using \emph{Graphtyper} is accurate}
+
+The 49 sequenced animals were also genotyped using either the Illumina BovineHD or the Illumina BovineSNP50 Bead chip. 
+Genotype concordance, non-reference sensitivity and non-reference discrepancy were calculated using array-called and 
+sequence variant genotypes at corresponding positions. Genotype concordance is a measure of the proportion of variants that have
+identical genotypes on the microarray and in whole-genome sequencing data. 
+Non-reference sensitivity is the proportion of microarray-derived variants that were also detected in the sequencing data. 
+Non-reference discrepancy reflects the proportion of sequence variants that have genotypes that differ from the microarray-derived genotypes [for more details on how the different metrics were calculated (see \ref{supp_mat:22})]. 
+All metrics were calculated both for raw and filtered variants either before or after applying the algorithm implemented in the \emph{Beagle} software for haplotype phasing and imputation.
+
+In the raw data, the proportion of missing non-reference sites was 1.90\%, 0.56\%, and 0.47\% using \emph{GATK}, \emph{Graphtyper}, and \emph{SAMtools}, respectively.
+The genotype concordance between the sequence- and microarray-derived genotypes was higher (\emph{P} $<$ 0.005) when \emph{Graphtyper} (97.72\%) was used than when either \emph{SAMtools} (97.68\%) or \emph{GATK} (95.99\%) was used (Table \ref{tab:varcomp}). 
+For the three tools evaluated, the genotype concordance was higher at homozygous than heterozygous sites, particularly in animals that were sequenced at low depth (see \ref{supp_mat:23}).
+In order to take the variable proportions of missing genotypes in the sequence variants into account, we calculated non-reference sensitivity and non-reference discrepancy. 
+Non-reference sensitivity was almost identical using \emph{Graphtyper} (98.26\%) and \emph{SAMtools} (98.21\%). 
+However, non-reference sensitivity was clearly lower using \emph{GATK} (93.81\%, \emph{P} $<$ 0.001). 
+Non-reference discrepancy was lower using \emph{Graphtyper} (3.53\%) than using either \emph{SAMtools} (3.6\%, \emph{P} $=$ 0.003) or \emph{GATK} (6.35\%, \emph{P} $<$ 0.001).
+
+\begin{landscape}
+    \begin{table}
+        \centering
+        \caption{\textbf{Comparisons between array-called and sequence variant genotypes. }}
+        \small
+        \arrayrulecolor{black}
+        \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|} 
+        \cline{2-13}
+        \multicolumn{1}{l|}{\multirow{3}{*}{~}} & \multicolumn{4}{l|}{Genotype concordance}                         & \multicolumn{4}{l|}{Non-reference sensitivity}                    & \multicolumn{4}{l|}{Non-reference discrepancy}                 \\ 
+        \cline{2-13}
+        \multicolumn{1}{l|}{}                   & \multicolumn{2}{l|}{full}       & \multicolumn{2}{l|}{filtered}   & \multicolumn{2}{l|}{full}       & \multicolumn{2}{l|}{filtered}   & \multicolumn{2}{l|}{full}     & \multicolumn{2}{l|}{filtered}  \\ 
+        \cline{2-13}
+        \multicolumn{1}{l|}{}                   & raw            & imp            & raw            & imp            & raw            & imp            & raw            & imp            & raw           & imp           & raw           & imp            \\ 
+        \arrayrulecolor{black}\cline{1-1}\arrayrulecolor{black}\cline{2-13}
+        \textit{GATK}                           & 95.99***       & 99.32***       & 96.02***       & 99.39***       & 93.81***       & \textit{99.36} & 93.67***       & \textit{99.15} & 6.35***       & 1.05***       & 6.3***        & 0.95***        \\ 
+        \hline
+        \textit{Graphtyper}                     & \textit{97.71} & \textit{99.46} & \textit{97.75} & \textit{99.52} & \textit{98.26} & 99.35          & \textit{97.91} & 99.00***       & \textit{3.53} & \textit{0.83} & \textit{3.47} & \textit{0.73}  \\ 
+        \hline
+        \textit{SAMtools}                       & 97.68***       & 99.24***       & 97.7*          & 99.29***       & 98.21          & 99.35          & 97.53***       & 98.67***       & 3.6**         & 1.17***       & 3.56**        & 1.09***        \\
+        \hline
+        \end{tabular}
+        \label{tab:varcomp}
+        \end{table}
+        \singlespacing
+        \small{Genotype concordance, non-reference sensitivity and non-reference discrepancy (in percentage) was calculated between 
+        the genotypes from the Bovine SNP Bead chip and sequence–derived genotypes for 49 Original Braunvieh cattle considering either the raw or imputed (imp) sequence variant 
+        genotypes before (full) and after (filtered) variants were filtered based on commonly used criteria. 
+        Asterisks denote a significant difference (* \emph{P} $<$ 0.05, ** \emph{P} $<$ 0.01, *** \emph{P} $<$ 0.001) with the best value (italic) for a respective parameter.}
+
+\end{landscape}
+
+
+Next, we analysed the proportion of opposing homozygous genotypes for SNPs and indels in nine sire-son pairs that were included among the sequenced animals (Table \ref{tab:mendel}). 
+We observed that SNPs that were discovered using either \emph{Graphtyper} or \emph{SAMtools} had almost a similar proportion of genotypes with Mendelian inconsistencies in the full and filtered datasets, whereas the values were two times higher using \emph{GATK}. 
+The proportion of opposing homozygous genotypes was higher for indels than SNPs for all the tools evaluated. 
+However, in the full and filtered datasets, it was lower when \emph{Graphtyper} was used than when either \emph{GATK} or \emph{SAMtools} was used. Using filtering parameters that are commonly applied for the three evaluated tools (see \nameref{chap2:met}), 
+we excluded 1,378,517 (6.52\%, Ti/Tv 1.24), 2,583,758 (12.75\%, Ti/Tv 1.47) and 1,796,910 (8.69\%, Ti/Tv 1.36) variants due to low mapping or genotyping quality from the \emph{GATK}, \emph{Graphtyper}, and \emph{SAMtools} datasets, respectively. 
+The genotype concordance between sequence- and microarray-derived genotypes was slightly higher for the filtered than the raw genotypes, but the non-reference sensitivity was lower for the filtered than the raw genotypes, which indicates that the filtering step also removed some true variant sites from the raw data (Table \ref{tab:varcomp}). 
+The filtering step had almost no effect on the proportion of Mendelian inconsistencies detected in the nine sire-son pairs (Table \ref{tab:mendel}).
+
+\begin{table}
+            \begin{center}
+            \caption{\textbf{Proportions of opposing homozygous genotypes observed in nine sire-son pairs}}
+            \small
+            \begin{tabular}{|l|l|l|l|l|l|l|l|l|} 
+            \cline{2-9}
+            \multicolumn{1}{l!{\color{black}\vrule}}{~} & \multicolumn{4}{l|}{SNPs}                                     & \multicolumn{4}{l|}{indels}                                    \\ 
+            \cline{2-9}
+            \multicolumn{1}{l|}{~}                      & \multicolumn{2}{l|}{full}     & \multicolumn{2}{l|}{filtered} & \multicolumn{2}{l|}{full}     & \multicolumn{2}{l|}{filtered}  \\ 
+            \cline{2-9}
+            \multicolumn{1}{l|}{~}                      & raw           & imp           & raw           & imp           & raw           & imp           & raw           & imp            \\ 
+            \cline{2-9}
+            \textit{Bovine HD SNP array}                & \multicolumn{8}{l|}{\textit{0.001}}                                                                                            \\ 
+            \hline
+            \textit{GATK}                               & 0.73*         & 0.15*         & 0.72*         & 0.13*         & 0.98*         & 0.24*         & 0.99*         & 0.21*          \\ 
+            \hline
+            \textit{Graphtyper}                         & 0.36          & \textit{0.11} & 0.36          & \textit{0.11} & \textit{0.54} & \textit{0.13} & \textit{0.54} & \textit{0.13}  \\ 
+            \hline
+            \textit{SAMtools}                           & \textit{0.33} & 0.28*         & \textit{0.32} & 0.25*         & 0.67          & 0.54*         & 0.61          & 0.57*          \\
+            \hline
+            \end{tabular}
+            \label{tab:mendel}
+            \end{center}
+            \singlespacing
+            \small{The ratio (in percentage) was calculated using autosomal sequence variants considering either 
+            the raw or imputed (imp) sequence variant genotypes before (full) and after (filtered) variants were filtered based on commonly used criteria. 
+            Asterisks denote significant differences (* \emph{P} $\leq$ 0.05, ** \emph{P} $\leq$ 0.01, *** \emph{P} $\leq$ 0.001) with the best value (italic) for a respective parameter.}
+
+\end{table}
+
+\subsubsection*{\emph{Beagle} genotype refinement improved genotype quality}
+
+We used the \emph{Beagle} software to refine the primary genotype calls and infer missing genotypes in the raw and filtered datasets. 
+Following imputation, the quality of the sequence variant genotypes increased for all evaluated tools particularly for the individuals that had a sequencing coverage less than 12-fold (Fig. \ref{fig:varimpute}). 
+The largest increase in the concordance metrics was observed for the sequence variants that were obtained using \emph{GATK} (Tables \ref{tab:varcomp} and \ref{tab:mendel}). 
+Following imputation, the variants identified using Graphtyper had a significantly higher quality (\emph{P $<$} 0.05) for eight out of the ten metrics evaluated.
+
+The quality of the sequence variant genotypes, particularly before Beagle genotype phasing and imputation, was influenced by the variable depth of coverage for the 49 sequenced samples of our study (Fig. \ref{fig:varimpute}). 
+When we restricted the evaluations to 31 samples that had an average sequencing depth above 12-fold, the three tools performed almost identically (see \ref{supp_mat:24}). 
+However, the performance of \emph{Graphtyper} was significantly (\emph{P $<$} 0.05) higher for 12 (out of the total 20) metrics than either that of \emph{GATK} or \emph{SAMtools}. 
+When 18 samples with an average sequencing depth lower than 12-fold were considered, the differences observed in the three metrics were more pronounced between the three tools. 
+In samples with a low sequencing coverage, \emph{Graphtyper} performed significantly (\emph{P $<$} 0.05) better than either \emph{GATK} or \emph{SAMtools} for all concordance metrics both before and after filtering and \emph{Beagle} imputation, except for the non-reference sensitivity.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper1/main_figure/Figure3.pdf}
+    \caption{\textbf{Accuracy and sensitivity of sequence variant genotyping at different sequencing depths.} Genotype concordance, non-reference sensitivity and non-reference discrepancy were calculated for 49 Original Braunvieh cattle considering either raw (red) or filtered and imputed (blue) sequence variant genotypes. The grey points represent overlays of the results from the other methods}
+    \label{fig:varimpute}
+\end{figure}
+
+\subsection*{Computing requirements}
+
+The multi-sample sequence variant genotyping pipelines that were implemented using either \emph{GATK} or \emph{SAMtools} were run separately for each chromosome in a single-threading mode. 
+The \emph{SAMtools mpileup} module took between 3.07 and 11.4 CPU hours and required between 0.12 and 0.25 gigabytes (GB) peak random-access memory (RAM) per chromosome. 
+To genotype 20,668,459 sequence variants in 49 animals, \emph{SAMtools} mpileup required 192 CPU hours (Fig. \ref{fig:varresource}).
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper1/main_figure/Figure4.pdf}
+    \caption{\textbf{Computing time required to genotype all autosomal sequence variants in 49 Original Braunvieh cattle.} The runtime of GATK and Graphtyper is shown for the different steps (see Fig. \ref{fig:loca} for more details)}
+    \label{fig:varresource}
+\end{figure}
+
+For \emph{GATK}, we submitted 1421 parallel jobs of the \emph{HaplotypeCaller} module (i.e., one job for each animal and chromosome) that required between 3.9 and 12.3 GB RAM and between 0.36 and 11 CPU hours to complete.
+To process 29 chromosomes in 49 samples, the \emph{HaploytpeCaller} module required 2428 CPU hours. 
+Subsequently, we ran the \emph{GATK GenomicsDBImport} module, which required between 7.98 and 20.88 GB RAM and between 2.81 and 19.31 CPU hours per chromosome. 
+\emph{GATK Joint Genotyping} required between 4.33 and 17.32 GB of RAM and between 1.81 and 14.01 h per chromosome. 
+To genotype 21,140,196 polymorphic sequence variants in 49 animals, the \emph{GATK} pipeline required 2792 CPU hours (Fig. \ref{fig:varresource}).
+
+The \emph{Graphtyper} pipeline including construction of the variation graph and genotyping of sequence variants was run in parallel for 2538 non-overlapping segments of 1 million bp as recommended by \citep{eggertsson2017graphtyper}. 
+The peak RAM required by Graphtyper was between 1 and 3 GB per segment. 
+Twelve segments, for which Graphtyper either ran out of memory or did not finish within the allocated time, were subdivided into smaller segments of 10 kb and subsequently re-run (\ref{supp_mat:25}).
+The genotyping of 20,262,913 polymorphic sites in 49 animals using our implementation of the \emph{Graphtyper} pipeline required 1066 CPU hours (Fig. \ref{fig:varresource}).
+
+
+The computing resources required by \emph{SAMtools} and \emph{GATK} increased linearly with chromosome length. 
+The computing time required to genotype sequence variants was highly heterogeneous along the genome using \emph{Graphtyper}. 
+The CPU time for a 1-Mb segment ranged from 0.196 to 10.11 h, with an average CPU time of 0.42 h. 
+We suspected that flaws in the reference genome might increase the complexity of the variation-aware graph and that the construction of the graph might benefit from an improved assembly. 
+To test this hypothesis, we re-mapped the sequencing reads to the recently released new bovine reference genome (ARS-UCD1.2, \url{https://www.ncbi.nlm.nih.gov/assembly/GCF_002263795.1}) and repeated the graph-based sequence variant discovery. 
+Indeed, we did observe a decrease in the computing time required to genotype polymorphic sites (particularly at chromosomes 12, 27 and 29) and a more uniform runtime along the genome, which possibly indicates that graph-based variant discovery in cattle will be faster and more accurate with highly contiguous reference sequences (Fig. \ref{fig:varassemb}).
+
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper1/main_figure/Figure5.pdf}
+    \caption{\textbf{Sequence variant genotyping on chromosome 12 using Graphtyper.} Computing time required (\textbf{a}) and number of variants discovered (\textbf{b}) for bovine chromosome 12 using Graphtyper. 
+    Each dot represents an interval of 1 million bp. Blue and red colours represent values for the UMD3.1 and ARS-UCD1.2 versions of the bovine assembly, respectively}
+    \label{fig:varassemb}
+\end{figure}
+
+\section{Discussion}
+
+We used either \emph{GATK}, \emph{Graphtyper}, or \emph{SAMtools} to discover and genotype polymorphic sequence variants in whole-genome sequencing data of 49 Original Braunvieh cattle that were sequenced at between 6 and 38-fold genome coverage. 
+Whereas \emph{SAMtools} and \emph{GATK} discover variants from a linear reference genome, \emph{Graphtyper} locally realigns reads to a variation-aware reference graph that incorporates cohort-specific sequence variants \citep{eggertsson2017graphtyper}. 
+Our graph-based variant discovery pipeline that is implemented by using the \emph{Graphtyper} software used the existing bovine reference sequence to construct the genome graph. 
+Subsequently, the graph was augmented with variants that were detected from linear alignments of the 49 Original Braunvieh cattle. 
+The use of more sophisticated genome graph-based approaches that have been developed very recently facilitates the mapping of raw sequencing reads directly against a genome graph without the need to first align reads towards a linear reference genome \citep{garrison2018variation}. 
+Whereas genome graph-based variant discovery has been explored recently in mammalian-sized genomes \citep{dilthey2015improved,rakocevic2019fast,garrison2018variation,sibbesen2018accurate}, our work is the first to apply graph-based sequence variant genotyping in cattle.
+
+In order to evaluate graph-based variant discovery in cattle, we compared accuracy and sensitivity of \emph{Graphtyper} to \emph{GATK}, and \emph{SAMtools} , i.e., two state-of-the-art methods on linear reference genomes that have been evaluated thoroughly in many species including cattle \citep{Jansen2013,baes2014evaluation}. 
+We ran each tool with default parameters for variant discovery and applied commonly used or recommended filtration criteria. 
+However, our evaluation of the software tools may suffer from ascertainment bias because we relied on SNPs that are included in bovine SNP arrays, i.e., they are located predominantly at genomic regions where variants are easy to identify \citep{li2014toward,malomane2018efficiency,linderman2014analytical}. 
+Thus, the global accuracy and sensitivity of sequence variant discovery might be overestimated in our study. 
+However, this ascertainment bias is unlikely to affect the relative performance of the methods evaluated.
+
+In 49 Original Braunvieh cattle, sequence variant genotyping was more accurate using \emph{Graphtyper} than either \emph{GATK} or \emph{SAMtools}. Differences in accuracy are small between the three tools, particularly when samples are sequenced at an average coverage higher than 12-fold (see Additional file 4). Yet, \emph{Graphtyper} performed significantly better than \emph{GATK} and \emph{SAMtools} for samples sequenced at medium ($>$ 12-fold) or low($<$ 12-fold)
+coverage indicating that genome graph-based variant discovery in cattle is accurate across a wide range of sequencing depths. \emph{GATK} might perform better than observed in our study, when the VQSR module is applied to train the variant filtration algorithm on true and false variants \citep{pirooznia2014validation}. However, to the best of our knowledge, the required sets of true and false variants are not available in cattle. An intersection of variants detected by different sequence variant genotyping software may be considered as a truth set (e.g., \citep{alberto2018convergent}) and compiling such a set is possible using the 49 samples from our study. However, a truth set that has been constructed from the data that are used for evaluation is likely to be depleted for variants that are difficult to discover in the target data set, thus preventing an unbiased evaluation of variant calling \citep{li2018synthetic}. Variants from the 1000 Bull Genomes project \citep{Daetwyler2014,Hayes2019} could potentially serve as a truth/training set. However, variants from the 1000 Bull Genomes project were detected from short read sequencing data using either \emph{GATK} or \emph{SAMtools}, i.e., technologies and software that are part of our evaluation, thus precluding an unbiased comparison of variant discovery between GATK, Graphtyper, and SAMtools \citep{li2018synthetic}. \citep{vander2018best} showed in a subset of samples from the 1000 Bull Genomes project that GATK VQSR does not notably improve the concordance between sequence-derived and microarray-called genotypes compared to GATK hard filtering. Interestingly, the proportion of opposing homozygous genotypes in sire/offspring pairs was slightly higher in their study using GATK VQSR than GATK hard-filtering as used by the 1000 Bull Genomes project \citep{vander2018best}. Applying GATK VQSR to the variants of our dataset corroborates the findings of \citep{vander2018best} (see Additional file 6). Considering that the quality of the truth/training sets has a strong impact on the capabilities of VQSR (\ref{supp_mat:26}) and that high-confidence variants are currently not publicly available for cattle, we report GATK results using the recommended filtering parameters when VQSR is not possible.
+
+Regardless of the method evaluated, we observed heterozygous under-calling in animals that are sequenced at low coverage, i.e., heterozygous variants were erroneously genotyped as homozygous due to an insufficient number of sequencing reads supporting the heterozygous genotype \citep{nielsen2011genotype,sims2014sequencing,fragoso2016imputing,bilton2018linkage}. In agreement with previous studies \citep{Jansen2013,Daetwyler2014}, \emph{Beagle} imputation improved genotype concordance and reduced heterozygous under-calling particularly in individuals that are sequenced at low coverage. After the imputation step, the genotype concordance, non-reference sensitivity, and non-reference discrepancy of the three tools were almost identical, which indicates that genotyping sequence variants from samples with a medium genome coverage is possible at high accuracy (at least for common variants in more accessible regions of the genome) using any of the three tools evaluated and subsequent Beagle error correction. While such conclusions have been drawn previously for \emph{SAMtools} and \emph{GATK} \citep{Jansen2013,baes2014evaluation}, our findings demonstrate that the genotype likelihoods estimated from the \emph{Graphtyper} software are also compatible with and benefit from the imputation algorithm implemented in the Beagle software. Considering that sequence data are enriched for rare variants that are more difficult to impute than common variants from SNP microarrays \citep{pausch2017evaluation}, the benefits from Beagle error correction might be overestimated in our study. An integration of phasing and imputation of missing genotypes directly in a graph-based variant genotyping approach would simplify sequence variant genotyping from variation-aware graphs \citep{rakocevic2019fast,siren2020haplotype,novak2017graph}. Using \emph{Graphtyper} for variant genotyping and Beagle for genotype refinement enabled us to genotype sequence variants in 49 Original Braunvieh cattle at a genotypic concordance of 99.52\%, i.e., higher than previously achieved using either GATK or SAMtools for variant calling in cattle that are sequenced at a similar genome coverage \citep{Jansen2013,Stothard2015,Boussaha2016,Daetwyler2014,baes2014evaluation,stafuzza2017single}; this indicates that graph-based variant discovery might improve sequence variant genotyping. However, applying the filtering criteria that are recommended for \emph{Graphtyper} \citep{eggertsson2017graphtyper} removed more variants from the \emph{Graphtyper} (12.75\%) than from either \emph{GATK} (6.52\%) or \emph{SAMtools} (8.69\%) datasets. It should be mentioned that \emph{GATK} VQSR would remove considerably more variants from the \emph{GATK} dataset than \emph{GATK} hard filtering as applied in our study (see Additional file 6). Fine-tuning of the variant filtering parameters is necessary to further increase the accuracy and sensitivity of sequencing variant genotyping, particularly for \emph{Graphtyper} \citep{carson2014effective,jun2015efficient}. Moreover, the accuracy and sensitivity of graph-based variant discovery may be higher when known variants are considered for the initial construction of the variation graph \citep{eggertsson2017graphtyper}. Indeed, we observed a slight increase in genotype concordance (see \ref{supp_mat:27}) when we used Graphtyper to genotype sequence variants from a variation-aware genome-graph that incorporated bovine variants listed in dbSNP 150. However, additional research is required to prioritize a set of variants to augment bovine genome graphs for different cattle breeds \citep{pritt2018forge}.
+
+Using microarray-derived genotypes as a truth set may overestimate the accuracy of sequence variant discovery particularly at variants that are rare or located in less accessible regions of the genome. Moreover, it does not allow assessment of the accuracy and sensitivity of indel discovery because variants other than SNPs are currently not routinely genotyped with commercially available microarrays. Estimating the proportion of opposing homozygous genotypes between parent–offspring pairs may be a useful diagnostic metric to detect sequencing artefacts or flawed genotypes at indels \citep{patel2014struggle}. Our results show that genotypes at indels are more accurate using \emph{Graphtyper} than either \emph{SAMtools} or \emph{GATK} because \emph{Graphtyper} produced less opposing homozygous genotypes at indels in nine sire-son pairs than the other methods both in the raw and filtered datasets. These findings are in line with those reported by \citep{eggertsson2017graphtyper}, who showed that the mapping of the sequencing reads to a variation-aware graph could improve read alignment nearby indels, thus enabling highly accurate sequence variant genotyping also for variants other than SNPs. Recently, \citep{garrison2018variation} showed that graph-based variant discovery may also mitigate reference allele bias. An assessment of reference allele bias was, however, not possible in our study because the sequencing depth was too low for most samples.
+
+
+In our study, \emph{Graphtyper} required less computing time than \emph{GATK} to genotype sequence variants for 49 individuals.\emph{SAMtools} required the least computing resources, probably because the implemented mpileup algorithm produces genotypes from the aligned reads without performing the computationally intensive local realignment of the reads. However, with an increasing number of samples, the multi-sample variant genotyping implementation of the \emph{GATK HaplotypeCaller} module seems to be more efficient than \emph{SAMtools mpileup} because variant discovery within samples can be separated from the joint genotyping across samples \citep{poplin2018scaling,vander2018best}. A highly parallelized graph-based variant discovery pipeline also offers a computationally feasible and scalable framework for variant discovery in thousands of samples \citep{eggertsson2017graphtyper}. However, the computing time necessary for graph-based variant genotyping might be high in genomic regions where the nucleotide diversity is high or the assembly is flawed \citep{sibbesen2018accurate,koren2013reducing}. In our study, the algorithm implemented in the \emph{Graphtyper} software failed to finish within the allocated time for 12 1-Mb segments including a segment on chromosome 12 that contains a large segmental duplication \citep{pausch2017evaluation,liu2009analysis,bickhart2012copy} possibly because many mis-mapped reads increased graph complexity. The region on chromosome 12 contains an unusually large number of sequence variants and has been shown to suffer from low accuracy of imputation \citep{pausch2017evaluation}. \emph{Graphtyper} also failed to finish within the allocated time for a region on chromosome 23 that encompasses the bovine major histocompatibility complex, which is known to have a high level of diversity. Our results show that \emph{Graphtyper} may also produce genotypes for problematic segments when they are split and processed in smaller parts. Moreover, most of these problems disappeared when we considered the latest assembly of the bovine genome, which possibly corroborates that more complete and contiguous genome assemblies may facilitate more reliable genotyping from variation-aware graphs \citep{li2014toward,guo2017improvements}.
+
+\section{Conclusions}
+
+Genome graphs facilitate sequence variant discovery from non-linear reference genomes. Sequence variant genotyping from a variation-aware graph is possible in cattle using Graphtyper. Sequence variant genotyping at both SNPs and indels is more accurate and sensitive using \emph{Graphtyper} than either \emph{SAMtools} or \emph{GATK}. The proportion of Mendelian inconsistencies at both SNPs and indels is low using \emph{Graphtyper}, which indicates that sequence variant genotyping from a variation-aware genome graph facilitates accurate variant discovery at different types of genetic variation. Considering highly informative variation-aware genome graphs that have been constructed from multiple breed-specific de-novo assemblies and high-confidence sequence variants may facilitate more accurate, sensitive and unbiased sequence variant genotyping in cattle.
+
 %\bibliography{references/chapter2_ref}
+
 
 \singlespacing
 \footnotesize
@@ -252,5 +438,7 @@ An intersection of 15,901,526 biallelic SNPs was common to all sequence-variant 
 \bibliography{references/chapter2_ref}
 %\printbibliography[title=References]
 
-
-\end{document}
+\ifdefined\BuildingFromMainFile
+\else
+   \end{document}
+\fi
