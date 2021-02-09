@@ -1,0 +1,1109 @@
+\ifdefined\BuildingFromMainFile
+\else
+   \documentclass[../main.tex]{subfiles}
+   \graphicspath{{figure/}{../figure/}}
+   \begin{document}
+\fi
+
+
+\newpage
+
+\setcounter{subsection}{0}
+\renewcommand \thesubsection {Note S3.\arabic{subsection}}
+\setcounter{figure}{0}
+\renewcommand \thefigure {S3.\arabic{figure}}
+\setcounter{table}{0}
+\renewcommand \thetable {S3.\arabic{table}}
+
+\begin{flushleft}
+    
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{paper2/supplement/sp31.pdf}
+    \caption[Number of 256 bp haplotype paths]{\textbf{Number of 256 bp haplotype paths in the graphs with an increasing
+    number of variants added to the graphs.} \\
+    \small{The line plot is fitted using loess function in \emph{R}.}}
+    \label{sup_fig:s31}
+\end{figure}
+
+
+\newpage
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp32.pdf}
+    \caption[Single-end mapping accuracy]{\textbf{Single-end mapping accuracy using genome graphs that contained
+    variants filtered for allele frequency.} \\
+    \small{(a) Proportion of incorrectly mapped reads for four breed-specific augmented
+    genome graphs. Diamonds and large dots represent results from linear mapping
+    using \emph{BWA mem} and \emph{vg}, respectively. The inset is a larger representation of the
+    mapping accuracy for alternate allele frequency thresholds less than 0.1. (b) Read
+    mapping accuracy for breed-specific augmented graphs that contained variants that
+    were either filtered for alternate allele frequency (triangles) or sampled randomly
+    (circles) from all variants detected within a breed. The dashed and solid line
+    represents the average proportion of mapping errors across four breeds using
+    variant prioritization and random sampling. }}
+    \label{sup_fig:s32}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp33.pdf}
+    \caption[Number of variants detected on chromosome 25]{\textbf{Number of variants detected on chromosome 25 in 82 BSW, 49 FV,
+    49 HOL and 108 OBV cattle.} \\
+    \small{Variants are binned according to allele frequency.}}
+    \label{sup_fig:s33}
+\end{figure}
+
+\newpage
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp34.pdf}
+    \caption[Distribution of alternate allele frequencies]{\textbf{Distribution of alternate allele frequencies in four cattle breeds and
+    four human populations based on (a) bta25 and human chromosome 19 used
+    for graph construction, and (b) whole genome variants. } \\
+    \small{The bars indicate the proportion of sequence variants for 20 allele frequency
+    classes. Different colour indicates cattle breeds (HOL, FV, BSW, OBV) and human
+    populations (JPT, GBR, STU, YRI).}}
+    \label{sup_fig:s34}
+\end{figure}
+
+\newpage
+
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp35.png}
+    \caption[Nucleotide diversity ($\pi$) ]{\textbf{Nucleotide diversity ($\pi$) based on whole genome autosomal variants
+    in cattle and human. } \\
+    \small{Nucleotide diversity ($\pi$) from each population calculated using vcftools with 10 kb
+    non-overlapped windows based on whole genome autosomal variants. Number
+    under the boxplot indicates average across windows.}}
+    \label{sup_fig:s35}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp36.pdf}
+    \caption[Single mapping accuracy using human graphs]{\textbf{Single-end mapping accuracy using four human population-specific
+    augmented graphs. } \\
+    \small{(a) Proportion of incorrectly mapped reads for four populationspecific augmented genome graphs (b) True positive (sensitivity) and false positive
+    mapping rate (specificity) parameterized based on the mapping quality for the best
+    performing graph from each population. (c) Read mapping accuracy for population specific augmented graphs that contained variants that were either filtered for
+    alternate allele frequency (triangles) or sampled randomly (circles) from all variants detected within a population. The dashed and solid line represents the average proportion of mapping errors across four populations using variant prioritization and random sampling.}}
+    \label{sup_fig:s36}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp37.pdf}
+    \caption[The accuracy of mapping simulated BSW single-end reads]{\textbf{The accuracy of mapping simulated BSW single-end reads to
+    variation-aware and linear reference structures.} \\
+    \small{(a) Proportion of BSW single-end reads that mapped erroneously against breed-specific
+    augmented graphs, random graphs or linear reference sequences. Dark and light blue
+    colours represent the proportion of incorrectly mapped reads with mapping quality (MQ)$<$10
+    and MQ$>$10, respectively. (b) True positive (sensitivity) and false positive mapping rate
+    (specificity) parameterized based on the mapping quality. (c) Dark and light green colours
+    represent the proportion of incorrectly mapped reads that matched corresponding reference
+    nucleotides and contained non-reference alleles, respectively}}
+    \label{sup_fig:s37}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp38.pdf}
+    \caption[Overlap of the variants]{\textbf{Overlap of the variants} \\
+    \small{(N=243,145) between the BSW-and all other
+    variation-aware reference graphs. The values are averaged across 10 replicates.}}
+    \label{sup_fig:s38}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{paper2/supplement/sp39.pdf}
+    \caption{\textbf{Pairwise heatmap of \emph{P-values} from \emph{t tests}} \\
+    \small{comparing 8 graph-based
+    mapping scenarios for (a) paired- and (b) single-end reads. The P-values are
+    adjusted for multiple testing using Bonferroni-correction.}}
+    \label{sup_fig:s39}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp310.pdf}
+    \caption[The accuracy of mapping simulated FV, HOL and OBV reads]{\textbf{The accuracy of mapping simulated FV, HOL and OBV reads to
+    variation-aware and linear reference structures.} \\
+    \small{(a) Proportion of reads that
+    mapped erroneously against personalized graphs, breed-specific augmented graphs,
+    random graphs or linear reference sequences. Dark and light blue colours represent
+    the proportion of incorrectly mapped reads with mapping quality (MQ)$<$10 and
+    MQ$>$10, respectively. The upper and lower panels reflect paired-end and single-end
+    reads, respectively. (b) Dark and light green colours represent the proportion of
+    incorrectly mapped reads that matched corresponding reference nucleotides and
+    contained non-reference alleles, respectively. The upper and lower panels reflect
+    paired-end and single-end reads, respectively}}
+    \label{sup_fig:s310}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp311.pdf}
+    \caption[ROC curves split by read’s novelty]{\textbf{ROC curves split by read’s novelty} \\
+    \small{Cumulative \emph{True positive} and \emph{False positive rate} at different mapping quality
+    thresholds visualized as Receiver Operating Characteristic (ROC) curves for reads
+    than contain variants and match corresponding reference alleles. The upper and
+    lower panels represent results from paired- and single-end reads.}}
+    \label{sup_fig:s311}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp312.pdf}
+    \caption[Mapping accuracy from different genomic features.]{\textbf{Mapping accuracy for reads originating from different genomic
+    features.} \\
+    \small{The origin of 10 million simulated reads was determined based on the Bos taurus
+    ARS-UCD1.2 ensembl 99 annotations (exonic and genic) and the ARS-UCD1.2
+    repeat regions labelled by Repeat Masker (Interspersed duplications including
+    SINEs, LINEs, LTR, and DNA transposable elements, and simple repeats which
+    contain low-complexity and simple repetitive regions). Different colour indicates the
+    proportion of erroneously mapped reads for each annotation category. The orange
+    bars represent the average proportion of mis-mapped reads for six graph-based
+    (BSW, Multi-breed, OBV, HOL, FV, random) and two linear (VG, BWA) reference
+    structures. Reads were simulated from haplotypes of a BSW individual.}}
+    \label{sup_fig:s312}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.7\textwidth]{paper2/supplement/sp313.pdf}
+    \caption[Single-end read mapping to consensus genome]{\textbf{Single-end read mapping accuracy using breed-specific
+    augmented genome graphs and consensus linear reference sequences.} \\
+    \small{(a) Dark and light blue represent the proportion of reads that mapped incorrectly
+    using \emph{BWA mem} and \emph{vg}, respectively, to the BSW-specific augmented reference
+    graph (BSW-graph), the BSW-specific (major-BSW) and multi-breed linear
+    consensus sequence (major-pan) and the bovine linear reference sequence
+    (unmodified). (b) True positive (sensitivity) and false positive mapping rate
+    (specificity) parameterized based on the mapping quality. (c) Paired- and single-end
+    read mapping accuracy using breed-specific augmented genome graphs and
+    consensus linear reference sequences that were only adjusted at SNPs.}}
+    \label{sup_fig:s313}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{paper2/supplement/sp314.png}
+    \caption[Graph alignment visualization.]{\textbf{Graph alignment visualization.} \\
+    \small{Visualization of a 23-bp insertion at
+    Chr10: 5,941,270 in graph and linear alignments using the \emph{sequence tube map} tool \citep{beyer2019sequence}. The variant was called heterozygous from the linear alignment,
+    but the allelic ratio was highly biased towards the reference allele. Visual inspection
+    suggests that more reads supporting the alternate allele are present in the graph
+    alignments. Red and blue colour indicates forward and reverse reads, respectively.
+    The reads from the linear alignment were realigned to the variation-aware graph for
+    the purpose of the visualisation.}}
+    \label{sup_fig:s314}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp315.pdf}
+    \caption[Read support difference between reference and alternate alleles]{\textbf{Difference in the total of mapped reads, and reads support for
+    reference and alternate alleles} \\
+    \small{between the graph-based and BWA alignments for
+    deletions, SNPs and insertions. Positive values indicate a larger number of reads for
+    graph-based alignments. The dashed grey line indicates equal support for graphbased and linear alignments. The circles represent the mean ($\pm$ standard error of
+    mean) values at a given variant length. Red and green colour indicates that the
+    alternate allele is included and not included in the graph, respectively. }}
+    \label{sup_fig:s315}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/sp316.pdf}
+    \caption[Proportion of soft-clipped reads]{\textbf{Proportion of soft-clipped reads at heterozygous sites in graph
+    (\emph{vg}) and linear (\emph{vg} and \emph{BWA}) alignments.} \\
+    \small{We considered only variants for which
+    the alternate allele was already included in the graph. The circles represent the
+    mean ($\pm$ standard error of mean) values at a given variant length.}}
+    \label{sup_fig:s316}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{paper2/supplement/sp317.pdf}
+    \caption[Genotype concordance matrices]{\textbf{Genotype concordance matrices for four quality parameters.} \\
+    \small{For
+    each metric, we divided the sum of the red cells by the sum of the cells within the
+    green frame.}}
+    \label{sup_fig:s317}
+\end{figure}
+
+\clearpage
+% Supplementary notes
+
+\subsection{}
+\textbf{Comparison of variant prioritization approaches}
+
+We applied FORGe \citep{pritt2018forge} to prioritize variants to be added to the Brown Swiss reference graph for chromosome 25. Specifically, we considered the four variant ranking approaches implemented in FORGe and compared the mapping accuracy from the
+resulting graphs with a graph that was constructed with variants selected based on an allele frequency threshold.
+\bigskip
+
+The following prioritization approaches were investigated:
+\begin{enumerate}
+    \item  Pop Cov: variants ranked based on allele frequency
+    \item  Pop Cov + blowup: variants ranked based on allele frequency and proximity (variants that are nearby receive lower scores)
+    \item Hybrid: variants ranked based on allele frequency and how the variants affect the resulting k-mer profile of the genome graph (variants that would increase the
+    repetiveness of the resulting graph receive lower scores)
+    \item Hybrid + blowup: hybrid methods + considering variant proximity
+    \item AF threshold: variants ranked based on allele frequency (AF, as applied in our paper).
+\end{enumerate}
+
+\bigskip
+
+We refer to the FORGe paper \citep{pritt2018forge} for a detailed description on the
+implementation of the variant prioritization methods 1-4.
+For each prioritization approach, we constructed a number of graphs that included the top x\% of the ranked variants, where x ranged from 1 to 100 with steps of 10 (e.g., a graph constructed with x=10 included 34,715 out of 347,147 bta25 Brown Swiss variants). We then mapped paired-end reads simulated form a Brown Swiss animal (as detailed in the Material and Methods part of the main manuscript) to the graphs in order to calculate mapping accuracy.
+\bigskip
+
+Graphs constructed with variants that were prioritized solely using allele frequency (as applied in our current paper and the Pop Cov method of FORGe) enable the most accurate mapping of reads (\hyperlink{Table SN31}{Table SN31} and \hyperlink{Figure SN31}{Figure SN31}). Considering additional factors other than allele frequency did not lead to further accuracy improvements. The mapping accuracy of the Pop Cov and AF threshold strategies was virtually identical when the same number of variants was used. The most accurate Pop Cov approach corresponds to an alternate allele frequency threshold of 0.06. 
+\bigskip
+\newpage
+
+\textbf{\hypertarget{Table SN31}{Table SN31}: Comparison of the most accurate graph from each ranking method}
+\begin{center}
+    \begin{tabular}{|l|l|l|} 
+        \hline
+        \textbf{Ranking methods}                            & \textbf{Minimum mapping error} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Number of variants in the graphs }\\\textbf{with maximum accuracy}\end{tabular}}  \\ 
+        \hline
+        \rowcolor[rgb]{0.949,0.949,0.949} PopCov            & 0.0722                         & 208288                                                                                                                                   \\ 
+        \hline
+        PopCov + blowup                                     & 0.0730                         & 208288                                                                                                                                   \\ 
+        \hline
+        \rowcolor[rgb]{0.949,0.949,0.949} Variant frequency & 0.0723                         & 208288                                                                                                                                   \\ 
+        \hline
+        Hybrid                                              & 0.0749                         & 347147                                                                                                                                   \\ 
+        \hline
+        \rowcolor[rgb]{0.949,0.949,0.949} Hybrid + blowup   & 0.0749                         & 347147                                                                                                                                   \\
+        \hline
+        \end{tabular}
+\end{center}
+
+\bigskip
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/forge_rank_pe.pdf}
+    \caption*{\textbf{\hypertarget{Figure SN31}{Figure SN31}: Comparison of different variant prioritization strategies.} \\
+    \small{Proportion of incorrectly mapped reads for graphs constructed with five variant prioritization approaches.}}
+\end{figure}
+
+
+\subsection{}
+\textbf{Adjusted (tuned) linear mapping approach}
+\bigskip
+
+We followed the proposed approach outlined by \citep{grytten2020assessing} to adjust the default parameters of \emph{BWA mem} in order to also consider sub-optimal alignments.
+First, we reduce the D value (default 0.5) to consider more alternative alignment positions.
+However, the mapping performance changed only marginally.
+
+\bigskip
+Second, we ran \emph{Minimap2} in short read mode (-ax sr) to find all suboptimal alignments.
+Subsequently, we retained for each read the read placement from either \emph{BWA mem} or
+\emph{Minimap2} that had the higher alignment score. For reads that had identical alignment score
+and position for both linear mappers, we retained the lower mapping quality score. For all
+other cases, we retained the \emph{BWA mem} alignment.
+
+\bigskip
+
+We made two observations (\hyperlink{Figure SN32}{Figure SN32}):
+\begin{enumerate}
+    \item The overall mapping accuracy increased mainly due to a smaller number of incorrectly placed reads that had high mapping quality (MQ $>$ 10). This indicates that the tuned linear mapping approach assigns the quality of the alignments better.
+    \item We found an improvement in mapping accuracy only on reads that are identical to the reference, but not on reads that contain variants.
+\end{enumerate}
+
+\bigskip
+
+While Grytten et al. observed that an adjusted parameter setting of \emph{BWA mem} and subsequent application of \emph{Minimap2} led to considerable accuracy improvements, the gain in accuracy was low in our study. The proportion of simulated reads with variants was twice as high (19.16\% vs. 10.6\%) in our study than in Grytten et al., because the average number of polymorphic sites per genome was almost two-fold higher in cattle than humans.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{paper2/supplement/roc_tuned_comb.pdf}
+    \caption*{\textbf{\hypertarget{Figure SN32}{Figure SN32}: Mapping accuracy of paired-end reads simulated form a Brown Swiss
+    animal using different mapping approaches.} \\
+    \small{(a) Proportion of simulated reads with mapping errors for different mapping scenarios. (b) True positive and false positive rate parameterized on mapping quality for the different scenarios.}}
+\end{figure}
+
+\clearpage
+
+\subsection{}
+\textbf{Integrating structural variants into the graphs}
+\bigskip
+
+
+We investigated the effect of including longer (structural) variants. For this purpose, we first called and genotyped structural variants using \emph{Delly} \citep{rausch2012delly} from 82 Brown Swiss samples that had been sequenced using short-reads (see Material and Methods part of the main manuscript). We discovered 157 precise SVs on bovine chromosome 25 that had an average length of 178 bp. We then combined these variants with 243,145 SNPs and Indels that were discovered using \emph{GATK}. We used the bta25 ARS-UCD1.2 reference as a backbone and constructed four graphs: (i) SNPs (+Indels) from \emph{GATK}, (i) SVs from \emph{Delly},
+(iii) SNPs (+Indels) from \emph{GATK} + SVs from \emph{Delly}, (iv) empty (only the backbone, no variants). We simulated 10 million paired end reads from haplotypes of one Brown Swiss animal (SAMEA6272105, that had 121,996 SNPs + Indels and 57 SVs that were included in the graph). The simulated reads were mapped to the different graphs using \emph{vg}.
+
+\bigskip
+
+\textbf{\hypertarget{Table SN32}{Table SN32}: Mapping accuracy for graphs that contained different variant types} \\
+MQ$=$0 and MQ $<$ 10 indicates the proportion of reads mapped with mapping quality 0 and
+less than 10, respectively. 
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|} 
+        \hline
+        \textbf{Graphs}                            & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Variants }\\\textbf{in the graphs}\end{tabular}} & \textbf{MQ=0~(\%)} & \textbf{MQ\textless{}10 (\%)} & \textbf{Mapping error~(\%)}  \\ 
+        \hline
+        Linear                                     & 0                                                                                                       & 0.15474            & 0.22310                       & 0.08599                      \\ 
+        \hline
+        \rowcolor[rgb]{0.973,0.973,0.973} SNP      & 243,145                                                                                                 & 0.15366            & 0.21804                       & 0.07995                      \\ 
+        \hline
+        SV                                         & 157                                                                                                     & 0.15508            & 0.22390                       & 0.08629                      \\ 
+        \hline
+        \rowcolor[rgb]{0.973,0.973,0.973} SNP + SV & 243,145 + 157                                                                                           & 0.15458            & 0.21900                       & 0.08003                      \\
+        \hline
+        \end{tabular}
+\end{center}
+
+\bigskip 
+
+Adding SVs that were detect from short sequencing reads to the graph marginally affected
+the mapping performance. Actually, the mapping accuracy decreased slightly when SVs
+were added. Read mapping accuracy improvements were attributable to the SNPs and
+Indels detected using \emph{GATK}.
+
+\clearpage
+
+\begin{landscape}
+\begin{table}
+    \centering
+    \caption{\textbf{Properties of autosomal variants detected in human (JPT, GBR, STU, YRI) and bovine (HOL, FV, BSW, OBV) populations}}
+    \label{sup_tab:s31}
+    \begin{tabular}{|c|l|c|c|c|c|c|} 
+    \hline
+    Species                 & \multicolumn{1}{c|}{Population} & \begin{tabular}[c]{@{}c@{}}Number \\of samples\end{tabular} & Variant count & \begin{tabular}[c]{@{}c@{}}Average \\per sample\end{tabular} & \begin{tabular}[c]{@{}c@{}}Singleton\\~variants\end{tabular} & \begin{tabular}[c]{@{}c@{}}Variants with \\allele frequency \textless{} 0.05~\end{tabular}  \\ 
+    \hline
+    \multirow{4}{*}{Human}  & JPT                             & 104               & 12,433,397~~~ & 4,020,815          & 2,836,542 (22.81\%)  & 5,580,288 (44.88\%)                   \\ 
+    \cline{2-7}
+                            & GBR                             & 91                & 13,148,448    & 4,011,102          & 2,878,144 (21.88 \%) & 6,005,303 (45.67\%)                   \\ 
+    \cline{2-7}
+                            & STU                             & 102               & 15,264,479    & 4,096,457          & 4,024,478 (26.34\%)  & 7,915,678 (51.85\%)                   \\ 
+    \cline{2-7}
+                            & YRI                             & 108               & 22,420,039    & 4,863,955          & 4,702,120 (20.97\%)  & 12,431,887 (55.45\%)                  \\ 
+    \hline
+    \multirow{4}{*}{Cattle} & HOL                             & 49                & 16,762,842    & 6,841,965          & 1,713,642 (10.22\%)  & 3,964,699 (23.65\%)                   \\ 
+    \cline{2-7}
+                            & FV                              & 49                & 18,638,951~~  & 6,955,100          & 2,272,546 (12.19\%)  & 5,112,547 (27.42\%)                   \\ 
+    \cline{2-7}
+                            & BSW                             & 82                & 20,446,693    & 6,983,517          & 3,957,703 (19.35\%)  & 7,913,226 (38.70\%)                   \\ 
+    \cline{2-7}
+                            & OBV                             & 104               & 21,875,164    & 7,111,562          & 3,124,950 (14.28\%)  & 8,250,961 (37.71\%)                   \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\newpage 
+
+\begin{table}
+    \centering
+    \caption{\textbf{Properties of variants  detected on human chromosome 19 and bovine chromosome 25 in human (JPT, GBR, STU, YRI) and bovine (HOL, FV, BSW, OBV) populations}}
+    \label{sup_tab:s32}
+    \begin{tabular}{|c|l|c|c|c|c|c|} 
+    \hline
+    Species                 & \multicolumn{1}{c|}{Population} & \begin{tabular}[c]{@{}c@{}}Number \\of samples\end{tabular} & Variant count & \begin{tabular}[c]{@{}c@{}}Average \\per sample\end{tabular} & \begin{tabular}[c]{@{}c@{}}Singleton\\~variants\end{tabular} & \begin{tabular}[c]{@{}c@{}}Variants with \\allele frequency \textless{} 0.05~\end{tabular}  \\ 
+    \hline
+    \multirow{4}{*}{Human}  & JPT                             & 104                                                         & 291,303~~~    & 88,945                                                       & 66,944 (22.98\%)                                             & 135,289 (46.44\%)                                                                           \\ 
+    \cline{2-7}
+                            & GBR                             & 91                                                          & 306,304       & 90,988                                                       & 64,119 (20.93 \%)                                            & 138,076 (45.07\%)                                                                           \\ 
+    \cline{2-7}
+                            & STU                             & 102                                                         & 355,107~~~    & 94,253                                                       & 93,116 (26.22\%)                                             & 181,300 (51.05\%)                                                                           \\ 
+    \cline{2-7}
+                            & YRI                             & 108                                                         & 521,021       & 118,429                                                      & 106,734~~(20.49\%)                                           & 280,960 (53.92\%)                                                                           \\ 
+    \hline
+    \multirow{4}{*}{Cattle} & HOL                             & 49                                                          & 295,801       & 121,114                                                      & 30,543 (10.32\%)                                             & 67827 (22.92\%)                                                                             \\ 
+    \cline{2-7}
+                            & FV                              & 49                                                          & 336,390       & 125,597                                                      & 43,783 (13.01\%)                                             & 94,577 (28.11\%)                                                                            \\ 
+    \cline{2-7}
+                            & BSW                             & 82                                                          & 347,402       & 124,209                                                      & 53,773 (15.47\%)                                             & 128,990 (37.12\%)                                                                           \\ 
+    \cline{2-7}
+                            & OBV                             & 104                                                         & 387,855~~~    & 126,158                                                      & 47,498 (12.24\%)                                             & 144,958 (37.37\%)                                                                           \\
+    \hline
+    \end{tabular}
+   \end{table}
+
+
+\begin{table}
+    \centering
+    \caption{\textbf{Concordance between array-called and sequence variant genotypes that were discovered from either graph or linear alignments using \emph{Samtools}, \emph{GATK}, or \emph{Graphtyper}.}} 
+    \small{Numbers represent average values ($\pm$ standard deviation) of 10 BSW animals for the raw (Full) and hard-filtered (Filtered) genotypes.}
+    \bigskip
+    \label{sup_tab:s33}
+    \begin{tabular}{|l|l|l|l|l|l|l|} 
+    \hline
+    ~                       & \multicolumn{3}{c|}{Full}                                                              & \multicolumn{3}{c|}{Filtered}                                                           \\ 
+    \hline
+    \multicolumn{7}{|l|}{\textit{Samtools}}                                                                                                                                                                    \\ 
+    \hline
+    \multirow{2}{*}{~}      & \multicolumn{1}{c|}{Graph} & \multicolumn{1}{c|}{Linear} & \multicolumn{1}{c|}{Linear} & \multicolumn{1}{c|}{Graph} & \multicolumn{1}{c|}{Linear} & \multicolumn{1}{c|}{Linear}  \\ 
+    \cline{2-7}
+                            & \multicolumn{1}{c|}{VG}    & \multicolumn{1}{c|}{VG}     & \multicolumn{1}{c|}{BWA}    & \multicolumn{1}{c|}{VG}    & \multicolumn{1}{c|}{VG}     & \multicolumn{1}{c|}{BWA}     \\ 
+    \hline
+    Genotype concordance    & 98.50(1.07)                & 98.47(1.07)                 & 98.53(1.03)                 & 98.53(1.07)                & 98.50(1.07)                 & 98.55(1.04)                  \\ 
+    \hline
+    NR-sensitivity (Recall) & 98.53(0.37)                & 98.52(0.39)                 & 98.53(0.39)                 & 97.48(0.36)                & 97.45(0.35)                 & 97.53(0.36)                  \\ 
+    \hline
+    NR-discrepancy          & 2.21(1.60)                 & 2.24(1.60)                  & 2.17(1.55)                  & 2.17(1.60)                 & 2.20(1.61)                  & 2.13(1.56)                   \\ 
+    \hline
+    Precision               & 98.90(0.83)                & 98.89(0.83)                 & 98.93(0.81)                 & 98.91(0.83)                & 98.90(0.83)                 & 98.94(0.82)                  \\ 
+    \hline
+    \multicolumn{7}{|l|}{\textit{GATK}}                                                                                                                                                                        \\ 
+    \hline
+    Genotype concordance    & 97.26(2.24)                & 97.24(2.25)                 & 97.38(2.15)                 & 97.26(2.25)                & 97.25(2.25)                 & 97.39(2.15)                  \\ 
+    \hline
+    NR-sensitivity (Recall) & 98.17(0.94)                & 98.16(0.94)                 & 98.23(0.87)                 & 98.14(0.94)                & 98.12(0.94)                 & 98.18(0.87)                  \\ 
+    \hline
+    NR-discrepancy          & 4.09(3.38)                 & 4.10(3.39)                  & 3.89(3.23)                  & 4.08(3.38)                 & 4.09(3.39)                  & 3.88(3.23)                   \\ 
+    \hline
+    Precision               & 98.90(0.83)                & 98.90(0.83)                 & 98.94(0.80)                 & 98.91(0.83)                & 98.91(0.83)                 & 98.95(0.80)                  \\ 
+    \hline
+    \multicolumn{7}{|l|}{\textit{Graphtyper}}                                                                                                                                                                  \\ 
+    \hline
+    Genotype concordance    & 98.57(1.01)                & 98.57(1.01)                 & 98.61(0.97)                 & 98.61(1.03)                & 98.61(1.03)                 & 98.64(0.99)                  \\ 
+    \hline
+    NR-sensitivity (Recall) & 98.34(0.54)                & 98.36(0.55)                 & 98.37(0.53)                 & 96.14(0.54)                & 96.13(0.54)                 & 96.17(0.52)                  \\ 
+    \hline
+    NR-discrepancy          & 2.08(1.49)                 & 2.08(1.50)                  & 2.02(1.44)                  & 2.01(1.50)                 & 2.01(1.50)                  & 1.97(1.45)                   \\ 
+    \hline
+    Precision               & 98.85(0.80)                & 98.84(0.81)                 & 98.87(0.79)                 & 98.89(0.82)                & 98.89(0.82)                 & 98.91(0.80)                  \\
+    \hline
+    \end{tabular}
+\end{table}
+\end{landscape}
+
+\clearpage
+
+\begin{footnotesize}
+\begin{longtable}{|c|c|c|c|c|c|c|} 
+    \caption[Sample number accessions]{\textbf{Accession numbers of the animals} used for variant detection, read simulation, sequence read mapping and genotyping}
+    \label{sup_tab:s34} \\
+    \hline
+    Accession     & Breed & \begin{tabular}[c]{@{}c@{}}Graph\\~construction\end{tabular} & Simulation & \begin{tabular}[c]{@{}c@{}}~~~Validation \\genotyping~\end{tabular} & \begin{tabular}[c]{@{}c@{}}Validation\\~Mapping bias\end{tabular} & Coverage  
+    \endfirsthead 
+    \multicolumn{1}{c}{\small{\emph{Continuation of Table \ref{sup_tab:s34}}}}\\
+    \hline
+    Accession     & Breed & \begin{tabular}[c]{@{}c@{}}Graph\\~construction\end{tabular} & Simulation & \begin{tabular}[c]{@{}c@{}}~~~Validation \\genotyping~\end{tabular} & \begin{tabular}[c]{@{}c@{}}Validation\\~Mapping bias\end{tabular} & Coverage  
+    \endhead
+    \hline
+    SAMEA4827645  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 14.41     \\ 
+    \hline
+    SAMEA4827646  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.9      \\ 
+    \hline
+    SAMEA4827647  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 14.79     \\ 
+    \hline
+    SAMEA4827648  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.76     \\ 
+    \hline
+    SAMEA4827649  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.55     \\ 
+    \hline
+    SAMEA4827650  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.29     \\ 
+    \hline
+    SAMEA4827651  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 14.76     \\ 
+    \hline
+    SAMEA4827652  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.65     \\ 
+    \hline
+    SAMEA4827653  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.69      \\ 
+    \hline
+    SAMEA4827654  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.72     \\ 
+    \hline
+    SAMEA4827655  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.32     \\ 
+    \hline
+    SAMEA4827656  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.83     \\ 
+    \hline
+    SAMEA4827657  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.47      \\ 
+    \hline
+    SAMEA4827658  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.69      \\ 
+    \hline
+    SAMEA4827659  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.52      \\ 
+    \hline
+    SAMEA4827660  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.04     \\ 
+    \hline
+    SAMEA4827661  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.68      \\ 
+    \hline
+    SAMEA4827662  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 17.37     \\ 
+    \hline
+    SAMEA4827663  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.2      \\ 
+    \hline
+    SAMEA4827664  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.29     \\ 
+    \hline
+    SAMEA4827665  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.07     \\ 
+    \hline
+    SAMEA4827666  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.23     \\ 
+    \hline
+    SAMEA4827667  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.99     \\ 
+    \hline
+    SAMEA4827668  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.93     \\ 
+    \hline
+    SAMEA4827669  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.89     \\ 
+    \hline
+    SAMEA4827670  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.18     \\ 
+    \hline
+    SAMEA4827671  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.35     \\ 
+    \hline
+    SAMEA4827672  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.49     \\ 
+    \hline
+    SAMEA4827673  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.31     \\ 
+    \hline
+    SAMEA4827674  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.58     \\ 
+    \hline
+    SAMEA5059741  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.58      \\ 
+    \hline
+    SAMEA5059742  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 3.76      \\ 
+    \hline
+    SAMEA5059743  & OBV   & x                                                            & x          & ~                                                                           & ~                                                                 & 22.33     \\ 
+    \hline
+    SAMEA5059744  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 3.93      \\ 
+    \hline
+    SAMEA5059745  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.31      \\ 
+    \hline
+    SAMEA5059746  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.29      \\ 
+    \hline
+    SAMEA5059747  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.58      \\ 
+    \hline
+    SAMEA5059748  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.08      \\ 
+    \hline
+    SAMEA5059749  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.19      \\ 
+    \hline
+    SAMEA5059750  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 3.91      \\ 
+    \hline
+    SAMEA5059751  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.59      \\ 
+    \hline
+    SAMEA5059752  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 3.89      \\ 
+    \hline
+    SAMEA5059753  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.18      \\ 
+    \hline
+    SAMEA5059754  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 3.49      \\ 
+    \hline
+    SAMEA5059755  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.49      \\ 
+    \hline
+    SAMEA5059756  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.65      \\ 
+    \hline
+    SAMEA5059757  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.74      \\ 
+    \hline
+    SAMEA5059758  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.1       \\ 
+    \hline
+    SAMEA6272117  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.43      \\ 
+    \hline
+    SAMEA5059759  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 3.97      \\ 
+    \hline
+    SAMEA5159792  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.68     \\ 
+    \hline
+    SAMEA5159791  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.22     \\ 
+    \hline
+    SAMEA5159788  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.71     \\ 
+    \hline
+    SAMEA5159783  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.91     \\ 
+    \hline
+    SAMEA5159785  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.94     \\ 
+    \hline
+    SAMEA5159799  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.25     \\ 
+    \hline
+    SAMEA5159787  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.63     \\ 
+    \hline
+    SAMEA5159761  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 16.46     \\ 
+    \hline
+    SAMEA5159782  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.47     \\ 
+    \hline
+    SAMEA5159775  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.14     \\ 
+    \hline
+    SAMEA5159786  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.04     \\ 
+    \hline
+    SAMEA5159784  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.88     \\ 
+    \hline
+    SAMEA5159798  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.79     \\ 
+    \hline
+    SAMEA5159781  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.65     \\ 
+    \hline
+    SAMEA5159780  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.41     \\ 
+    \hline
+    SAMEA5159777  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.8       \\ 
+    \hline
+    SAMEA5159797  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.98     \\ 
+    \hline
+    SAMEA5159774  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.46      \\ 
+    \hline
+    SAMEA5159769  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.3      \\ 
+    \hline
+    SAMEA5159778  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.03     \\ 
+    \hline
+    SAMEA5159771  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.92     \\ 
+    \hline
+    SAMEA5159779  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.63     \\ 
+    \hline
+    SAMEA5159772  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.88     \\ 
+    \hline
+    SAMEA5159773  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.77     \\ 
+    \hline
+    SAMEA5159793  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.6      \\ 
+    \hline
+    SAMEA5159770  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.01     \\ 
+    \hline
+    SAMEA5159795  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.58     \\ 
+    \hline
+    SAMEA5159768  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.69      \\ 
+    \hline
+    SAMEA5159796  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.39     \\ 
+    \hline
+    SAMEA5159789  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.27     \\ 
+    \hline
+    SAMEA5159790  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.52     \\ 
+    \hline
+    SAMEA5159794  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.46     \\ 
+    \hline
+    SAMEA5159776  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.71      \\ 
+    \hline
+    SAMEA5159767  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.17     \\ 
+    \hline
+    SAMN05216093  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.85     \\ 
+    \hline
+    SAMN05216095  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.12     \\ 
+    \hline
+    SAMN05216094  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.64     \\ 
+    \hline
+    SAMN05216096  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.51     \\ 
+    \hline
+    SAMEA6272131  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.4      \\ 
+    \hline
+    SAMEA6272130  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.41     \\ 
+    \hline
+    SAMEA4644727  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 14.86     \\ 
+    \hline
+    SAMEA4644728  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 14.86     \\ 
+    \hline
+    SAMEA19864918 & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.23      \\ 
+    \hline
+    SAMEA4644765  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.14     \\ 
+    \hline
+    SAMEA4644766  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 16.48     \\ 
+    \hline
+    SAMEA4644768  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.41     \\ 
+    \hline
+    SAMEA4644769  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 16.04     \\ 
+    \hline
+    SAMEA19312918 & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.43      \\ 
+    \hline
+    SAMEA19313668 & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.13      \\ 
+    \hline
+    SAMEA19314418 & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.99     \\ 
+    \hline
+    SAMEA19315168 & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.7       \\ 
+    \hline
+    SAMEA19318918 & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.9       \\ 
+    \hline
+    SAMEA19323418 & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 18.83     \\ 
+    \hline
+    SAMEA4644754  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.25     \\ 
+    \hline
+    SAMEA4644755  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.58     \\ 
+    \hline
+    SAMEA4644756  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.88     \\ 
+    \hline
+    SAMEA4644730  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 14.85     \\ 
+    \hline
+    SAMEA4644734  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.3      \\ 
+    \hline
+    SAMEA4644735  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.43      \\ 
+    \hline
+    SAMEA4644757  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.36     \\ 
+    \hline
+    SAMEA4644739  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 14.13     \\ 
+    \hline
+    SAMEA4644740  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.73     \\ 
+    \hline
+    SAMEA4644741  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.57     \\ 
+    \hline
+    SAMEA4644742  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.68     \\ 
+    \hline
+    SAMEA4644758  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13        \\ 
+    \hline
+    SAMEA4644743  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.46     \\ 
+    \hline
+    SAMEA4644749  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.85     \\ 
+    \hline
+    SAMEA4644750  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.25     \\ 
+    \hline
+    SAMEA4644762  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.92     \\ 
+    \hline
+    SAMEA4644763  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.62     \\ 
+    \hline
+    SAMEA4644764  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.57     \\ 
+    \hline
+    SAMN07692225  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.72     \\ 
+    \hline
+    SAMN02671625  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.06      \\ 
+    \hline
+    SAMN02671626  & FV    & x                                                            & x          & ~                                                                           & ~                                                                 & 23.24     \\ 
+    \hline
+    SAMN02671627  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.32      \\ 
+    \hline
+    SAMN02671628  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.95      \\ 
+    \hline
+    SAMN02671629  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.41      \\ 
+    \hline
+    SAMN02671630  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.88      \\ 
+    \hline
+    SAMN02671631  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.77      \\ 
+    \hline
+    SAMN02671632  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.64      \\ 
+    \hline
+    SAMN02671633  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 3.59      \\ 
+    \hline
+    SAMN02671634  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.67      \\ 
+    \hline
+    SAMN02671635  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.37      \\ 
+    \hline
+    SAMN02671636  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.26      \\ 
+    \hline
+    SAMN02671637  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 3.79      \\ 
+    \hline
+    SAMN02671638  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 3.95      \\ 
+    \hline
+    SAMN02671639  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.21      \\ 
+    \hline
+    SAMN02671640  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.62      \\ 
+    \hline
+    SAMN02671641  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.08      \\ 
+    \hline
+    SAMN02671642  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.47      \\ 
+    \hline
+    SAMN02671643  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.03      \\ 
+    \hline
+    SAMN02671644  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.35      \\ 
+    \hline
+    SAMN02671645  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.06      \\ 
+    \hline
+    SAMN02671646  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.79      \\ 
+    \hline
+    SAMN02671647  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.2       \\ 
+    \hline
+    SAMN02671648  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.81      \\ 
+    \hline
+    SAMN02671649  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.32      \\ 
+    \hline
+    SAMN02671650  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.34      \\ 
+    \hline
+    SAMN02671651  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.51      \\ 
+    \hline
+    SAMN02671652  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.48      \\ 
+    \hline
+    SAMN02671653  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.5       \\ 
+    \hline
+    SAMN02671654  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.6       \\ 
+    \hline
+    SAMN02671655  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.19      \\ 
+    \hline
+    SAMN02671656  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.4       \\ 
+    \hline
+    SAMN02671657  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.61      \\ 
+    \hline
+    SAMN02671658  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.91      \\ 
+    \hline
+    SAMN02671659  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.83      \\ 
+    \hline
+    SAMN02671661  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.58      \\ 
+    \hline
+    SAMN02671662  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.08      \\ 
+    \hline
+    SAMN02671663  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.06      \\ 
+    \hline
+    SAMN02671664  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.95      \\ 
+    \hline
+    SAMN02671665  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.53      \\ 
+    \hline
+    SAMN02671666  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.06      \\ 
+    \hline
+    SAMN02671667  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.13      \\ 
+    \hline
+    SAMN02671572  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.79      \\ 
+    \hline
+    SAMN02671574  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.25     \\ 
+    \hline
+    SAMN02671576  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.02      \\ 
+    \hline
+    SAMN02671578  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 19.78     \\ 
+    \hline
+    SAMN02671580  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.52     \\ 
+    \hline
+    SAMN02671582  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.22     \\ 
+    \hline
+    SAMN02671584  & HOL   & x                                                            & x          & ~                                                                           & ~                                                                 & 29.97     \\ 
+    \hline
+    SAMN02671586  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 17.21     \\ 
+    \hline
+    SAMN02671588  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 16.99     \\ 
+    \hline
+    SAMN02671590  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.79     \\ 
+    \hline
+    SAMN02671592  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 16.31     \\ 
+    \hline
+    SAMN02671594  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 19.56     \\ 
+    \hline
+    SAMN02671596  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 16.43     \\ 
+    \hline
+    SAMN02671455  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.23      \\ 
+    \hline
+    SAMN02671457  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.28     \\ 
+    \hline
+    SAMN02671459  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.4       \\ 
+    \hline
+    SAMN02671461  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.47      \\ 
+    \hline
+    SAMN02671463  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.36      \\ 
+    \hline
+    SAMN02671465  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.61     \\ 
+    \hline
+    SAMN02671467  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.78      \\ 
+    \hline
+    SAMN02671469  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.13      \\ 
+    \hline
+    SAMN02671471  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 6.49      \\ 
+    \hline
+    SAMN02671473  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.71      \\ 
+    \hline
+    SAMN02671475  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.57      \\ 
+    \hline
+    SAMN02671477  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.89     \\ 
+    \hline
+    SAMN02671479  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.81      \\ 
+    \hline
+    SAMN02671481  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.59      \\ 
+    \hline
+    SAMN02671483  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.79     \\ 
+    \hline
+    SAMN02671485  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.18      \\ 
+    \hline
+    SAMN02671487  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.1      \\ 
+    \hline
+    SAMN02671489  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.06     \\ 
+    \hline
+    SAMN02671491  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.83      \\ 
+    \hline
+    SAMN02671493  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.1      \\ 
+    \hline
+    SAMN02671495  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.58      \\ 
+    \hline
+    SAMN02671613  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 23.58     \\ 
+    \hline
+    SAMN02671615  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 20.36     \\ 
+    \hline
+    SAMN02671617  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 20.36     \\ 
+    \hline
+    SAMN02671619  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.54     \\ 
+    \hline
+    SAMN02671621  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.86     \\ 
+    \hline
+    SAMN02671623  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 4.73      \\ 
+    \hline
+    SAMN02671668  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.92     \\ 
+    \hline
+    SAMN02671670  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.35     \\ 
+    \hline
+    SAMN02671672  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.21     \\ 
+    \hline
+    SAMN02671674  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.4      \\ 
+    \hline
+    SAMN02671676  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.21     \\ 
+    \hline
+    SAMN02671725  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.54     \\ 
+    \hline
+    SAMN02671727  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 5.43      \\ 
+    \hline
+    SAMN02671729  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.68     \\ 
+    \hline
+    SAMN02671731  & HOL   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.58     \\ 
+    \hline
+    SAMEA6272085  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.01      \\ 
+    \hline
+    SAMEA6272091  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.55      \\ 
+    \hline
+    SAMEA6272090  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.74     \\ 
+    \hline
+    SAMEA6272089  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.25      \\ 
+    \hline
+    SAMEA6272088  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.97     \\ 
+    \hline
+    SAMEA6272093  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.3      \\ 
+    \hline
+    SAMEA6272087  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.62     \\ 
+    \hline
+    SAMEA6272086  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.58     \\ 
+    \hline
+    SAMEA6272092  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.38      \\ 
+    \hline
+    SAMEA6272094  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.31      \\ 
+    \hline
+    SAMEA6272115  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.65      \\ 
+    \hline
+    SAMEA6272114  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.06      \\ 
+    \hline
+    SAMEA6272112  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.51      \\ 
+    \hline
+    SAMEA6272113  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.61     \\ 
+    \hline
+    SAMEA6272110  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.99      \\ 
+    \hline
+    SAMEA6272103  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.09      \\ 
+    \hline
+    SAMEA6272109  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.97      \\ 
+    \hline
+    SAMEA6272107  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.34     \\ 
+    \hline
+    SAMEA6272102  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 7.25      \\ 
+    \hline
+    SAMEA6272100  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 8.55      \\ 
+    \hline
+    SAMEA6272133  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.73     \\ 
+    \hline
+    SAMEA6272134  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.25     \\ 
+    \hline
+    SAMEA6272128  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.09     \\ 
+    \hline
+    SAMEA6163196  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.48     \\ 
+    \hline
+    SAMEA6163197  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 9.86      \\ 
+    \hline
+    SAMEA6163198  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.63     \\ 
+    \hline
+    SAMEA6163199  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 13.68     \\ 
+    \hline
+    SAMEA6272129  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 14.9      \\ 
+    \hline
+    SAMEA6272132  & FV    & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.25     \\ 
+    \hline
+    SAMEA6272119  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 19.58     \\ 
+    \hline
+    SAMEA6272123  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 16.93     \\ 
+    \hline
+    SAMEA6272118  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 18.66     \\ 
+    \hline
+    SAMEA6272120  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 18.5      \\ 
+    \hline
+    SAMEA6272121  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 16.58     \\ 
+    \hline
+    SAMEA6272126  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 61.9      \\ 
+    \hline
+    SAMEA6272124  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 18.82     \\ 
+    \hline
+    SAMEA6272122  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 18.33     \\ 
+    \hline
+    SAMEA6272127  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 53.65     \\ 
+    \hline
+    SAMEA6272125  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 23.01     \\ 
+    \hline
+    SAMEA6272084  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 11.78     \\ 
+    \hline
+    SAMEA6272083  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 31.95     \\ 
+    \hline
+    SAMEA6272082  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 23.39     \\ 
+    \hline
+    SAMEA6272095  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 25.36     \\ 
+    \hline
+    SAMEA6272096  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 20.6      \\ 
+    \hline
+    SAMEA6272097  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.68     \\ 
+    \hline
+    SAMEA6272098  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.25     \\ 
+    \hline
+    SAMEA6272099  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.32     \\ 
+    \hline
+    SAMEA6272101  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 10.4      \\ 
+    \hline
+    SAMEA6272104  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 12.63     \\ 
+    \hline
+    SAMEA6272105  & BSW   & x                                                            & x          & ~                                                                           & ~                                                                 & 33.7      \\ 
+    \hline
+    SAMEA6272106  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 15.76     \\ 
+    \hline
+    SAMEA6272108  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 20.46     \\ 
+    \hline
+    SAMEA6272111  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 28.82     \\ 
+    \hline
+    SAMEA6272116  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 70.04     \\ 
+    \hline
+    SAMEA5159861  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 24.84     \\ 
+    \hline
+    SAMEA5159863  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 23.64     \\ 
+    \hline
+    SAMEA5159864  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 24.92     \\ 
+    \hline
+    SAMEA5159865  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 25.99     \\ 
+    \hline
+    SAMEA5159866  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 25.11     \\ 
+    \hline
+    SAMEA5159867  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 26.28     \\ 
+    \hline
+    SAMEA5159868  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 26.73     \\ 
+    \hline
+    SAMEA5159869  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 27.62     \\ 
+    \hline
+    SAMEA5159870  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 32.64     \\ 
+    \hline
+    SAMEA5159871  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 34.49     \\ 
+    \hline
+    SAMEA5159872  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 27.96     \\ 
+    \hline
+    SAMEA5159873  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 24.08     \\ 
+    \hline
+    SAMEA5159874  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 33.8      \\ 
+    \hline
+    SAMEA5159875  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 22.66     \\ 
+    \hline
+    SAMEA5159885  & BSW   & x                                                            & ~          & ~                                                                           & ~                                                                 & 23.1      \\ 
+    \hline
+    SAMEA5159837  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 28.12     \\ 
+    \hline
+    SAMEA5159843  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 22.81     \\ 
+    \hline
+    SAMEA5159848  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 22.5      \\ 
+    \hline
+    SAMEA5159849  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 26.32     \\ 
+    \hline
+    SAMEA5159850  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 27.69     \\ 
+    \hline
+    SAMEA5159886  & OBV   & x                                                            & ~          & ~                                                                           & ~                                                                 & 35.51     \\ 
+    \hline
+    SAMEA6163185  & BSW   & ~                                                            & ~          & x                                                                           & x                                                                 & 39.88     \\ 
+    \hline
+    SAMEA6163188  & BSW   & ~                                                            & ~          & x                                                                           & ~                                                                 & 25.74     \\ 
+    \hline
+    SAMEA6163187  & BSW   & ~                                                            & ~          & x                                                                           & ~                                                                 & 20.29     \\ 
+    \hline
+    SAMEA6163177  & BSW   & ~                                                            & ~          & x                                                                           & ~                                                                 & 8.26      \\ 
+    \hline
+    SAMEA6163178  & BSW   & ~                                                            & ~          & x                                                                           & ~                                                                 & 5.74      \\ 
+    \hline
+    SAMEA6163176  & BSW   & ~                                                            & ~          & x                                                                           & ~                                                                 & 9.29      \\ 
+    \hline
+    SAMEA6163179  & BSW   & ~                                                            & ~          & x                                                                           & ~                                                                 & 6.93      \\ 
+    \hline
+    SAMEA6163183  & BSW   & ~                                                            & ~          & x                                                                           & ~                                                                 & 7.86      \\ 
+    \hline
+    SAMEA6163181  & BSW   & ~                                                            & ~          & x                                                                           & ~                                                                 & 7.97      \\ 
+    \hline
+    SAMEA6163182  & BSW   & ~                                                            & ~          & x                                                                           & ~                                                                 & 8.36      \\
+    \hline
+\end{longtable}
+\end{footnotesize}
+
+
+\renewcommand{\bibname}{Supplementary References}
+\bibliographystyle{abbrvnat}
+\bibliography{references/chapter3_ref}
+
+
+\end{flushleft}
+
+\ifdefined\BuildingFromMainFile
+\else
+   \end{document}
+\fi

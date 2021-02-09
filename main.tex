@@ -2,6 +2,8 @@
 
 %bibliography
 \usepackage[a4paper,width=150mm,top=40mm,bottom=25mm]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage[scaled]{helvet}
 
 \usepackage{setspace}
 \usepackage{graphicx}
@@ -29,6 +31,8 @@
 \usepackage{xcolor}
 \usepackage{pdflscape}
 \usepackage{enumerate}
+\usepackage{caption}
+\usepackage{longtable}
 \urlstyle{tt}
 \hypersetup{
     colorlinks,
@@ -86,22 +90,46 @@ Deutsch abstract
 \pagenumbering{arabic}
 
 
-\chapter{Analysis of the cohort-specific graphs}
-\subsection*{Preface: Bridging text between Chapter 1 and Chapter 2}
-\label{chap:locgraph}
-In this chapter, I assessed the feasibility of the genome graphs in cattle genome. I assessed \emph{Graphtyper} software for variant genotyping in cattle.  \emph{Graphtyper} performed two round of genotyping. The first is to discover variants from linear
-genome. And the second round used the variants discovered in the first round to construct a local genome graph and used it to refine the genotypes. I discovered that \textit{graph genotyping} using \textit{Graphtyper} is highly accurate in cattle and outperform current approaches e.g., \textit{SAMtools, \emph{GATK}} that are based on linear reference. My work is the first to apply \textit{graph genome} for sequence variant genotyping in the livestock genome.  I implemented the graph genotyping pipeline and it is now publicly available at \\  
-\url{https://github.com/danangcrysnanto/Graph-genotyping-paper-pipelines}.
-\onehalfspacing
-\include{chapters/chapter2}
+% \chapter[cohort-specific cattle graphs]{\Large{Analysis of the cohort-specific graphs}}
+% \label{chap:locgraph}
+% \subsection*{Preface: Bridging text between Chapter 1 and Chapter 2}
 
-%\singlespacing
-%\bibliography{references/chapter2_ref}
+% In this chapter, I assessed the feasibility of the genome graphs in cattle genome. 
+% I assessed \emph{Graphtyper} software for variant genotyping in cattle.
+% \emph{Graphtyper} performed two round of genotyping. The first is to discover variants from linear
+% genome. And the second round used the variants discovered in the first round to construct a local genome graph and used it to refine the genotypes. I discovered that \textit{graph genotyping} using \textit{Graphtyper} is highly accurate in cattle and outperform current approaches e.g., \textit{SAMtools, \emph{GATK}} that are based on linear reference. My work is the first to apply \textit{graph genome} for sequence variant genotyping in the livestock genome.  I implemented the graph genotyping pipeline and it is now publicly available at \\  
+% \url{https://github.com/danangcrysnanto/Graph-genotyping-paper-pipelines}. \\ 
+
+% \emph{Contribution}: I and Hubert Pausch conceived the study, I wrote the genotyping pipelines and performed all analyses. I wrote the initial draft of the manuscript with input from Hubert Pausch. 
+% \onehalfspacing
+% \include{chapters/chapter2}
+
+% \chapter[whole genome cattle graphs]{\Large{Analysis of the cattle whole-genome graphs}}
+% \label{chap:wholegraph}
+
+% \subsection*{Preface: Bridging text between Chapter 2 and Chapter 3}
+
+% In this chapter, I constructed the first cattle whole genome graph and performed the first assessment of the gigabase genome graph on the species other than human. I showed using both real and simulated datasets that the graph facilitate accurate read mapping and unbiased sequence variant genotyping. I developed the graph pipeline further from previous implementation based on \emph{vg toolkit} allowing graph analysis performed in a full genome scale. Additionally, I included catalogues of previously discovered variants to the graph, which showed that \emph{breed-specific} graph perform similarly as the \emph{multi-breed pangenome graph}. \\
+
+% \emph{Contribution}: I and Hubert Pausch conceived the study, I wrote the full genome graph pipelines and performed all analyses. I wrote the initial draft of the manuscript with input from Hubert Pausch. 
+
+% \onehalfspacing
+% \include{chapters/chapter3}
 
 
-\chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:locgraph}}}
-\addcontentsline{toc}{chapter}{Supplementary Materials Chapter \ref{chap:locgraph}}
+% % \chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:locgraph}}}
+% \chapter*{\centering{Supplementary Materials \\ Chapter 2}}
+% % \addcontentsline{toc}{chapter}{Supplementary Materials Chapter \ref{chap:locgraph}}
+% \singlespacing
+% \fancyhead[C]{APPENDICES}
+% \include{chapters/supp_chap2}
+
+%\chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:wholegraph}}}
+\chapter*{\centering{Supplementary Materials \\ Chapter 3}}
+\addcontentsline{toc}{chapter}{Supplementary Materials Chapter 3}
 \singlespacing
 \fancyhead[C]{APPENDICES}
-\include{chapters/supp_chap2}
+\include{chapters/supp_chap3}
+
+
 \end{document}
