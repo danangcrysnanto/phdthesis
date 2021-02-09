@@ -1,4 +1,5 @@
-# My PhD dissertation on bovine pangenome graphs
+# My PhD dissertation on bovine pangenome graphs 
+*In progress*
 
 
 Source codes of my doctoral dissertation thesis in `Latex`. 
@@ -16,7 +17,7 @@ The dissertation is divided into 6 parts:
 Crysnanto D., C. Wurmser, and H. Pausch, 2019.Accurate sequence variant genotyping in cattle using variation-aware genome graphs. Genet. Sel. Evol. 51. 
 ```
 
-- Chapter 3: Variant prioritization into cattle graphs and construction of cattle whole genome graphs that enable elimination of reference bias. Based on the paper published in `Genome Biology`
+- Chapter 3: Variant prioritization into cattle graphs and construction of cattle whole genome graphs that enable elimination of reference bias. Based on the paper published in [Genome Biology](https://doi.org/10.1101/2019.12.20.882423)
 
 ```
 Crysnanto D., and H. Pausch, 2020 Bovine breed-specific augmented reference graphs facilitate accurate sequence read mapping and unbiased variant discovery. Genome Biol. 21. 
