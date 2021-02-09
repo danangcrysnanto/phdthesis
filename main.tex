@@ -20,6 +20,9 @@
 \usepackage{subfiles}
 \graphicspath{{figure/}{../figure/}}
 
+%use single spacing after period
+\frenchspacing
+
 \usepackage[round]{natbib}
 %\usepackage[natbib=true, style=authoryear]{biblatex}
 %\bibliography{references/chapter2_ref}
@@ -90,42 +93,47 @@ Deutsch abstract
 \pagenumbering{arabic}
 
 
-% \chapter[cohort-specific cattle graphs]{\Large{Analysis of the cohort-specific graphs}}
-% \label{chap:locgraph}
-% \subsection*{Preface: Bridging text between Chapter 1 and Chapter 2}
+% paper 1 as chapter 2
 
-% In this chapter, I assessed the feasibility of the genome graphs in cattle genome. 
-% I assessed \emph{Graphtyper} software for variant genotyping in cattle.
-% \emph{Graphtyper} performed two round of genotyping. The first is to discover variants from linear
-% genome. And the second round used the variants discovered in the first round to construct a local genome graph and used it to refine the genotypes. I discovered that \textit{graph genotyping} using \textit{Graphtyper} is highly accurate in cattle and outperform current approaches e.g., \textit{SAMtools, \emph{GATK}} that are based on linear reference. My work is the first to apply \textit{graph genome} for sequence variant genotyping in the livestock genome.  I implemented the graph genotyping pipeline and it is now publicly available at \\  
-% \url{https://github.com/danangcrysnanto/Graph-genotyping-paper-pipelines}. \\ 
+\chapter[Cohort-specific cattle graphs]{\Large{Analysis of the cohort-specific graphs}}
+\label{chap:locgraph}
+\subsection*{Preface: Bridging text between Chapter 1 and Chapter 2}
 
-% \emph{Contribution}: I and Hubert Pausch conceived the study, I wrote the genotyping pipelines and performed all analyses. I wrote the initial draft of the manuscript with input from Hubert Pausch. 
-% \onehalfspacing
-% \include{chapters/chapter2}
+In this chapter, I assessed the feasibility of the genome graphs in cattle genome. 
+I assessed \emph{Graphtyper} software for variant genotyping in cattle.
+\emph{Graphtyper} performed two round of genotyping. The first is to discover variants from linear
+genome. And the second round used the variants discovered in the first round to construct a local genome graph and used it to refine the genotypes. I discovered that \textit{graph genotyping} using \textit{Graphtyper} is highly accurate in cattle and outperform current approaches e.g., \textit{SAMtools, \emph{GATK}} that are based on linear reference. My work is the first to apply \textit{graph genome} for sequence variant genotyping in the livestock genome.  I implemented the graph genotyping pipeline and it is now publicly available at \\  
+\url{https://github.com/danangcrysnanto/Graph-genotyping-paper-pipelines}. \\ 
 
-% \chapter[whole genome cattle graphs]{\Large{Analysis of the cattle whole-genome graphs}}
-% \label{chap:wholegraph}
+\emph{Contribution}: I and Hubert Pausch conceived the study, I wrote the genotyping pipelines and performed all analyses. I wrote the initial draft of the manuscript with input from Hubert Pausch. 
+\onehalfspacing
+\include{chapters/chapter2}
 
-% \subsection*{Preface: Bridging text between Chapter 2 and Chapter 3}
+% paper 2 as chapter 3
 
-% In this chapter, I constructed the first cattle whole genome graph and performed the first assessment of the gigabase genome graph on the species other than human. I showed using both real and simulated datasets that the graph facilitate accurate read mapping and unbiased sequence variant genotyping. I developed the graph pipeline further from previous implementation based on \emph{vg toolkit} allowing graph analysis performed in a full genome scale. Additionally, I included catalogues of previously discovered variants to the graph, which showed that \emph{breed-specific} graph perform similarly as the \emph{multi-breed pangenome graph}. \\
+\chapter[Whole genome cattle graphs]{\Large{Analysis of the cattle whole-genome graphs}}
+\label{chap:wholegraph}
 
-% \emph{Contribution}: I and Hubert Pausch conceived the study, I wrote the full genome graph pipelines and performed all analyses. I wrote the initial draft of the manuscript with input from Hubert Pausch. 
+\subsection*{Preface: Bridging text between Chapter 2 and Chapter 3}
 
-% \onehalfspacing
-% \include{chapters/chapter3}
+In this chapter, I constructed the first cattle whole genome graph and performed the first assessment of the gigabase genome graph on the species other than human. I showed using both real and simulated datasets that the graph facilitate accurate read mapping and unbiased sequence variant genotyping. I developed the graph pipeline further from previous implementation based on \emph{vg toolkit} allowing graph analysis performed in a full genome scale. Additionally, I included catalogues of previously discovered variants to the graph, which showed that \emph{breed-specific} graph perform similarly as the \emph{multi-breed pangenome graph}. \\
+
+\emph{Contribution}: I and Hubert Pausch conceived the study, I wrote the full genome graph pipelines and performed all analyses. I wrote the initial draft of the manuscript with input from Hubert Pausch. 
+
+\onehalfspacing
+\include{chapters/chapter3}
 
 
-% % \chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:locgraph}}}
-% \chapter*{\centering{Supplementary Materials \\ Chapter 2}}
-% % \addcontentsline{toc}{chapter}{Supplementary Materials Chapter \ref{chap:locgraph}}
-% \singlespacing
-% \fancyhead[C]{APPENDICES}
-% \include{chapters/supp_chap2}
 
-%\chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:wholegraph}}}
-\chapter*{\centering{Supplementary Materials \\ Chapter 3}}
+% Appedixes 
+
+\chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:locgraph}}}
+\addcontentsline{toc}{chapter}{Supplementary Materials Chapter \ref{chap:locgraph}}
+\singlespacing
+\fancyhead[C]{APPENDICES}
+\include{chapters/supp_chap2}
+
+\chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:wholegraph}}}
 \addcontentsline{toc}{chapter}{Supplementary Materials Chapter 3}
 \singlespacing
 \fancyhead[C]{APPENDICES}

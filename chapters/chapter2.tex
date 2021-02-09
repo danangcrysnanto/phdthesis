@@ -120,7 +120,7 @@ Following  quality  control  (removal  of  adapter  sequences  and  low-quality 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper1/main_figure/Figure1.pdf}
-    \caption[Pipeline methods]{\textbf{Schematic representation of the three sequence variant discovery and genotyping methods evaluated.} \\
+    \caption[Scheme of the compared genotyping pipelines]{\textbf{Schematic representation of the three sequence variant discovery and genotyping methods evaluated.} \\
     \small{According to the best practice recommendations for sequence variant discovery using \emph{GATK}, the VQSR module should be applied to distinguish between true and false positive variants. Because this approach requires a truth set of variants, which is not (publicly) available for cattle, the VQSR module was not considered in our evaluation}}
     \label{fig:loca}
 \end{figure}
@@ -135,7 +135,7 @@ Using default parameters for variant discovery for each of the software programs
 \begin{table}
     \vspace{10mm} 
     \centering
-    \caption{\textbf{Number of different types of autosomal sequence variants} detected in 49 Original Braunvieh cattle using three sequence variant genotyping methods (Full) and subsequent variant filtration based on commonly used criteria (Filtered)}
+    \caption[Number of different types of autosomal sequence variants]{\textbf{Number of different types of autosomal sequence variants} detected in 49 Original Braunvieh cattle using three sequence variant genotyping methods (Full) and subsequent variant filtration based on commonly used criteria (Filtered)}
     \vspace{10mm}
     \begin{tabular}{|l|l|l|l|l|l|l|} 
     \cline{2-7}
@@ -208,7 +208,7 @@ i.e., they were not present in dbSNP 150. The intersection among the three tools
 \begin{landscape}
 \begin{table}
     \centering
-    \caption{\textbf{Average number of autosomal variants} identified per animal using three sequence variant genotyping methods}
+    \caption[Average number of autosomal variants]{\textbf{Average number of autosomal variants} identified per animal using three sequence variant genotyping methods}
     \vspace{10 mm}
     \begin{tabular}{|l|l|l|l|l|l|l|} 
     \cline{2-7}
@@ -244,7 +244,7 @@ i.e., they were not present in dbSNP 150. The intersection among the three tools
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper1/main_figure/Figure2.pdf}
-    \caption{Number of biallelic SNPs (\textbf{a}) and indels (\textbf{b}) identified in 49 Original Braunvieh cattle using three sequence variant genotyping methods. Blue horizontal bars represent the total number of sites discovered for each method. Vertical bars indicate private and common variants detected by the methods evaluated}
+    \caption[Number of biallelic variants]{Number of biallelic SNPs (\textbf{a}) and indels (\textbf{b}) identified in 49 Original Braunvieh cattle using three sequence variant genotyping methods. Blue horizontal bars represent the total number of sites discovered for each method. Vertical bars indicate private and common variants detected by the methods evaluated}
     \label{fig:varoverlap}
 \end{figure}
 
@@ -271,7 +271,7 @@ Non-reference discrepancy was lower using \emph{Graphtyper} (3.53\%) than using 
 \begin{landscape}
     \begin{table}
         \centering
-        \caption{\textbf{Comparisons between array-called and sequence variant genotypes. }}
+        \caption[Comparisons between array-called and sequence variant genotypes]{\textbf{Comparisons between array-called and sequence variant genotypes.}}
         \small
         \arrayrulecolor{black}
         \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|} 
@@ -310,7 +310,7 @@ The filtering step had almost no effect on the proportion of Mendelian inconsist
 
 \begin{table}
             \begin{center}
-            \caption{\textbf{Proportions of opposing homozygous genotypes observed in nine sire-son pairs}}
+            \caption[Proportions of opposing homozygous genotypes observed in nine sire-son pairs]{\textbf{Proportions of opposing homozygous genotypes observed in nine sire-son pairs}}
             \small
             \begin{tabular}{|l|l|l|l|l|l|l|l|l|} 
             \cline{2-9}
@@ -354,7 +354,7 @@ In samples with a low sequencing coverage, \emph{Graphtyper} performed significa
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper1/main_figure/Figure3.pdf}
-    \caption{\textbf{Accuracy and sensitivity of sequence variant genotyping at different sequencing depths.} Genotype concordance, non-reference sensitivity and non-reference discrepancy were calculated for 49 Original Braunvieh cattle considering either raw (red) or filtered and imputed (blue) sequence variant genotypes. The grey points represent overlays of the results from the other methods}
+    \caption[Accuracy and sensitivity of sequence variant genotyping at different sequencing depths]{\textbf{Accuracy and sensitivity of sequence variant genotyping at different sequencing depths.} Genotype concordance, non-reference sensitivity and non-reference discrepancy were calculated for 49 Original Braunvieh cattle considering either raw (red) or filtered and imputed (blue) sequence variant genotypes. The grey points represent overlays of the results from the other methods}
     \label{fig:varimpute}
 \end{figure}
 
@@ -367,7 +367,7 @@ To genotype 20,668,459 sequence variants in 49 animals, \emph{SAMtools} mpileup 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper1/main_figure/Figure4.pdf}
-    \caption{\textbf{Computing time required to genotype all autosomal sequence variants in 49 Original Braunvieh cattle.} The runtime of GATK and Graphtyper is shown for the different steps (see Fig. \ref{fig:loca} for more details)}
+    \caption[Computing time required for genotyping]{\textbf{Computing time required to genotype all autosomal sequence variants in 49 Original Braunvieh cattle.} The runtime of GATK and Graphtyper is shown for the different steps (see Fig. \ref{fig:loca} for more details)}
     \label{fig:varresource}
 \end{figure}
 
@@ -394,7 +394,7 @@ Indeed, we did observe a decrease in the computing time required to genotype pol
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper1/main_figure/Figure5.pdf}
-    \caption{\textbf{Sequence variant genotyping on chromosome 12 using Graphtyper.} Computing time required (\textbf{a}) and number of variants discovered (\textbf{b}) for bovine chromosome 12 using Graphtyper. 
+    \caption[Sequence variant genotyping on chromosome 12 using Graphtyper]{\textbf{Sequence variant genotyping on chromosome 12 using Graphtyper.} Computing time required (\textbf{a}) and number of variants discovered (\textbf{b}) for bovine chromosome 12 using Graphtyper. 
     Each dot represents an interval of 1 million bp. Blue and red colours represent values for the UMD3.1 and ARS-UCD1.2 versions of the bovine assembly, respectively}
     \label{fig:varassemb}
 \end{figure}

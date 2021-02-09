@@ -124,7 +124,7 @@
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.7\textwidth]{paper2/supplement/sp39.pdf}
-    \caption{\textbf{Pairwise heatmap of \emph{P-values} from \emph{t tests}} \\
+    \caption[Pairwise heatmap of 8 graphs comparison]{\textbf{Pairwise heatmap of \emph{P-values} from \emph{t tests}} \\
     \small{comparing 8 graph-based
     mapping scenarios for (a) paired- and (b) single-end reads. The P-values are
     adjusted for multiple testing using Bonferroni-correction.}}
@@ -151,7 +151,7 @@
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper2/supplement/sp311.pdf}
-    \caption[ROC curves split by read’s novelty]{\textbf{ROC curves split by read’s novelty} \\
+    \caption[ ROC curves split by read’s novelty]{\textbf{ROC curves split by read’s novelty} \\
     \small{Cumulative \emph{True positive} and \emph{False positive rate} at different mapping quality
     thresholds visualized as Receiver Operating Characteristic (ROC) curves for reads
     than contain variants and match corresponding reference alleles. The upper and
@@ -162,7 +162,7 @@
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper2/supplement/sp312.pdf}
-    \caption[Mapping accuracy from different genomic features.]{\textbf{Mapping accuracy for reads originating from different genomic
+    \caption[ Mapping accuracy from different genomic features.]{\textbf{Mapping accuracy for reads originating from different genomic
     features.} \\
     \small{The origin of 10 million simulated reads was determined based on the Bos taurus
     ARS-UCD1.2 ensembl 99 annotations (exonic and genic) and the ARS-UCD1.2
@@ -180,7 +180,7 @@
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.7\textwidth]{paper2/supplement/sp313.pdf}
-    \caption[Single-end read mapping to consensus genome]{\textbf{Single-end read mapping accuracy using breed-specific
+    \caption[ Single-end read mapping to consensus genome]{\textbf{Single-end read mapping accuracy using breed-specific
     augmented genome graphs and consensus linear reference sequences.} \\
     \small{(a) Dark and light blue represent the proportion of reads that mapped incorrectly
     using \emph{BWA mem} and \emph{vg}, respectively, to the BSW-specific augmented reference
@@ -196,7 +196,7 @@
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.8\textwidth]{paper2/supplement/sp314.png}
-    \caption[Graph alignment visualization.]{\textbf{Graph alignment visualization.} \\
+    \caption[ Graph alignment visualization.]{\textbf{Graph alignment visualization.} \\
     \small{Visualization of a 23-bp insertion at
     Chr10: 5,941,270 in graph and linear alignments using the \emph{sequence tube map} tool \citep{beyer2019sequence}. The variant was called heterozygous from the linear alignment,
     but the allelic ratio was highly biased towards the reference allele. Visual inspection
@@ -210,7 +210,7 @@
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper2/supplement/sp315.pdf}
-    \caption[Read support difference between reference and alternate alleles]{\textbf{Difference in the total of mapped reads, and reads support for
+    \caption[ Read support difference between reference and alternate alleles]{\textbf{Difference in the total of mapped reads, and reads support for
     reference and alternate alleles} \\
     \small{between the graph-based and BWA alignments for
     deletions, SNPs and insertions. Positive values indicate a larger number of reads for
@@ -223,7 +223,7 @@
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper2/supplement/sp316.pdf}
-    \caption[Proportion of soft-clipped reads]{\textbf{Proportion of soft-clipped reads at heterozygous sites in graph
+    \caption[ Proportion of soft-clipped reads]{\textbf{Proportion of soft-clipped reads at heterozygous sites in graph
     (\emph{vg}) and linear (\emph{vg} and \emph{BWA}) alignments.} \\
     \small{We considered only variants for which
     the alternate allele was already included in the graph. The circles represent the
@@ -234,7 +234,7 @@
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.8\textwidth]{paper2/supplement/sp317.pdf}
-    \caption[Genotype concordance matrices]{\textbf{Genotype concordance matrices for four quality parameters.} \\
+    \caption[ Genotype concordance matrices]{\textbf{Genotype concordance matrices for four quality parameters.} \\
     \small{For
     each metric, we divided the sum of the red cells by the sum of the cells within the
     green frame.}}
@@ -245,6 +245,7 @@
 % Supplementary notes
 
 \subsection{}
+\label{sup_not:s31}
 \textbf{Comparison of variant prioritization approaches}
 
 We applied FORGe \citep{pritt2018forge} to prioritize variants to be added to the Brown Swiss reference graph for chromosome 25. Specifically, we considered the four variant ranking approaches implemented in FORGe and compared the mapping accuracy from the
@@ -302,6 +303,7 @@ Graphs constructed with variants that were prioritized solely using allele frequ
 
 
 \subsection{}
+\label{sup_not:s32}
 \textbf{Adjusted (tuned) linear mapping approach}
 \bigskip
 
@@ -339,6 +341,7 @@ While Grytten et al. observed that an adjusted parameter setting of \emph{BWA me
 \clearpage
 
 \subsection{}
+\label{sup_not:s33}
 \textbf{Integrating structural variants into the graphs}
 \bigskip
 
