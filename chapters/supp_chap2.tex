@@ -157,11 +157,11 @@ Asterisks denote significant differences with the best value (italic) for a resp
     \cline{2-13}
     \multicolumn{1}{c|}{}                  & raw      & imp~           & raw      & imp                & raw      & imp            & raw      & imp                & raw      & imp            & raw      & imp                 \\ 
     \arrayrulecolor{black}\cline{1-1}\arrayrulecolor{black}\cline{2-13}
-    GATK                                   & 90.99*** & 98.7***        & 91.02*** & 98.82***           & 85.63*** & 98.91          & 85.51*** & 98.73              & 14.64*** & 2.09***        & 14.59*** & 1.91***             \\ 
+    \emph{GATK}                                   & 90.99*** & 98.7***        & 91.02*** & 98.82***           & 85.63*** & 98.91          & 85.51*** & 98.73              & 14.64*** & 2.09***        & 14.59*** & 1.91***             \\ 
     \hline
-    Graphtyper                             & 94.89    & 99.07          & 94.91    & 99.17              & 96.44    & 99             & 96.13    & 98.71              & 8.04     & 1.49           & 8        & 1.31                \\ 
+    \emph{Graphtyper}                             & 94.89    & 99.07          & 94.91    & 99.17              & 96.44    & 99             & 96.13    & 98.71              & 8.04     & 1.49           & 8        & 1.31                \\ 
     \hline
-    SAMtools                               & 94.87    & 98.61***       & 94.89    & 98.67***           & 96.24*** & 98.94          & 95.75*** & 98.45***           & 8.11     & 2.24***        & 8.09     & 2.11***             \\
+    \emph{SAMtools}                               & 94.87    & 98.61***       & 94.89    & 98.67***           & 96.24*** & 98.94          & 95.75*** & 98.45***           & 8.11     & 2.24***        & 8.09     & 2.11***             \\
     \hline
     \end{tabular}
     \end{footnotesize}
@@ -182,11 +182,11 @@ Asterisks denote significant differences with the best value (italic) for a resp
     \cline{2-13}
     \multicolumn{1}{c|}{}                  & raw      & imp~           & raw      & imp                & raw     & imp             & raw      & imp                & raw     & imp             & raw     & imp                  \\ 
     \arrayrulecolor{black}\cline{1-1}\arrayrulecolor{black}\cline{2-13}
-    GATK                                   & 98.73*** & 99.66          & 98.76*** & 99.71              & 98.3*** & 99.61           & 98.14*** & 99.39              & 1.8***  & 0.48*           & 1.76*** & 0.42                 \\ 
+    \emph{GATK}                                   & 98.73*** & 99.66          & 98.76*** & 99.71              & 98.3*** & 99.61           & 98.14*** & 99.39              & 1.8***  & 0.48*           & 1.76*** & 0.42                 \\ 
     \hline
-    Graphtyper                             & 99.26    & 99.67          & 99.3     & 99.72              & 99.25   & 99.54***        & 98.88    & 99.16***           & 1.04    & 0.45            & 0.99    & 0.4                  \\ 
+    \emph{Graphtyper}                             & 99.26    & 99.67          & 99.3     & 99.72              & 99.25   & 99.54***        & 98.88    & 99.16***           & 1.04    & 0.45            & 0.99    & 0.4                  \\ 
     \hline
-    SAMtools                               & 99.21*** & 99.59***       & 99.24*** & 99.62***           & 99.21** & 99.58***        & 98.51*** & 98.79***           & 1.12*** & 0.58***         & 1.08*** & 0.54***              \\
+    \emph{SAMtools}                               & 99.21*** & 99.59***       & 99.24*** & 99.62***           & 99.21** & 99.58***        & 98.51*** & 98.79***           & 1.12*** & 0.58***         & 1.08*** & 0.54***              \\
     \hline
     \end{tabular}
     \end{footnotesize}
@@ -262,7 +262,7 @@ truth/training variants are not (publicly) available, \citep{alberto2018converge
 intersection of high confidence variants that had been discovered from multiple variant
 callers as truth/training sets, i.e., they derived truth/training sets directly from the analyzed
 data. We implemented their approach to apply \emph{GATK} VQSR to our variant dataset. Training
-and truth sets were constructed using the overlap of the filtered variants from the GATK,
+and truth sets were constructed using the overlap of the filtered variants from the \emph{GATK},
 \emph{Graphtyper} and \emph{SAMtools} pipelines (truth=false, training=true, known=false, prior= 10) and
 markers from the BovineHD BeadChip (truth=true, training=true, known=false, prior= 15),
 respectively. Moreover, we used variants listed in dbSNP (version 150) as known variants
