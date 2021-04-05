@@ -34,7 +34,7 @@
 \usepackage{xcolor}
 \usepackage{pdflscape}
 \usepackage{enumerate}
-\usepackage{caption}
+\usepackage[singlelinecheck=false]{caption}
 \usepackage{longtable}
 \urlstyle{tt}
 \hypersetup{
@@ -123,9 +123,20 @@ In this chapter, I constructed the first cattle whole genome graph and performed
 \onehalfspacing
 \include{chapters/chapter3}
 
+\chapter[Multiassembly bovine graphs]{\Large{Analysis of the multi-assembly graphs}}
+\label{chap:multigraph}
+
+\subsection*{Preface: Bridging text between Chapter 2 and Chapter 3}
+
+In this chapter, I constructed the first cattle whole genome graph and performed the first assessment of the gigabase genome graph on the species other than human. I showed using both real and simulated datasets that the graph facilitate accurate read mapping and unbiased sequence variant genotyping. I developed the graph pipeline further from previous implementation based on \emph{vg toolkit} allowing graph analysis performed in a full genome scale. Additionally, I included catalogues of previously discovered variants to the graph, which showed that \emph{breed-specific} graph perform similarly as the \emph{multi-breed pangenome graph}. \\
+
+\emph{Contribution}: I and Hubert Pausch conceived the study, I wrote the full genome graph pipelines and performed all analyses. I wrote the initial draft of the manuscript with input from Hubert Pausch. 
+
+\onehalfspacing
+\include{chapters/chapter4}
 
 
-% Appedixes 
+% Appendixes 
 
 \chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:locgraph}}}
 \addcontentsline{toc}{chapter}{Supplementary Materials Chapter \ref{chap:locgraph}}
