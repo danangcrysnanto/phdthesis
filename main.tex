@@ -3,7 +3,9 @@
 %bibliography
 \usepackage[a4paper,width=150mm,top=40mm,bottom=25mm]{geometry}
 \usepackage[utf8x]{inputenc}
+\DeclareUnicodeCharacter{8239}{okay}
 \usepackage[scaled]{helvet}
+% \usepackage{underscore}
 
 \usepackage{setspace}
 \usepackage{graphicx}
@@ -61,7 +63,7 @@
 \setcounter{tocdepth}{1}
 \hypersetup{linkcolor=black}
 \tableofcontents
-\addcontentsline{toc}{chapter}{Abstract}
+\addcontentsline{toc}{chapter}{Table of Contents}
 \newpage
 
 \listoffigures 
@@ -150,5 +152,10 @@ In this chapter, I constructed the first cattle whole genome graph and performed
 \fancyhead[C]{APPENDICES}
 \include{chapters/supp_chap3}
 
+\chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:multigraph}}}
+\addcontentsline{toc}{chapter}{Supplementary Materials Chapter 4}
+\singlespacing
+\fancyhead[C]{APPENDICES}
+\include{chapters/supp_chap4}
 
 \end{document}
