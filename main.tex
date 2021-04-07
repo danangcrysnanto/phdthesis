@@ -39,10 +39,7 @@
 \usepackage[singlelinecheck=false]{caption}
 \usepackage{longtable}
 %for cv
-% \usepackage{multicol}
-% \usepackage{titlesec}
-% \usepackage{enumitem}
-%\usepackage{tabularx}
+\usepackage{pdfpages}
 
 \urlstyle{tt}
 \hypersetup{
@@ -177,5 +174,15 @@ This chapter explored the utility of multi-assembly graphs that integrated the c
 \singlespacing
 \fancyhead[C]{APPENDICES}
 \include{chapters/supp_chap4}
+
+% cv 
+
+\newif\ifincludecv
+\includecvtrue %comment out to remove cv
+\ifincludecv
+    \newpage
+    \includepdf[noautoscale]{aux/cv.pdf}
+\fi
+
 
 \end{document}
