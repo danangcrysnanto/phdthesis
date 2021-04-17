@@ -1,4 +1,4 @@
-\documentclass[12 pt, a4paper, notitlepage]{report}
+\documentclass[11 pt, a4paper, notitlepage]{report}
 
 %bibliography
 \usepackage[a4paper,width=150mm,top=40mm,bottom=25mm]{geometry}
@@ -41,6 +41,9 @@
 %for cv
 \usepackage{pdfpages}
 
+% add space between paragraph
+% \setlength{\parskip}{\baselineskip}
+
 \urlstyle{tt}
 \hypersetup{
     colorlinks,
@@ -77,18 +80,30 @@
 \addcontentsline{toc}{chapter}{List of Tables}
 \newpage
 
+\section*{\centering{\LARGE{Summary}}}
+\addcontentsline{toc}{chapter}{Summary}
 \thispagestyle{plain}
-\section*{\centering{\Large{Abstract}}}
-\addcontentsline{toc}{chapter}{Abstract}
 
 \hypersetup{linkcolor={red!70!black}}
+%\linespread{1.6}
+\setlength{\parskip}{\baselineskip}
+\doublespacing
+The assembly of the draft \emph{Bos taurus }reference genome was a milestone for genetics- and genomics-oriented research in cattle. The reference genome was built from a single animal from the Hereford breed. However, the linear reference sequence does not represent genetic diversity of global cattle breeds. The lack of diversity  causes problems whenever DNA sequences from genetically distant animals are aligned and compared to the reference sequence. This issue is widely known as reference bias. Pangenomes are an intriguing novel reference structure to consider the full-spectrum of genetic diversity within a species. A richer, graph-based reference can integrate multiple  genome assemblies and their sites of variations in a coherent and non-redundant data structure. This thesis investigated for the first time the utility of graph-based references for genomic analysis in a livestock population.
 
-English abstract
+Chapter 2 assessed the feasibility of graph-based genomic analysis in cattle. Specifically, a graph-based sequence variant genotyping approach was implemented using the\emph{ Graphtyper} software and compared to two widely-used methods (\emph{SAMtools } and \emph{GATK}) that rely on a strictly linear representation of the reference using whole-genome sequencing data of 49 Original Braunvieh cattle. Comparison between sequence variant and array-derived genotypes indicated that the graph-based approach outperformed both \emph{SAMtools} and \emph{GATK} with regard to genotype concordance, non-reference sensitivity, non-reference discrepancy, and Mendelian inconsistencies. These findings demonstrated that graph-based genotyping using Graphtyper is accurate, sensitive, and computationally feasible in the cattle genome. 
+
+Chapter 3 reports on the construction of breed-specific and multi-breed genome graphs for four European cattle breeds (Original Braunvieh, Brown Swiss, Fleckvieh, and Holstein).  The \emph{vg toolkit} was used to augment the linear reference sequence with variants that were prioritized based on allele frequency. Based on both real and simulated short-read sequencing data, this study showed that variant prioritization is crucial to build informative genome graphs. Intriguingly, adding many low frequency and rare variants to the genome graphs compromised mapping accuracy. Moreover, this chapter demonstrates that pangenome graphs and breed-specific graphs enable almost identical mapping improvements over a linear genome. Finally, the first whole-genome graph was constructed for the Brown Swiss cattle breed using 14 million variants. The application of this whole-genome graph facilitated accurate short-read mapping and unbiased sequence variant discovery. 
+
+\thispagestyle{plain}
+
+Chapter 4 reports on integrating of six reference-quality bovine genome assemblies into a unified multi-assembly graph using the \emph{minigraph} software. The pangenome contains 70 megabases that are not present in the current ARS-UCD1.2 Bos taurus reference genome.  Using complementary bioinformatics approaches, this chapter provides compelling evidence that these non-reference sequences contain functionally active and biologically-relevant elements. Specifically, the analysis of RNA sequencing data revealed putatively novel genes, including some that are differentially expressed between individual animals. Moreover, variant discovery in the non-reference sequences revealed thousands of yet undetected polymorphic sites capturing genetic differentiation across cattle breeds. Chapter 4 demonstrated that multi-assembly graphs make so far neglected genetic variations amenable to genetic investigations. 
+
+Overall, thesis presents a novel paradigm of variation-aware genomic analysis in livestock genomics. This thesis provides a first step towards the transition into graph-based reference structures that mitigate inherent biases of the linear reference genome. Improving these genomic resources may directly support further advancements in genetic approaches to improve production efficiency and to preserve biodiversity. Importantly, this thesis establishes a computational framework to integrate multiple genome assemblies and their sites of variations into a more diverse reference structure broadly applicable across species. 
 
 \newpage
 
 \thispagestyle{plain}
-\section*{\centering{\Large{Zusammenfassung}}}
+\section*{\centering{\LARGE{Zusammenfassung}}}
 \addcontentsline{toc}{chapter}{Zusammenfassung}
 
 Deutsch abstract
@@ -97,13 +112,14 @@ Deutsch abstract
 
 \pagenumbering{arabic}
 
+\onehalfspacing
 
 % paper 1 as chapter 2
 
-\chapter[Feasibility of the bovine genome graphs]{\Large{Variant genotyping using local variation graphs}}
+\chapter[Feasibility of the bovine genome graphs]{\LARGE{Variant genotyping using local variation graphs}}
 \label{chap:locgraph}
 \subsection*{Preface: Bridging text between Chapter 1 and Chapter 2}
-
+\onehalfspacing
 \normalsize
 This chapter assessed the feasibility of the genome graphs in cattle genome for variant genotyping; the first graph-based genotyping approach applied in any agricultural animal. The region-specific graphs were constructed using variations discovered from the sequencing cohort implemented using \emph{Graphtyper}. The genotyping pipeline was based on refined sequencing read alignment towards the local graphs. The genotyping analysis showed that graph-based approach using \textit{Graphtyper} is highly accurate, outperforming state-of-the-art methods based on linear reference e.g., \textit{SAMtools, \emph{GATK}}. \\
 
@@ -116,12 +132,12 @@ This chapter assessed the feasibility of the genome graphs in cattle genome for 
 
 \emph{Contribution}: Hubert Pausch and I conceived the study. Christine Wurmser generated the sequencing data. I wrote the graph genotyping pipelines and Hubert Pausch and I performed the analyses. Hubert Pausch and I wrote the manuscript. 
 
-\onehalfspacing
+% \onehalfspacing
 \include{chapters/chapter2}
 
 % paper 2 as chapter 3
 
-\chapter[Bovine whole-genome variations graphs]{\Large{Analysis of the bovine whole-genome variation graphs}}
+\chapter[Bovine whole-genome variations graphs]{\LARGE{Analysis of the bovine whole-genome variation graphs}}
 \label{chap:wholegraph}
 
 \subsection*{Preface: Bridging text between Chapter 2 and Chapter 3}
@@ -136,10 +152,10 @@ This chapter developed a variation graphs pipeline using \emph{vg toolkit} that 
 
 % \emph{Contribution}: I and Hubert Pausch conceived the study, I wrote the full genome graph pipelines and performed all analyses. I wrote the initial draft of the manuscript with input from Hubert Pausch. 
 
-\onehalfspacing
+% \onehalfspacing
 \include{chapters/chapter3}
 
-\chapter[Bovine multi-assembly graphs]{\Large{Analysis of the bovine multi-assembly graphs}}
+\chapter[Bovine multi-assembly graphs]{\LARGE{Analysis of the bovine multi-assembly graphs}}
 \label{chap:multigraph}
 
 \subsection*{Preface: Bridging text between Chapter 3 and Chapter 4}

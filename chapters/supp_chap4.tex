@@ -365,8 +365,8 @@
 
 \subsection{}
 \label{sup_not:s41}
-\textbf{Assembly of the Original Braunvieh (OBV) genome}
-
+\normalsize
+\textbf{Assembly of the Original Braunvieh (OBV) genome} \\
 \bigskip
 The Original Braunvieh primary assembly was generated from PacBio HiFi CCS reads (study accession PRJEB42335 under sample accession SAMEA7759028), generated from subreads with minimum three passes and minimum predicted read quality of 20.  The fastq data contained 86.9 gigabases, corresponding to nearly 30-fold coverage. The CCS reads were filtered by fastp [0.21.0] \citep{chen2018fastp} with minimum average quality of Q20 and minimum read length of 1kb, with 99.99\% of the data passing these thresholds. Hifiasm [v0.13-r308] \citep{cheng2021haplotype} was then used to generate the assembly from the reads using the additional parameters “-r 4 -a 5 -n 5” on a computing cluster. Hifiasm yields the primary contigs in the GFA format, which were then converted using gfatools [0.4-r196-dirty] into a fasta sequence representation. These contigs were then scaffolded using RagTag [v1.0.1] \citep{alonge2019ragoo} to the ARS-UCD1.2 reference, with custom parameters “--mm2-params "-c -x asm5" -r -m 1000000”.
 
@@ -390,7 +390,7 @@ The contigs were validated for contiguity, completeness, and correctness by mult
 
 \normalsize
 
-Completeness of the assembly was determined through two independent approaches, BUSCO (8) and the asmgene command of paftools. The former relies on the OrthoDB datasets, specifically version 10 of the cetartiodactyla lineage. The latter uses cDNA libraries of annotated gene sequences from the ARS-UCD1.2 reference available from Ensembl. Both methods report a high completeness (>96\%) with respect to predicted gene content, as shown in \hyperlink{Table SN42}{Table SN42}.
+Completeness of the assembly was determined through two independent approaches, BUSCO (8) and the asmgene command of paftools. The former relies on the OrthoDB datasets, specifically version 10 of the cetartiodactyla lineage. The latter uses cDNA libraries of annotated gene sequences from the ARS-UCD1.2 reference available from Ensembl. Both methods report a high completeness ($>$96\%) with respect to predicted gene content, as shown in \hyperlink{Table SN42}{Table SN42}.
 
 \newpage
 
@@ -459,7 +459,7 @@ To investigate if the order of assemblies used to establish the multi-assembly g
 \end{figure}
 
 \bigskip
-Next, we investigated the profile of a multi-assembly graph that gradually increases in complexity. We built taurine-only graphs that contained either all or all but one taurine assemblies, a TauInd (four taurine and one indicine), and a full graph (four taurine, one indicine, and yak). The profile of the pangenome changed markedly as more distant assemblies were added to the graph. For example, the flexible part declined substantially from 6.10\% in the full graph to 3.83\% and 2.76\% for the TauInd and taurine-only graph, respectively. However, when an individual taurine assembly is removed from the taurine-only graphs, the size of the flexible part changes only slightly (hyperlink{Figure SN42}{Figure SN42}).
+Next, we investigated the profile of a multi-assembly graph that gradually increases in complexity. We built taurine-only graphs that contained either all or all but one taurine assemblies, a TauInd (four taurine and one indicine), and a full graph (four taurine, one indicine, and yak). The profile of the pangenome changed markedly as more distant assemblies were added to the graph. For example, the flexible part declined substantially from 6.10\% in the full graph to 3.83\% and 2.76\% for the TauInd and taurine-only graph, respectively. However, when an individual taurine assembly is removed from the taurine-only graphs, the size of the flexible part changes only slightly \hyperlink{Figure SN42}{Figure SN42}).
 
 \bigskip
 \begin{figure}[!htb]
@@ -469,6 +469,7 @@ Next, we investigated the profile of a multi-assembly graph that gradually incre
     \footnotesize{The X-axis indicates the constructed graphs (- denotes the taurine assembly that was removed from the taurine-only graph, taurine denotes a graph with four taurine assemblies, the indicine graph contains all taurine assemblies and the assembly of Brahman, and all reflects a multi-assembly graph that contains all six assemblies (taurine, indicine, and yak). The core part is the size of the segments that are common to all assemblies, flexible\_shared indicates the size of segments shared by at least two but not all assemblies, and private denotes the size of segments found only in a single assembly, thus flexible genome is composed of flexible\_shared + private segment.}}
 \end{figure}
 
+\newpage
 
 \subsection{}
 \label{sup_not:s43}
@@ -535,7 +536,7 @@ To investigate if the choice of the backbone assembly influences the properties 
 \bigskip
 \normalsize
 
-The choice of the backbone had, as expected, a major impact on the amount of non-reference bases detected from each of the remaining assemblies (\hyperlink{Table SN45}{Table SN45}). A multi-assembly graph with a Bos taurus taurus backbone contains between 10.14 and 19.48 million non-reference bases from the remaining three taurine assemblies. Using the Hereford or Angus assemblies as the backbone resulted in more total non-reference sequences than using the OBV or Highland assemblies. Regardless of backbone choice, the OBV and Highland assemblies also contribute more non-reference sequences to the multi-assembly graph than the Hereford and Angus assembly. These two observations suggest that the OBV and Highland assemblies represent a more comprehensive \emph{Bos taurus taurus} genome, agreeing well with their high completeness, continuity, and correctness (see \ref{sup_not:s41} and \citep{rice2020continuous}). Thus, there is a tendency to detect fewer non-reference sequences with a more complete and contiguous backbone. Although selecting a more distant assembly as the backbone identifies more non-reference sequences from each remaining assembly on average (~40 Mb with Yak compared to ~20 Mb for taurine), this appeared to be a smaller effect compared to the backbone completeness.
+The choice of the backbone had, as expected, a major impact on the amount of non-reference bases detected from each of the remaining assemblies (\hyperlink{Table SN45}{Table SN45}). A multi-assembly graph with a \emph{Bos taurus taurus} backbone contains between 10.14 and 19.48 million non-reference bases from the remaining three taurine assemblies. Using the Hereford or Angus assemblies as the backbone resulted in more total non-reference sequences than using the OBV or Highland assemblies. Regardless of backbone choice, the OBV and Highland assemblies also contribute more non-reference sequences to the multi-assembly graph than the Hereford and Angus assembly. These two observations suggest that the OBV and Highland assemblies represent a more comprehensive \emph{Bos taurus taurus} genome, agreeing well with their high completeness, continuity, and correctness (see \ref{sup_not:s41} and \citep{rice2020continuous}). Although selecting a more distant assembly as the backbone identifies more non-reference sequences from each remaining assembly on average (\~40 Mb with Yak compared to \~20 Mb for taurine), this appeared to be a smaller effect compared to the backbone completeness.
 
 \bigskip
 
@@ -607,7 +608,7 @@ Minigraph might fail to align and include input sequences into the graph. We ass
     \hline
     \multicolumn{1}{|c|}{\multirow{2}{*}{Backbone~}} & \multicolumn{6}{c|}{Assembly}                                                & \multicolumn{1}{c|}{\multirow{2}{*}{Total}}  \\ 
     \cline{2-7}
-    \multicolumn{1}{|c|}{}                            & Hereford~  & Yak        & Brahman ~  & OBV         & Angus      & Highland   & \multicolumn{1}{c|}{}                        \\ 
+    \multicolumn{1}{|c|}{}                            & Hereford~  & Yak        & Brahman~  & OBV         & Angus      & Highland   & \multicolumn{1}{c|}{}                        \\ 
     \hline
     Hereford                                          & -          & 5,388,777  & 6,369,649  & 106,905,680 & 7,442,463  & 8,165,867  & 134,272,436~                                 \\ 
     \hline
@@ -731,7 +732,7 @@ Step by step (manual) instruction to construct a multi-assembly graph from a col
         \centering
         \includegraphics[width=\textwidth]{paper3/supplement/sp422.png}
     \end{figure}
-3. Re-align each assembly to the multi-assembly graph \\ Separately realign each assembly to the multi-assembly graph to record the coverage for all nodes and edges in the graph. \\
+3. Re-align each assembly to the multi-assembly graph \\ Separately realign each assembly to the multi-assembly graph to record the coverage for all nodes and edges in the graph. \\ 
     \begin{figure}[!htb]
         \centering
         \includegraphics[width=\textwidth]{paper3/supplement/sp423.png}
@@ -765,7 +766,7 @@ Step by step (manual) instruction to construct a multi-assembly graph from a col
     \includegraphics[width=\textwidth]{paper3/supplement/sp429.png}
 \end{figure}
 
-2. Identify the precise location of the structural variations from the multi-assembly graph \\ Paths in the bubble represent alleles of the structural variations. This step will enumerate all possible paths based on the start and stop node of the bubbles, done separately for biallelic (2 paths/alleles) and multi-allelic ($>=$3 alleles) bubbles. Finally, it labels structural variations according to the origin of the assemblies. \\
+2. Identify the precise location of the structural variations from the multi-assembly graph \\ Paths in the bubble represent alleles of the structural variations. This step will enumerate all possible paths based on the start and stop node of the bubbles, done separately for biallelic (2 paths/alleles) and multi-allelic ($>=$3 alleles) bubbles. Finally, it labels structural variations according to the origin of the assemblies. \\ 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp430.png}
@@ -773,19 +774,21 @@ Step by step (manual) instruction to construct a multi-assembly graph from a col
 
 \newpage
 
-3. Annotate the breakpoints detected in from the multi-assembly graph \\ Annotate the breakpoint of the structural variations using start and stop node coordinate for left and right breakpoints, respectively on the reference backbone coordinate. This step requires an annotation file from the backbone assembly. \\
+3. Annotate the breakpoints detected in from the multi-assembly graph \\ Annotate the breakpoint of the structural variations using start and stop node coordinate for left and right breakpoints, respectively on the reference backbone coordinate. This step requires an annotation file from the backbone assembly. \\ 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp431.png}
 \end{figure}
 
-4. Extract structural variation alleles in the bubbles \\ Extract non-ref alleles (excluding paths less than 100 bp, complete deletions, or paths without non-ref sequences) as a representative non-reference sequences of the pangenome. Sequences in nodes are not used directly, because multiple consecutive nodes might be part of the same allele, and they are representing a continuous sequences. \\
+4. Extract structural variation alleles in the bubbles \\ Extract non-ref alleles (excluding paths less than 100 bp, complete deletions, or paths without non-ref sequences) as a representative non-reference sequences of the pangenome. Sequences in nodes are not used directly, because multiple consecutive nodes might be part of the same allele, and they are representing a continuous sequences. \\ 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp432.png}
 \end{figure}
 
 
+\singlespacing
+\footnotesize
 \renewcommand{\bibname}{Supplementary References}
 \bibliographystyle{abbrvnat}
 \bibliography{references/chapter4_ref}
