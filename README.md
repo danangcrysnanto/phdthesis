@@ -4,7 +4,14 @@
 
 Source codes of my doctoral dissertation thesis in `Latex`. 
 
-I used [Latex workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) in visual studio code with automatic build run of `pdflatex`(default command).  My latex distribution is `MacTex` on MacOS. This repository might be beneficial as template that comply with [ETH Zurich](https://ethz.ch/students/en/doctorate/doctoral-thesis-examination.html) format requirement. Please adapt accordingly.
+I used [Latex workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) in visual studio code with automatic build run of `pdflatex` (default command).  My latex distribution is `MacTex` on MacOS. 
+To build this project invoke command below. It will generate two pdf versions of the thesis for online (`main_online.pdf`) and print (`main_print.pdf`)
+
+```
+./compile.sh 
+```
+
+This repository might be beneficial as template that comply with [ETH Zurich](https://ethz.ch/students/en/doctorate/doctoral-thesis-examination.html) format requirement. Please adapt accordingly.
 
 
 My PhD work is mainly in developing and using variation-aware genome graphs as reference genome in cattle population. I showed that the use of graphs instead of linear genome lead to a more accurate and unbiased genetic variants discovery. Additionally, the use of graphs facilitate genetic investigation on the region intractable with a single linear reference genome. 
