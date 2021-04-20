@@ -1,8 +1,12 @@
-\documentclass[11 pt, a4paper, notitlepage]{report}
-
-%comment out to print docs (twoside) 
 \newif\iftwoside
+%comment out to print docs (twoside) 
 % \twosidetrue
+\iftwoside
+\documentclass[11 pt, a4paper, notitlepage, twoside]{report}
+\else
+\documentclass[11 pt, a4paper, notitlepage]{report}
+\fi 
+
 
 %bibliography
 \usepackage[a4paper,width=150mm,top=40mm,bottom=25mm]{geometry}
@@ -218,7 +222,7 @@ This chapter explored the utility of multi-assembly graphs that integrated the c
 \includecvtrue %comment out to remove cv
 \ifincludecv
     \newpage
-    \includepdf[noautoscale]{aux/cv.pdf}
+    \includepdf[noautoscale]{frontback/cv.pdf}
 \fi
 
 
