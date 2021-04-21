@@ -5,7 +5,7 @@
 Source codes of my doctoral dissertation thesis in `Latex`. 
 
 I used [Latex workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) in visual studio code with automatic build run of `pdflatex` (default command).  My latex distribution is `MacTex` on MacOS. 
-To build this project invoke command below. It will generate two pdf versions of the thesis for online (`main_online.pdf`) and print (`main_print.pdf`)
+To build this project invoke command below. It will generate two pdf versions of the thesis for an online (`main_online.pdf`) and a print (`main_print.pdf`) version. 
 
 ```
 ./compile.sh 

@@ -11,6 +11,9 @@
 
 \renewcommand \thesubsection {Additional file 2.\arabic{subsection}}
 
+% do not include in the list of figure
+\captionsetup[figure]{list=no}
+\captionsetup[table]{list=no}
 
 \begin{flushleft}
 \normalsize
@@ -290,7 +293,7 @@ ascertainment bias because it is calculated using sequence-derived SNPs) is less
 \bigskip
 
 The performance of \emph{GATK} VQSR may be assessed using the novel variant sensitivity
-tranche plot (Figure 2). In the lowest 90\% tranches (highest specificity) the filtering model
+tranche plot (Figure 1). In the lowest 90\% tranches (highest specificity) the filtering model
 still retained many false positive variants (orange box and low Ti/Tv ratio). However, when
 the 99.9\% tranche sensitivity is used as filtration criterion as recommended by the \emph{GATK}
 best practice guidelines, a high proportion of true positive variants is removed from the
@@ -300,7 +303,7 @@ Overall, our findings suggest that
 
 \begin{enumerate}[(i)]
     \item \emph{GATK} VQSR removes more variants from the data than \emph{GATK} hard filtering,
-    \item \emph{GATK} VQSR does not notably improve the concordance between sequencederived and microarray-called genotypes compared to \emph{GATK} hard filtering,
+    \item \emph{GATK} VQSR does not notably improve the concordance between sequence derived and microarray-called genotypes compared to \emph{GATK} hard filtering,
     \item the proportion of opposing homozygous genotypes in sire/son-pairs is higher using \emph{GATK} VQSR than \emph{GATK} hard filtering, and
     \item improving VQSR may be possible by providing more sophisticated truth/training variant datasets produced by orthogonal sequencing technology other than the ones used for training, e.g. \citep{li2018synthetic}
 \end{enumerate}

@@ -13,6 +13,8 @@
 \usepackage[utf8x]{inputenc}
 \DeclareUnicodeCharacter{8239}{}
 \usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
 % \usepackage{underscore}
 
 \usepackage{setspace}
@@ -44,10 +46,11 @@
 \frenchspacing
 
 \usepackage[round]{natbib}
-%\usepackage[natbib=true, style=authoryear]{biblatex}
-%\bibliography{references/chapter2_ref}
+% comment out to use numeric-style citation
+% \usepackage[numbers,square,comma]{natbib}
 %\bibliographystyle{abbrvnat}
 \usepackage{chapterbib}
+
 
 
 \usepackage{hyperref}
@@ -59,8 +62,19 @@
 %for cv
 \usepackage{pdfpages}
 
+% no space between list of item
+\usepackage[shortlabels]{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
 % add space between paragraph
 % \setlength{\parskip}{\baselineskip}
+
+% \usepackage{tocloft}
+% \setlength[titles]{\cftfignumwidth}{2.55em}
+
+\usepackage[titles]{tocloft}
+\setlength{\cftfignumwidth}{3em}
+
 
 \urlstyle{tt}
 \hypersetup{
@@ -133,15 +147,21 @@ Overall, thesis presents a novel analysis paradigm in livestock genomics by leve
 
 Deutsch abstract
 
+\iftwoside
+\cleardoublepage
+\newpage
+\fi
+
 \newpage
 
 \pagenumbering{arabic}
+
 
 \onehalfspacing
 
 % paper 1 as chapter 2
 
-\chapter[Feasibility of the bovine genome graphs]{\LARGE{Variant genotyping using local variation graphs}}
+\chapter[Feasibility of the bovine genome graphs]{\LARGE{Assessment of variant genotyping using local variation graphs}}
 \label{chap:locgraph}
 \subsection*{Preface: Bridging text between Chapter 1 and Chapter 2}
 \onehalfspacing
@@ -160,14 +180,21 @@ This chapter assessed the feasibility of the genome graphs in cattle genome for 
 % \onehalfspacing
 \include{chapters/chapter2}
 
+
+\iftwoside
+\cleardoublepage
+\newpage
+\fi
+
 % paper 2 as chapter 3
 
-\chapter[Bovine whole-genome variations graphs]{\LARGE{Analysis of the bovine whole-genome variation graphs}}
+\chapter[Bovine whole-genome variations graphs]{\LARGE{Analysis of the bovine breed-specific and multi-breed variation graphs}}
 \label{chap:wholegraph}
 
 \subsection*{Preface: Bridging text between Chapter 2 and Chapter 3}
 \normalsize
-This chapter developed a variation graphs pipeline using \emph{vg toolkit} that augmented external variations and enabling analyses on full genome-scale. The first cattle whole-genome graph was constructed using the pipeline; the first assessment of the gigabase genome-graph on the species other than human. The application of this whole-genome graph facilitated accurate read mapping and unbiased sequence variant genotyping. \\
+This chapter evaluated the variant prioritization to the breed-specific and multi-breed genome graphs based on the sequence variants of four Europen cattle breeds (Original Braunvieh, Brown Swiss, Fleckviech, Holstein). Further, the first cattle whole-genome graph was constructed using the \emph{vg toolkit}; the first assessment of a gigabase genome-graph in any livestock species. Applications of this whole-genome graph facilitated accurate read mapping and unbiased sequence variant genotyping. \\
+
 
 \bigskip
 
@@ -180,13 +207,18 @@ This chapter developed a variation graphs pipeline using \emph{vg toolkit} that 
 % \onehalfspacing
 \include{chapters/chapter3}
 
+\iftwoside
+\cleardoublepage
+\newpage
+\fi
+
 \chapter[Bovine multi-assembly graphs]{\LARGE{Analysis of the bovine multi-assembly graphs}}
 \label{chap:multigraph}
 
 \subsection*{Preface: Bridging text between Chapter 3 and Chapter 4}
 
 \normalsize
-This chapter explored the utility of multi-assembly graphs that integrated the collection of genome assemblies into a unified representation using \emph{minigraph}. The first bovine multi-assembly graph was constructed that unified six cattle assemblies, including its close relatives of Brahman and Yak. The application of the multi-assembly graph identified the 70 Mb sequences not included in the existing \emph{Bos taurus} reference genome. Further analysis showed that these non-reference sequences contain abundant functionally relevant sequences. \\
+This chapter investigated the utility of multi-assembly graphs that integrated the collection of genome assemblies into a unified representation. The first bovine multi-assembly graph was constructed that unified six cattle assemblies, including its close relatives of Brahman and Yak using the \emph{minigraph} software. The application of the multi-assembly graph identified the 70 Mb sequences not included in the existing \emph{Bos taurus} reference genome. Further analysis showed that these non-reference sequences contain abundant functionally relevant sequences. \\
 
 \bigskip
 
@@ -195,6 +227,11 @@ This chapter explored the utility of multi-assembly graphs that integrated the c
 
 \onehalfspacing
 \include{chapters/chapter4}
+
+\iftwoside
+\cleardoublepage
+\newpage
+\fi
 
 % Appendixes 
 
