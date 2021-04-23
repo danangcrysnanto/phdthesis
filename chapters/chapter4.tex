@@ -231,7 +231,7 @@ The size of the bovine multi-assembly graph will grow as additional reference-qu
 
 \subsection*{Construction of the multi-assembly graph}
 
-We used minigraph \citep{li2020design} (version 0.12-r389) with option \emph{-xggs} to integrate six reference-quality genome assemblies into a multi-assembly graph. The current bovine reference genome (Bos taurus taurus, ARS$-$UCD1.2, GCF\_002263795.1) and four assemblies that were generated previously are accessible at NCBI: Angus (\emph{Bos taurus taurus}, UOA\_Angus\_1, GCA\_003369685.2)\citep{low2020haplotype}, Brahman (\emph{Bos taurus indicus}, UOA\_Brahman\_1, GCF \_003369695.1) \citep{low2020haplotype}, Highland \emph{(Bos taurus taurus}, ARS\_UNL\_ Btau-highland\_paternal\_1.0\_alt, GCA\_009493655.1) \citep{rice2020continuous}, yak (\emph{Bos grunniens}, \\ ARS\_UNL\_BGru\_maternal\_1.0\_p, GCA\_009493645.1) \citep{rice2020continuous}. Additionally, we constructed an assembly from a female Original Braunvieh calf (\emph{Bos taurus taurus}) using PacBio high-fidelity (HiFi) reads (\emph{SI Appendix}, \ref{sup_not:s41}). The sampling of blood from the Original Braunvieh animal and its parents was approved by the veterinary office of the Canton of Zurich (animal experimentation permit ZH 200/19).
+We used minigraph \citep{li2020design} (version 0.12-r389) with option \emph{-xggs} to integrate six reference-quality genome assemblies into a multi-assembly graph. The current bovine reference genome (Bos taurus taurus, ARS$-$UCD1.2, GCF\_002263795.1) and four assemblies that were generated previously are accessible at NCBI: Angus (\emph{Bos taurus taurus}, UOA\_Angus\_1, GCA\_003369685.2)\citep{low2020haplotype}, Brahman (\emph{Bos taurus indicus}, UOA\_Brahman\_1, GCF \_003369695.1) \citep{low2020haplotype}, Highland \emph{(Bos taurus taurus}, ARS \_UNL \_ Btau-highland \_paternal \_1.0 \_alt, GCA\_009493655.1) \citep{rice2020continuous}, yak (\emph{Bos grunniens}, \\ ARS\_UNL\_BGru\_maternal\_1.0\_p, GCA\_009493645.1) \citep{rice2020continuous}. Additionally, we constructed an assembly from a female Original Braunvieh calf (\emph{Bos taurus taurus}) using PacBio high-fidelity (HiFi) reads (\emph{SI Appendix}, \ref{sup_not:s41}). The sampling of blood from the Original Braunvieh animal and its parents was approved by the veterinary office of the Canton of Zurich (animal experimentation permit ZH 200/19).
 
 The genetic distance among the six assemblies was estimated using Mash (version 2.2) \citep{ondov2016mash}. We performed genomic sketching separately for each assembly with \emph{mash sketch } using a sketch and k-mer size of s$=$1000 and k$=$21, respectively. Sketches were combined using \emph{ mash paste}, and \emph{mash dist} was used to estimate the distances between the assemblies. A phylogenetic tree was built from the estimated pairwise distances using the neighbor-joining method \citep{saitou1987neighbor} as implemented in the R package ape (version 5.4) \citep{paradis2019ape}. The tree was visualized with the \emph{phylo.plot} function, using the yak assembly as the outgroup to root the tree.
 
@@ -333,15 +333,15 @@ We are thankful for the excellent technical support provided by the ETH Zürich 
 \footnotesize
 
 % uncomment so that references appear on the same page
-% \let\Origclearpage\clearpage
-% \let\clearpage\relax
+\let\Origclearpage\clearpage
+\let\clearpage\relax
 
 
 \bibliographystyle{abbrvnat}
 \bibliography{references/chapter4_ref}
 %\printbibliography[title=References]
 
-% \let\clearpage\Origclearpage
+\let\clearpage\Origclearpage
 
 \ifdefined\BuildingFromMainFile
 \else

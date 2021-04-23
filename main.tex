@@ -76,6 +76,11 @@
 \setlength{\cftfignumwidth}{3em}
 
 
+% reduce size of the section
+\usepackage{titlesec}
+
+
+
 \urlstyle{tt}
 \hypersetup{
     colorlinks,
@@ -92,7 +97,7 @@
 
 \newcommand*{\BuildingFromMainFile}{}
 
-\subfile{chapters/intro_dept.tex}
+\subfile{frontback/titlepage.tex}
 
 \iftwoside
 \newpage
@@ -159,6 +164,24 @@ Deutsch abstract
 
 \onehalfspacing
 
+
+% general introduction
+
+
+\chapter[General Introduction]{\LARGE{General Introduction}}
+\label{chap:intro}
+
+\bigskip
+
+\emph{Contribution}: I wrote this chapter with input from Hubert Pausch and Alexander Leonard
+
+\include{chapters/intro}
+
+\iftwoside
+\cleardoublepage
+\newpage
+\fi
+
 % paper 1 as chapter 2
 
 \chapter[Feasibility of the bovine genome graphs]{\LARGE{Assessment of variant genotyping using local variation graphs}}
@@ -185,6 +208,7 @@ This chapter assessed the feasibility of the genome graphs in cattle genome for 
 \cleardoublepage
 \newpage
 \fi
+
 
 % paper 2 as chapter 3
 
@@ -233,6 +257,30 @@ This chapter investigated the utility of multi-assembly graphs that integrated t
 \newpage
 \fi
 
+\chapter[General Discussions]{\LARGE{General Discussions}}
+\label{chap:discuss}
+
+\bigskip
+
+\emph{Contribution}: I wrote this chapter with input from Hubert Pausch and Alexander Leonard
+
+\newpage
+\iftwoside
+\cleardoublepage
+\fi
+
+\fancyhead[C]{OUTLOOK}
+\section*{\LARGE{Outlook}}
+\addcontentsline{toc}{chapter}{Outlook}
+
+
+\newpage 
+
+\iftwoside
+\cleardoublepage
+\newpage
+\fi
+
 % Appendixes 
 
 \chapter*{\centering{Supplementary Materials \\ Chapter \ref{chap:locgraph}}}
@@ -253,13 +301,20 @@ This chapter investigated the utility of multi-assembly graphs that integrated t
 \fancyhead[C]{APPENDICES}
 \include{chapters/supp_chap4}
 
+\thispagestyle{plain}
+
+\section*{\LARGE{Acknowledgements}}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\bigskip
+\emph{To be written}
+
 % cv 
 
 \newif\ifincludecv
 \includecvtrue %comment out to remove cv
 \ifincludecv
     \newpage
-    \includepdf[noautoscale]{frontback/cv.pdf}
+    \includepdf[noautoscale,pages=-]{frontback/cv.pdf}
 \fi
 
 

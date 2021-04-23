@@ -454,7 +454,7 @@ To investigate if the order of assemblies used to establish the multi-assembly g
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.7\textwidth]{paper3/supplement/sp415.pdf}
+    \includegraphics[width=0.5\textwidth]{paper3/supplement/sp415.pdf}
     \caption*{\textbf{\hypertarget{Figure SN41}{Figure SN41}: Profile of the multi-assembly graph with an increasing number of genomes integrated into the graph.} \\
     \footnotesize{We varied the order and number of genomes added to the graphs, and calculated the number of bases in the pangenome, number of bases that are shared across all assemblies in the graph (core genome), and the number of bases that are variable across assemblies (i.e., not found in all assemblies, flexible genome). Points and lines indicate individual and average values.}}
 \end{figure}
@@ -470,7 +470,7 @@ Next, we investigated the profile of a multi-assembly graph that gradually incre
     \footnotesize{The X-axis indicates the constructed graphs (- denotes the taurine assembly that was removed from the taurine-only graph, taurine denotes a graph with four taurine assemblies, the indicine graph contains all taurine assemblies and the assembly of Brahman, and all reflects a multi-assembly graph that contains all six assemblies (taurine, indicine, and yak). The core part is the size of the segments that are common to all assemblies, flexible\_shared indicates the size of segments shared by at least two but not all assemblies, and private denotes the size of segments found only in a single assembly, thus flexible genome is composed of flexible\_shared + private segment.}}
 \end{figure}
 
-\newpage
+\clearpage
 
 \subsection{}
 \label{sup_not:s43}
@@ -724,33 +724,39 @@ Step by step (manual) instruction to construct a multi-assembly graph from a col
 \bigskip 
 
 1. Estimate pairwise genetic distance between the assemblies. \\
+    \vspace{3mm}
     \begin{figure}[!htb]
         \centering
         \includegraphics[width=\textwidth]{paper3/supplement/sp421.png}
     \end{figure}
 2. Graph construction \\ Assemblies are added to the graph based on their genetic distance to the backbone assembly. Less distant assemblies are added before the more distant ones. \\
+    \vspace{3mm}
     \begin{figure}[!htb]
         \centering
         \includegraphics[width=\textwidth]{paper3/supplement/sp422.png}
     \end{figure}
 3. Re-align each assembly to the multi-assembly graph \\ Separately realign each assembly to the multi-assembly graph to record the coverage for all nodes and edges in the graph. \\ 
+    \vspace{3mm}
     \begin{figure}[!htb]
         \centering
         \includegraphics[width=\textwidth]{paper3/supplement/sp423.png}
     \end{figure}
     \newpage
 4. Combine node and edge coverage across assemblies. \\
+    \vspace{3mm}
     \begin{figure}[!htb]
         \centering
         \includegraphics[width=\textwidth]{paper3/supplement/sp424.png}
     \end{figure}
 5. Use coverage data to label the nodes in the graph. \\
+    \vspace{3mm}
     \begin{figure}[!htb]
         \centering
         \includegraphics[width=\textwidth]{paper3/supplement/sp425.png}
     \end{figure}
 
 6. Analyze the properties of the multi-assembly graph based on the node and edge labels. \\
+    \vspace{3mm}
     \begin{figure}[!htb]
         \centering
         \includegraphics[width=\textwidth]{paper3/supplement/sp426.png}
@@ -762,12 +768,14 @@ Step by step (manual) instruction to construct a multi-assembly graph from a col
 
 \bigskip
 1. Identify bubbles in the graph \\ Bubbles are regions that diverged between assemblies which have a common start and stop node derived from reference sequences. \\
+\vspace{3mm}
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp429.png}
 \end{figure}
 
 2. Identify the precise location of the structural variations from the multi-assembly graph \\ Paths in the bubble represent alleles of the structural variations. This step will enumerate all possible paths based on the start and stop node of the bubbles, done separately for biallelic (2 paths/alleles) and multi-allelic ($>=$3 alleles) bubbles. Finally, it labels structural variations according to the origin of the assemblies. \\ 
+\vspace{3mm}
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp430.png}
@@ -776,12 +784,14 @@ Step by step (manual) instruction to construct a multi-assembly graph from a col
 \newpage
 
 3. Annotate the breakpoints detected in from the multi-assembly graph \\ Annotate the breakpoint of the structural variations using start and stop node coordinate for left and right breakpoints, respectively on the reference backbone coordinate. This step requires an annotation file from the backbone assembly. \\ 
+\vspace{3mm}
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp431.png}
 \end{figure}
 
 4. Extract structural variation alleles in the bubbles \\ Extract non-ref alleles (excluding paths less than 100 bp, complete deletions, or paths without non-ref sequences) as a representative non-reference sequences of the pangenome. Sequences in nodes are not used directly, because multiple consecutive nodes might be part of the same allele, and they are representing a continuous sequences. \\ 
+\vspace{3mm}
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp432.png}
