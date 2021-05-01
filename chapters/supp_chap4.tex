@@ -274,7 +274,7 @@
     \begin{table}
         \centering
         \caption[Mapping comparison between linear genome and the pangenome]{\textbf{Comparison of read mapping accuracy between the extended and ARS-UCD1.2 reference.} \\
-        \footnotesize{All metrics were extracted from BAM files using pysam v0.16.0.1 (1). Alignment identity reflects the proportion of bases from an aligned read that match the reference sequence. A read was considered to be clipped if the CIGAR string of the alignment contains tags for either hard- (H) or soft-clipped (S) bases. Supplementary alignments were reported for alignments with an XS tag. Criteria for perfect and unique alignments were based on those reported by Crysnanto and Pausch. Specifically, reads were considered to align perfectly if the edit distance was zero along the entire read (NM:0 tag), and when the CIGAR did not include H or S tags. Unique alignments are reported for reads that either have a single primary alignment or reads that have a secondary alignment (XA tag) but one alignment has a maximum mapping quality score of 60. Reported values are averaged over n=45 samples. Paired one-sided t-tests were conducted with n-1 degrees of freedom. Parameters marked with ‘*’ indicate the null-hypothesis that ARS-UCD1.2 would perform better than the extended reference, while those without marks indicate the reverse. All tests rejected the null hypothesis.
+        \footnotesize{All metrics were extracted from BAM files using pysam v0.16.0.1 \url{https://github.com/pysam-developers/pysam}. Alignment identity reflects the proportion of bases from an aligned read that match the reference sequence. A read was considered to be clipped if the CIGAR string of the alignment contains tags for either hard- (H) or soft-clipped (S) bases. Supplementary alignments were reported for alignments with an XS tag. Criteria for perfect and unique alignments were based on those reported by \citet{crysnanto2020bovine}. Specifically, reads were considered to align perfectly if the edit distance was zero along the entire read (NM:0 tag), and when the CIGAR did not include H or S tags. Unique alignments are reported for reads that either have a single primary alignment or reads that have a secondary alignment (XA tag) but one alignment has a maximum mapping quality score of 60. Reported values are averaged over n=45 samples. Paired one-sided t-tests were conducted with n-1 degrees of freedom. Parameters marked with ‘*’ indicate the null-hypothesis that ARS-UCD1.2 would perform better than the extended reference, while those without marks indicate the reverse. All tests rejected the null hypothesis.
         }}
         \bigskip
         \bigskip
@@ -391,7 +391,7 @@ The contigs were validated for contiguity, completeness, and correctness by mult
 
 \normalsize
 
-Completeness of the assembly was determined through two independent approaches, BUSCO (8) and the asmgene command of paftools. The former relies on the OrthoDB datasets, specifically version 10 of the cetartiodactyla lineage. The latter uses cDNA libraries of annotated gene sequences from the ARS-UCD1.2 reference available from Ensembl. Both methods report a high completeness ($>$96\%) with respect to predicted gene content, as shown in \hyperlink{Table SN42}{Table SN42}.
+Completeness of the assembly was determined through two independent approaches, BUSCO (8) and the asmgene command of paftools. The former relies on the OrthoDB datasets, specifically version 10 of the cetartiodactyla lineage. The latter uses cDNA libraries of annotated gene sequences from the ARS-UCD1.2 reference available from Ensembl. Both methods report a high completeness (>96\%) with respect to predicted gene content, as shown in \hyperlink{Table SN42}{Table SN42}.
 
 \newpage
 
@@ -434,11 +434,8 @@ Correctness was likewise determined by two k-mer based approaches, yak [r58] \ci
 \end{center}
 
 \normalsize
-\bigskip
 
 Furthermore, the assembly was validated by comparing structural variants called by pbsv [2.4.0] between the reads and the ARS-UCD1.2 reference and those called by mumandco [v2.4.2] \citep{o2020mum} between the assembly and the reference. There was good concordance between these approaches, for example an 8kb inversion identified in chromosome six of the assembly matched an 8kb inversion predicted by the read mapping.
-
-\bigskip
 
 The repeat content of the assembly was also in line with expectations, with approximately 48\% of the assembly consisting of repeat elements or low complexity regions according to RepeatMasker version 4.1.1 \citep{Smit2015} using the Repbase repeat database (release 20181026) \citep{bao2015repbase}. Several bovine-specific repeats were identified, along with telomeric or centromeric sequences not present in the existing ARS-UCD1.2 reference, indicating that several contigs are approaching chromosomal-scale and completeness.
 
@@ -662,7 +659,7 @@ We tested 13,085 genes that were expressed $>=$ 1 CPM in at least eight samples 
 \bigskip
 
 
-We found that genes relevant for the immune response were among the top differentially expressed genes with the greatest mean log-fold change (e.g., DEFB10 -8.24-fold, CXCL10 -3.30-fold, IL12B -3.11-fold, CXCL5 7.11-fold, CTLA4 4.25-fold, and CXCL8 5.70-fold), matching observations on an older reference genome annotation by McLoughlin \emph{et al.} \hyperlink{Table SN48}{Table SN48}. Multidimensional scaling (MDS) representations of transcript abundance estimates from either all 13,085 genes (\hyperlink{Figure SN45}{Figure SN45}b) or 3646 differentially expressed genes (\hyperlink{Figure SN45}{Figure SN45}a) separated Mycobacterium bovis-infected from healthy cattle. We discovered more differentially expressed genes of the Ensembl ARS-UCD1.2 genome annotation than McLoughlin \emph{et al.} (3610 vs. 3250), likely due to a vastly improved genome assembly (27,115 vs. 24,616 genes are included in build 101 (ARS-UCD1.2) and build 73 (UMD3.1), respectively). Using data from the supplement provided by McLoughlin \emph{et. al}, we were able to compare the expression levels of 2678 (out of 3250) differentially expressed genes between different genome builds (UMD31, standard and extended ARS-UCD1.2) and annotations (\hyperlink{Figure SN46}{Figure SN46}). Six genes with the greatest fold-change increase in expression reported by McLoughlin \emph{et al.} had a very similar expression pattern from all assemblies considered.
+We found that genes relevant for the immune response were among the top differentially expressed genes with the greatest mean log-fold change (e.g., DEFB10 -8.24-fold, CXCL10 -3.30-fold, IL12B -3.11-fold, CXCL5 7.11-fold, CTLA4 4.25-fold, and CXCL8 5.70-fold), matching observations on an older reference genome annotation by \citet{mcloughlin2014rna} \hyperlink{Table SN48}{Table SN48}. Multidimensional scaling (MDS) representations of transcript abundance estimates from either all 13,085 genes (\hyperlink{Figure SN45}{Figure SN45}b) or 3646 differentially expressed genes (\hyperlink{Figure SN45}{Figure SN45}a) separated Mycobacterium bovis-infected from healthy cattle. We discovered more differentially expressed genes of the Ensembl ARS-UCD1.2 genome annotation than \citet{mcloughlin2014rna} (3610 vs. 3250), likely due to a vastly improved genome assembly (27,115 vs. 24,616 genes are included in build 101 (ARS-UCD1.2) and build 73 (UMD3.1), respectively). Using data from the supplement provided by \citet{mcloughlin2014rna}, we were able to compare the expression levels of 2678 (out of 3250) differentially expressed genes between different genome builds (UMD31, standard and extended ARS-UCD1.2) and annotations (\hyperlink{Figure SN46}{Figure SN46}). Six genes with the greatest fold-change increase in expression reported by \citep{mcloughlin2014rna} had a very similar expression pattern from all assemblies considered.
 
 
 \bigskip 
@@ -693,7 +690,7 @@ We found that genes relevant for the immune response were among the top differen
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp418.pdf}
-    \caption*{\textbf{\hypertarget{Figure SN44}{Figure SN44}: Smear plot from the differential expression analysis.} Grey, green, and purple color indicates genes with no expression difference, significant up-regulation, and down-regulation in peripheral blood leukocytes of \emph{ Mycobacterium bovis}-infected cattle. Diamonds indicate 272 putatively novel genes assembled from RNA sequencing reads mapping to non-reference sequences. Six genes reported by (McLoughlin \emph{ et al.} 2014) are indicated with the text labels.}
+    \caption*{\textbf{\hypertarget{Figure SN44}{Figure SN44}: Smear plot from the differential expression analysis.} Grey, green, and purple color indicates genes with no expression difference, significant up-regulation, and down-regulation in peripheral blood leukocytes of \emph{ Mycobacterium bovis}-infected cattle. Diamonds indicate 272 putatively novel genes assembled from RNA sequencing reads mapping to non-reference sequences. Six genes reported by \citet{mcloughlin2014rna} are indicated with the text labels.}
 \end{figure}
 
 \bigskip
@@ -797,6 +794,7 @@ Step by step (manual) instruction to construct a multi-assembly graph from a col
     \includegraphics[width=\textwidth]{paper3/supplement/sp432.png}
 \end{figure}
 
+\newpage
 
 \singlespacing
 \footnotesize

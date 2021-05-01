@@ -55,6 +55,9 @@
 \usepackage[numbers,square,comma]{natbib}
 %\bibliographystyle{abbrvnat}
 \usepackage{chapterbib}
+% \setlength{\bibsep}{0pt}
+%reference as a section instead of a chapter
+\renewcommand{\bibsection}{\section*{\bibname}}
 
 
 
@@ -66,6 +69,9 @@
 \usepackage{longtable}
 %for cv
 \usepackage{pdfpages}
+% break long url
+\usepackage{xurl}
+\urlstyle{same}
 
 % no space between list of item
 \usepackage[shortlabels]{enumitem}
@@ -83,10 +89,8 @@
 
 % reduce size of the section
 \usepackage{titlesec}
+\titlespacing\subsection{0pt}{0pt}{-1em}
 
-
-
-\urlstyle{tt}
 \hypersetup{
     colorlinks,
     linkcolor={red!70!black},

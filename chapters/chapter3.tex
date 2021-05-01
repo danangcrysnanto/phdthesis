@@ -247,7 +247,7 @@ We constructed the first variation-aware reference graph for \emph{Bos taurus} t
 
 \section{Methods}
 
-\subsubsection*{Whole-genome sequencing data}
+\subsection*{Whole-genome sequencing data}
 
 We used short paired-end sequencing reads of 288 cattle from dairy (n $=$ 82 Brown Swiss (BSW), n $=$ 49 Holstein (HOL)) and dual-purpose (n $=$ 49 Fleckvieh (FV), n $=$ 108 Original Braunvieh (OBV)) breeds to detect variants that segregate in these populations. The average sequencing depth of the 288 cattle was 12.71-fold, and it ranged from 3.49 to 70.04. Most of the sequencing data were generated previously \citep{daetwyler2014whole,crysnanto2019accurate,jansen2013assessment,baes2014evaluation,hofstetter2019non}. Accession numbers for all animals are available in Table \ref{sup_tab:s34}.
 
@@ -292,7 +292,7 @@ We modified alleles of the ARS-UCD1.2 linear reference sequence using the vcf2di
 
 Ten million BSW reads were simulated (see above) and mapped to the original and modified linear reference sequences, as well as the corresponding variation aware reference structures using either \emph{BWA mem} or \emph{vg map} (see above) with default parameter settings. Since the replacement of reference alleles with Indels causes a shift in the reference coordinate system, we converted the coordinates of simulated reads between the original and modified reference using a local instance of the \emph{UCSC liftOver} tool \citep{haeussler2019ucsc} that was guided using a chain file produced by \emph{vcf2diploid}. In order to prevent possible errors arising from coordinate shifts when reference nucleotides are either deleted or inserted at Indels, we repeated the analysis when only the alleles at SNPs were replaced.
 
-\subsubsection*{Assessment of the read mapping accuracy}
+\subsection*{Assessment of the read mapping accuracy}
 
 We used \emph{vg stats} to obtain the number of nodes and edges, biologically plausible paths and length for each variation-aware reference graph. To assess the accuracy of graph-based alignment, we converted the Graph Alignment Map (GAM)-files to JavaScript Object Notation (JSON)-files using \emph{vg view}. Subsequently, we applied the command-line JSON processor jq (\url{https://stedolan.github.io/jq/}) to extract mapping information for each read. Mapping information from linear alignments were extracted from the Binary Alignment Map (BAM)-files using the Python module \emph{pysam} (version 0.15.3) (\url{https://github.com/pysam-developers/pysam}).
 
@@ -323,11 +323,11 @@ Reference allele bias was assessed at the heterozygous genotypes that had been d
 
 \subsection*{Availability of data and materials}
 
-The scripts and data used in this study are available via \emph{GitHub} repository (\url{https://github.com/danangcrysnanto/bovine-graphs-mapping}) and archived in Zenodo (data: \url{https://doi.org/10.5281/zenodo.3759712} \citep{Crysnanto2020data} and scripts: \url{https://doi.org/10.5281/zenodo.3763286} \citep{Crysnanto2020script}). Raw sequencing read data of 298 cattle used for graph construction, evaluation of variant genotyping accuracy, and assessment of reference allele bias are available at the European Nucleotide Archive (ENA) (\url{http://www.ebi.ac.uk/ena}) with study accession of PRJNA238491 \citep{daetwyler2014whole}, PRJEB28191 \citep{crysnanto2019accurate}, and PRJEB18113 \citep{hofstetter2019non}. Detailed accession numbers for each sample are provided in Table \ref{sup_tab:s34}.
+The scripts and data used in this study are available via \emph{GitHub} repository (\url{https://github.com/danangcrysnanto/bovine-graphs-mapping}) and archived in Zenodo (data: \url{https://doi.org/10.5281/zenodo.3759712} \citep{Crysnanto2020data} and scripts: \url{https://doi.org/10.5281/zenodo.3763286} \citep{Crysnanto2020script}). Raw sequencing read data of 298 cattle used for graph construction, evaluation of variant genotyping accuracy, and assessment of reference allele bias are available at the European Nucleotide Archive (ENA) (\url{http://www.ebi.ac.uk/ena}) with study accession of PRJNA238491 \citep{daetwyler2014whole}, PRJEB28191 \citep{crysnanto2019accurate}, and PRJEB18113 \citep{hofstetter2019non}. Detailed accession numbers for each sample are provided in Table \ref{sup_tab:s34}. \\
 
 \vspace{-2em}
-\let\Origclearpage\clearpage
-\let\clearpage\relax
+% \let\Origclearpage\clearpage
+% \let\clearpage\relax
 
 
 \singlespacing
@@ -338,7 +338,7 @@ The scripts and data used in this study are available via \emph{GitHub} reposito
 \bibliography{references/chapter3_ref}
 %\printbibliography[title=References]
 
-\let\clearpage\Origclearpage
+% \let\clearpage\Origclearpage
 
 \ifdefined\BuildingFromMainFile
 \else

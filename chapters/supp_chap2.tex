@@ -63,7 +63,7 @@ complement directly from the source, please follow the instructions below:
     \end{figure}
 
     \item Change directory into \emph{graphtyper} and modify the chromosomal specifications in the files
-    include $graphtyper/graph/absolute_position.hpp$ and $src/typer/vcf.cpp$ using UMD 3.1 cattle
+    include $graphtyper/graph/absolute\_position.hpp$ and $src/typer/vcf.cpp$ using UMD 3.1 cattle
     chromosomal names and lengths. The first modification enables all cattle chromosomes
     (esp. for chromosome number $>$ 23) as the current software release set the maximum
     allowed length for each chromosomes according to the human GRChb37 and GRCh38. The
@@ -147,10 +147,8 @@ Asterisks denote significant differences with the best value (italic) for a resp
 \bigskip
 \bigskip
 
-
-    
     \centering
-    \emph{Coverage less than 12}
+    \emph{Coverage less than 12} \\
     \begin{footnotesize}
     \arrayrulecolor{black}
     \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|} 
@@ -262,7 +260,7 @@ used a generic baseline hard-filtering threshold for each variant annotation (se
 
 
 To facilitate running the VQSR module in sheep and goat, i.e., species where sets of
-truth/training variants are not (publicly) available, \citep{alberto2018convergent} used an
+truth/training variants are not (publicly) available, \citet{alberto2018convergent} used an
 intersection of high confidence variants that had been discovered from multiple variant
 callers as truth/training sets, i.e., they derived truth/training sets directly from the analyzed
 data. We implemented their approach to apply \emph{GATK} VQSR to our variant dataset. Training
@@ -276,16 +274,16 @@ variants in the 99.9\% tranche sensitivity threshold (best practice).
 \bigskip
 
 Variant filtration using \emph{GATK} VQSR removed more variants from the raw data than \emph{GATK}
-hard filtering (Table 1). However, VQSR retained more HD SNPs than \emph{GATK} hard filtering,
+hard filtering (\hyperlink{Table SN21}{Table SN21}). However, VQSR retained more HD SNPs than \emph{GATK} hard filtering,
 possibly reflecting bias that results from the use of HD SNPs as training/truth sets. The
 values of the concordance statistics (genotype concordance, non-reference sensitivity, nonreference discrepancy) were almost identical between \emph{GATK} VQSR and \emph{GATK} hard
-filtration (Table 2) indicating that the choice of either filtration option does not notably affect
+filtration (\hyperlink{Table SN22}{Table SN22}) indicating that the choice of either filtration option does not notably affect
 the concordance between sequence-derived and BovineHD SNP array-derived genotypes.
-These findings are in line with \citep{vander2018best} who showed that the concordance
+These findings are in line with \citet{vander2018best} who showed that the concordance
 between microarray-called and sequence-derived genotypes is almost identical using either
 \emph{GATK} VQSR or the \emph{GATK} 1000 bull genomes project hard filters, even though they used
 stringently filtered truth/training sets based on a more comprehensive catalogue of variants
-than in our study. Interestingly, in agreement with \citep{vander2018best}, the proportion
+than in our study. Interestingly, in agreement with \citet{vander2018best}, the proportion
 of opposing homozygous genotypes in sire/son-pairs (which does not suffer from
 ascertainment bias because it is calculated using sequence-derived SNPs) is less using
 \emph{GATK} hard filter than \emph{GATK} VQSR.
@@ -293,22 +291,22 @@ ascertainment bias because it is calculated using sequence-derived SNPs) is less
 \bigskip
 
 The performance of \emph{GATK} VQSR may be assessed using the novel variant sensitivity
-tranche plot (Figure 1). In the lowest 90\% tranches (highest specificity) the filtering model
+tranche plot (\hyperlink{Figure SN21}{Figure SN21}). In the lowest 90\% tranches (highest specificity) the filtering model
 still retained many false positive variants (orange box and low Ti/Tv ratio). However, when
 the 99.9\% tranche sensitivity is used as filtration criterion as recommended by the \emph{GATK}
 best practice guidelines, a high proportion of true positive variants is removed from the
 data. 
 
 Overall, our findings suggest that
-
+\vspace{-2em}
 \begin{enumerate}[(i)]
     \item \emph{GATK} VQSR removes more variants from the data than \emph{GATK} hard filtering,
     \item \emph{GATK} VQSR does not notably improve the concordance between sequence derived and microarray-called genotypes compared to \emph{GATK} hard filtering,
     \item the proportion of opposing homozygous genotypes in sire/son-pairs is higher using \emph{GATK} VQSR than \emph{GATK} hard filtering, and
-    \item improving VQSR may be possible by providing more sophisticated truth/training variant datasets produced by orthogonal sequencing technology other than the ones used for training, e.g. \citep{li2018synthetic}
+    \item improving VQSR may be possible by providing more sophisticated truth/training variant datasets produced by orthogonal sequencing technology other than the ones used for training, e.g. \citet{li2018synthetic}
 \end{enumerate}
 
-\textbf{Table 1} Comparison of variants statistics between unfiltered and filtered datasets using
+\textbf{\hypertarget{Table SN21}{Table SN21}} Comparison of variants statistics between unfiltered and filtered datasets using
 either hard-filtering or VQSR.
 
 
@@ -336,7 +334,7 @@ either hard-filtering or VQSR.
 
 \bigskip
 
-\textbf{Table 2} The concordance statistics between hard-filtered and VQSR 
+\textbf{\hypertarget{Table SN22}{Table SN22}} The concordance statistics between hard-filtered and VQSR 
 
 \bigskip
 
@@ -355,7 +353,7 @@ either hard-filtering or VQSR.
 
 \newpage
 
-\textbf{Figure 1} Tranche sensitivity plot of novel variants as reported by the VQSR model fitting
+\textbf{\hypertarget{Figure SN21}{Figure SN21}} Tranche sensitivity plot of novel variants as reported by the VQSR model fitting
 
 \begin{figure}[!htb]
     \centering
