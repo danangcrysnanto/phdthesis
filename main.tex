@@ -117,24 +117,33 @@
 
 \pagenumbering{roman}
 
-
+\newpage
 
 \setcounter{tocdepth}{1}
 \hypersetup{linkcolor=black}
-\tableofcontents
+
+% do not count the title page
+% \setcounter{page}{1}
+
+\phantomsection
 \addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+
 \newpage
 
-\listoffigures 
+\phantomsection
 \addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures 
 \newpage
 
-\listoftables 
+\phantomsection
 \addcontentsline{toc}{chapter}{List of Tables}
+\listoftables 
 \newpage
 
-\section*{\centering{\LARGE{Summary}}}
+\phantomsection
 \addcontentsline{toc}{chapter}{Summary}
+\section*{\centering{\LARGE{Summary}}}
 \thispagestyle{plain}
 
 \hypersetup{linkcolor={red!70!black}}
@@ -156,15 +165,17 @@ Overall, thesis presents a novel analysis paradigm in livestock genomics by leve
 \newpage
 
 \thispagestyle{plain}
-\section*{\centering{\LARGE{Zusammenfassung}}}
+\phantomsection
 \addcontentsline{toc}{chapter}{Zusammenfassung}
+\section*{\centering{\LARGE{Zusammenfassung}}}
 
 Deutsch abstract
 
 \newpage
 
-\section*{\LARGE{Thesis Outline}}
+\phantomsection
 \addcontentsline{toc}{chapter}{Thesis Outline}
+\section*{\LARGE{Thesis Outline}}
 \thispagestyle{plain}
 
 The thesis is structured as follow:
@@ -220,7 +231,8 @@ Chapter 5 provides a general discussion, and outlook for future research
 
 \chapter[Feasibility of the bovine genome graphs]{\LARGE{Assessment of variant genotyping using local variation graphs}}
 \label{chap:locgraph}
-\subsection*{Preface: Bridging text between Chapter 1 and Chapter 2}
+% \subsection*{Preface: Bridging text between Chapter 1 and Chapter 2}
+\subsection*{}
 \onehalfspacing
 \normalsize
 This chapter assessed the feasibility of the genome graphs in cattle genome for variant genotyping; the first graph-based genotyping approach applied in any agricultural animal. The region-specific graphs were constructed using variations discovered from the sequencing cohort implemented using \emph{Graphtyper}. The genotyping pipeline was based on refined sequencing read alignment towards the local graphs. The genotyping analysis showed that graph-based approach using \textit{Graphtyper} is highly accurate, outperforming state-of-the-art methods based on linear reference e.g., \textit{SAMtools} and \emph{GATK}. \\
@@ -255,16 +267,16 @@ This chapter assessed the feasibility of the genome graphs in cattle genome for 
 \chapter[Bovine whole-genome variation graphs]{\LARGE{Analysis of the bovine breed-specific and multi-breed variation graphs}}
 \label{chap:wholegraph}
 
-\subsection*{Preface: Bridging text between Chapter 2 and Chapter 3}
+\subsection*{}
 \normalsize
-This chapter evaluated the variant prioritization to the breed-specific and multi-breed genome graphs based on the sequence variants of four Europen cattle breeds (Original Braunvieh, Brown Swiss, Fleckviech, Holstein). Further, the first cattle whole-genome graph was constructed using the \emph{vg toolkit}; the first assessment of a gigabase genome-graph in any livestock species. Applications of this whole-genome graph facilitated accurate read mapping and unbiased sequence variant genotyping. \\
+This chapter first evaluated the variant prioritization to the breed-specific and multi-breed genome graphs based on the sequence variants of four Europen cattle breeds (Original Braunvieh, Brown Swiss, Fleckviech, Holstein). Further, the first cattle whole-genome graph was constructed using the \emph{vg toolkit}; the first assessment of a gigabase genome-graph in any livestock species. Applications of this whole-genome graph facilitated accurate read mapping and unbiased sequence variant genotyping. \\
 
 
 \bigskip
 
 \begin{center}\fbox{\begin{minipage}{35em}
 
-% \emph{Contribution}: Hubert Pausch and I conceived the study, I wrote the whole-genome graph pipelines and Hubert Pausch and I performed analyses. Hubert Pausch and I wrote the manuscript. 
+
 
 \emph{Contribution}: I participated in conceiving the study, analysing the results and writing the manuscript. I wrote the whole-genome graph pipelines. 
 
@@ -286,8 +298,7 @@ This chapter evaluated the variant prioritization to the breed-specific and mult
 \chapter[Bovine multi-assembly graphs]{\LARGE{Analysis of the bovine multi-assembly graphs}}
 \label{chap:multigraph}
 
-\subsection*{Preface: Bridging text between Chapter 3 and Chapter 4}
-
+\subsection*{}
 \normalsize
 This chapter investigated the utility of multi-assembly graphs that integrated the collection of genome assemblies into a unified representation. The first bovine multi-assembly graph was constructed that unified six cattle assemblies, including its close relatives of Brahman and Yak using the \emph{minigraph} software. The application of the multi-assembly graph identified the 70 Mb sequences not included in the existing \emph{Bos taurus} reference genome. Further analysis showed that these non-reference sequences contain abundant functionally relevant sequences. \\
 
@@ -295,7 +306,6 @@ This chapter investigated the utility of multi-assembly graphs that integrated t
 
 \begin{center}\fbox{\begin{minipage}{35em}
 
-% \emph{Contribution}: Hubert Pausch and I conceived the study. Zih-Hua Fang coordinated the sampling and long-read sequencing. Alexander Leonard assembled the Original Braunvieh genome. Hubert Pausch, Alexander Leonard, and I performed the analyses and wrote the manuscript. 
 
 \emph{Contribution}: I participated in conceiving the study, analysing the results and writing the manuscript. I wrote the multi-assembly graph pipelines. 
 
@@ -310,14 +320,15 @@ This chapter investigated the utility of multi-assembly graphs that integrated t
 \newpage
 \fi
 
+
 \chapter[General Discussions]{\LARGE{General Discussions}}
 \label{chap:discuss}
 
 \include{chapters/discuss}
 
-\bigskip
 
 \newpage
+
 \iftwoside
 \cleardoublepage
 \fi

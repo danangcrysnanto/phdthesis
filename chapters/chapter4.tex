@@ -228,7 +228,7 @@ Our extended reference genome also leads to substantial improvements over ARS-UC
 The size of the bovine multi-assembly graph will grow as additional reference-quality assemblies from the Bovinae subfamily become available. Assemblies which are more distant will contribute correspondingly to the overall pangenome growth, increasing the flexible part of graph, and reducing the size of the core genome (\emph{SI Appendix}, \ref{sup_not:s42}). In its current implementation, our multi-assembly graph only contains insertions and deletions, as other types of structural variations (e.g., translocations, inversions) that distort the collinearity of the assembly graph cannot be integrated accurately with minigraph. We provide a versatile workflow that facilitates constructing and characterizing multi-assembly graphs for a flexible number of assemblies (\url{https://github.com/AnimalGenomicsETH/bovine-graphs}, \emph{SI Appendix}, \ref{sup_not:s45}). Our workflow provides tools to determine the origin of non-reference bases, derive structural variations from multi-assembly graphs, predict putatively novel genes and append the novel sequences linearly to a reference genome. We anticipate that the latter will become obsolete as soon as accurate and fast base-level alignment and split-read graph mapping enables the full-suite of genome analyses from a reference graph \citep{siren2020genotyping}.
 
 \section{Methods}
-
+\vspace{-1em}
 \subsection*{Construction of the multi-assembly graph}
 
 We used minigraph \citep{li2020design} (version 0.12-r389) with option \emph{-xggs} to integrate six reference-quality genome assemblies into a multi-assembly graph. The current bovine reference genome (Bos taurus taurus, ARS$-$UCD1.2, GCF\_002263795.1) and four assemblies that were generated previously are accessible at NCBI: Angus (\emph{Bos taurus taurus}, UOA\_Angus\_1, GCA\_003369685.2)\citep{low2020haplotype}, Brahman (\emph{Bos taurus indicus}, UOA\_Brahman\_1, GCF \_003369695.1) \citep{low2020haplotype}, Highland \emph{(Bos taurus taurus}, ARS\_UNL\_ Btau-highland\_paterna \_1.0\_alt, \\ GCA\_009493655.1) \citep{rice2020continuous}, yak (\emph{Bos grunniens}, \\ ARS\_UNL\_BGru\_maternal\_1.0\_p, GCA\_009493645.1) \citep{rice2020continuous}. Additionally, we constructed an assembly from a female Original Braunvieh calf (\emph{Bos taurus taurus}) using PacBio high-fidelity (HiFi) reads (\emph{SI Appendix}, \ref{sup_not:s41}). The sampling of blood from the Original Braunvieh animal and its parents was approved by the veterinary office of the Canton of Zurich (animal experimentation permit ZH 200/19).
@@ -319,30 +319,20 @@ Short sequencing reads are available at the European Nucleotide Archive (ENA) (\
 
 \subsection*{Code availability}
 
-Workflows to construct multi-assembly graphs and custom scripts to characterize non-reference sequences are available via Github \\
-(\url{https://github.com/AnimalGenomicsETH/bovine-graphs}). \\
-All workflows were built using Snakemake (version 5.30.1)(72) and custom scripts were written in R (version 3.5.1) \citep{RCoreTeam2017} and Python (version 3.7.1). 
+Workflows to construct multi-assembly graphs and custom scripts to characterize non-reference sequences are available via \emph{Github} (\url{https://github.com/AnimalGenomicsETH/bovine-graphs}). All workflows were built using Snakemake (version 5.30.1)and custom scripts were written in R (version 3.5.1) \citep{RCoreTeam2017} and Python (version 3.7.1). 
 
 \subsection*{Acknowledgements}
 
 We are thankful for the excellent technical support provided by the ETH Zürich functional genomics platform FGCZ (\url{https://fgcz.ch/}). Computing was done at the Leonhard High Performance Compute cluster at ETH Zürich. This study was supported by grants from the Swiss National Science Foundation (310030\_185229) and the Swiss Federal Office for Agriculture (FOAG), Bern.
 
-
+\vspace{-2em}
 
 \singlespacing
 \footnotesize
 
-% uncomment so that references appear on the same page
-% \let\Origclearpage\clearpage
-% \let\clearpage\relax
-
-
-% \bibliographystyle{abbrvnat}
+\renewcommand{\bibname}{References \vspace{-1em}}
 \bibliographystyle{unsrtnat}
 \bibliography{references/chapter4_ref}
-%\printbibliography[title=References]
-
-% \let\clearpage\Origclearpage
 
 \ifdefined\BuildingFromMainFile
 \else

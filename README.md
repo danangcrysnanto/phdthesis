@@ -2,7 +2,7 @@
 
 *In progress*
 
-Source codes of my doctoral dissertation thesis in `Latex`. 
+Source codes of my doctoral thesis in `Latex`. 
 
 This repository might be beneficial as template that comply with ETH Zurich's [thesis formatting requirement](https://ethz.ch/students/en/doctorate/doctoral-thesis-examination.html). Please adapt accordingly.
 
