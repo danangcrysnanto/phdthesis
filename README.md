@@ -4,10 +4,10 @@
 
 Source codes of my doctoral thesis in `Latex`. 
 
-This repository might be beneficial as template that comply with ETH Zurich's [thesis formatting requirement](https://ethz.ch/students/en/doctorate/doctoral-thesis-examination.html). Please adapt accordingly.
+This repository might be beneficial as a template that complies with ETH Zurich's [thesis formatting requirement](https://ethz.ch/students/en/doctorate/doctoral-thesis-examination.html). Please adapt accordingly.
 
 
-I used [Latex workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) in visual studio code with automatic build run of `pdflatex` (default command).  My latex distribution is `MacTex` on MacOS. 
+I used the [Latex workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) in visual studio code with an automatic build run of `pdflatex` (default command).  My latex distribution is `MacTex` on MacOS. 
 
 
 To build this project please invoke command below.
