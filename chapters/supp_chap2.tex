@@ -116,22 +116,40 @@ The metrics were calculated using the sum of the red cells as numerator and the 
 \textbf{\large{Concordance statistics}}
 
 
-The concordance of heterozygous and alternate homozygous genotypes in 49 Original Braunvieh cattle (\textbf{a}) and the concordance at the different sequencing depth for the (\textbf{b}) raw and (\textbf{c}) imputed datasets.
+The concordance of heterozygous and alternate homozygous genotypes in 49 Original Braunvieh cattle (\textbf{a}) and the concordance at the different sequencing depth for the (\textbf{b}) raw and (\textbf{c}) imputed datasets. \\
 
 \bigskip
 \bigskip
 \bigskip
 
     
-    \begin{figure}[!htb]
-        \centering
-        \includegraphics[width=1.4\textwidth]{paper1/supplement/sp31.png}
-    \end{figure} 
+    \centering
+    \begin{tabular}{|l|r|r|r|r|r|r|r|r|} 
+    \cline{2-9}
+    \multicolumn{1}{l|}{} & \multicolumn{4}{c|}{Heterozygous concordance}                                                              & \multicolumn{4}{c|}{Homozygous concordance}                                                                \\ 
+    \cline{2-9}
+    \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{raw} & \multicolumn{1}{c|}{imp} & \multicolumn{1}{c|}{raw~} & \multicolumn{1}{c|}{imp} & \multicolumn{1}{c|}{raw} & \multicolumn{1}{c|}{imp} & \multicolumn{1}{c|}{raw} & \multicolumn{1}{c|}{imp}  \\ 
+    \hline
+    \textit{GATK}         & 89.17                    & 99.11                    & 89.24                     & 99.21                    & \textit{98.74}           & 99.18                    & \textit{98.75}           & 99.27                     \\ 
+    \hline
+    \emph{Graphtyper}            & \textit{95.79}           & \textit{99.36}           & \textit{95.82}            & \textit{99.44}           & 98.55                    & \textit{99.51}           & 98.59                    & \textit{99.57}            \\ 
+    \hline
+    \textit{SAMtools}     & 95.73                    & 98.91                    & 95.77                     & 98.99                    & 98.46                    & 99.37                    & 98.49                    & 99.41                     \\
+    \hline
+    \end{tabular}
+    
+    
+    % \begin{figure}[!htb]
+    %     \centering
+    %     \includegraphics[width=1.4\textwidth]{paper1/supplement/sp31.png}
+    % \end{figure} 
 
     \begin{figure}[!htb]
         \centering
-        \includegraphics[width=1.5\textwidth]{paper1/supplement/sp32.png}
-        \includegraphics[width=1.5\textwidth]{paper1/supplement/sp33.png}
+        % \includegraphics[width=1.5\textwidth]{paper1/supplement/sp32.png}
+        \includegraphics[width=1.5\textwidth]{paper1/supplement/sp3b.pdf}
+        % \includegraphics[width=1.5\textwidth]{paper1/supplement/sp33.png}
+        \includegraphics[width=1.5\textwidth]{paper1/supplement/sp3c.pdf}
     \end{figure}
 
 \newpage
