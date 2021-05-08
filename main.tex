@@ -260,30 +260,38 @@ Chapter 5 provides a general discussion, and outlook for future research
 
 % paper 1 as chapter 2
 
-\chapter[Feasibility of the bovine genome graphs]{\LARGE{Assessment of variant genotyping using local variation graphs}}
+\chapter[Genotyping from variation-aware graphs]{\LARGE{Accurate sequence variant genotyping in cattle using variation-aware genome graphs}}
 \label{chap:locgraph}
-% \subsection*{Preface: Bridging text between Chapter 1 and Chapter 2}
+
 \subsection*{}
 \onehalfspacing
 \normalsize
-This chapter assessed the feasibility of the genome graphs in cattle genome for variant genotyping; the first graph-based genotyping approach applied in any agricultural animal. The region-specific graphs were constructed using variations discovered from the sequencing cohort implemented using \emph{Graphtyper}. The genotyping pipeline was based on refined sequencing read alignment towards the local graphs. The genotyping analysis showed that graph-based approach using \textit{Graphtyper} is highly accurate, outperforming state-of-the-art methods based on linear reference e.g., \textit{SAMtools} and \emph{GATK}. \\
+
+{
+\vspace{2em}
+\setlength\parindent{0pt}
+\large
+
+\textbf{Danang Crysnanto}$^{1}$, Christine Wurmser$^{2}$, Hubert Pausch$^{1}$ \\
+
+\vspace{0.5em}
+
+$^1$ Animal Genomics, ETH Zurich, Zurich, Switzerland. \\
+$^2$ Chair of Animal Breeding, TU München, Freising, Germany. \\
+
+\bigskip
+Published in \emph{Genetics Selection Evolution (2019) 51:21.}
 
 \bigskip
 
-% I assessed \emph{Graphtyper} software for variant genotyping in cattle.
-% \emph{Graphtyper} performed two round of genotyping. The first is to discover variants from linear
-% genome. And the second round used the variants discovered in the first round to construct a local genome graph and used it to refine the genotypes. I discovered that \textit{graph genotyping} using \textit{Graphtyper} is highly accurate in cattle and outperform current approaches e.g., \textit{SAMtools, \emph{GATK}} that are based on linear reference. My work is the first to apply \textit{graph genome} for sequence variant genotyping in the livestock genome.  I implemented the graph genotyping pipeline and it is now publicly available at \\  
-% \url{https://github.com/danangcrysnanto/Graph-genotyping-paper-pipelines}. \\ 
-
 \begin{center}\fbox{\begin{minipage}{35em}
 
-% \emph{Contribution}: Hubert Pausch and I conceived the study. Christine Wurmser generated the sequencing data. I wrote the graph genotyping pipelines and Hubert Pausch and I performed the analyses. Hubert Pausch and I wrote the manuscript. 
-
 \emph{Contribution}: I participated in conceiving the study, analysing the results and writing the manuscript. I wrote the graph genotyping pipelines. 
-
+        
 \end{minipage}}\end{center}
 
-% \onehalfspacing
+}
+
 \include{chapters/chapter2}
 
 
@@ -295,30 +303,36 @@ This chapter assessed the feasibility of the genome graphs in cattle genome for 
 
 % paper 2 as chapter 3
 
-\chapter[Bovine whole-genome variation graphs]{\LARGE{Analysis of the bovine breed-specific and multi-breed variation graphs}}
+\chapter[Unbiased variant analysis using genome graphs]{\LARGE{Bovine breed-specific augmented reference graphs facilitate accurate sequence read mapping and unbiased variant discovery}}
 \label{chap:wholegraph}
 
 \subsection*{}
 \normalsize
-This chapter first evaluated the variant prioritization to the breed-specific and multi-breed genome graphs based on the sequence variants from four Europen cattle breeds (Original Braunvieh, Brown Swiss, Fleckviech, Holstein). Further, the first cattle whole-genome graph was constructed using the \emph{vg toolkit}; the first assessment of a gigabase genome-graph in any livestock species. Applications of this whole-genome graph facilitated accurate read mapping and unbiased sequence variant genotyping. \\
 
+{
+\vspace{2em}
+\setlength\parindent{0pt}
+\large
+
+\textbf{Danang Crysnanto}$^{1}$, Hubert Pausch$^{1}$ \\
+
+\vspace{0.5em}
+
+$^1$ Animal Genomics, ETH Zurich, Zurich, Switzerland. \\
+
+\bigskip
+Published in \emph{Genome Biology (2020) 21:184}
 
 \bigskip
 
 \begin{center}\fbox{\begin{minipage}{35em}
 
-
-
 \emph{Contribution}: I participated in conceiving the study, analysing the results and writing the manuscript. I wrote the whole-genome graph pipelines. 
-
-
+        
 \end{minipage}}\end{center}
 
-% In this chapter, I constructed the first cattle whole genome graph and performed the first assessment of the gigabase genome graph on the species other than human. I showed using both real and simulated datasets that the graph facilitate accurate read mapping and unbiased sequence variant genotyping. I developed the graph pipeline further from previous implementation based on \emph{vg toolkit} allowing graph analysis performed in a full genome scale. Additionally, I included catalogues of previously discovered variants to the graph, which showed that \emph{breed-specific} graph perform similarly as the \emph{multi-breed pangenome graph}. \\
+}
 
-% \emph{Contribution}: I and Hubert Pausch conceived the study, I wrote the full genome graph pipelines and performed all analyses. I wrote the initial draft of the manuscript with input from Hubert Pausch. 
-
-% \onehalfspacing
 \include{chapters/chapter3}
 
 \iftwoside
@@ -326,22 +340,36 @@ This chapter first evaluated the variant prioritization to the breed-specific an
 \newpage
 \fi
 
-\chapter[Bovine multi-assembly graphs]{\LARGE{Analysis of the bovine multi-assembly graphs}}
+\chapter[A pangenome established from six assemblies]{\LARGE{Novel functional sequences uncovered through a bovine multi-assembly graph}}
 \label{chap:multigraph}
 
 \subsection*{}
 \normalsize
-This chapter investigated the utility of multi-assembly graphs that integrated the collection of genome assemblies into a unified representation. The first bovine multi-assembly graph was constructed that unified six cattle assemblies, including its close relatives of Brahman and Yak using the \emph{minigraph} software. The application of the multi-assembly graph identified the 70 Mb sequences not included in the existing \emph{Bos taurus} reference genome. Further analysis showed that these non-reference sequences contain abundant functionally relevant sequences. \\
+
+{
+\vspace{2em}
+\setlength\parindent{0pt}
+\large
+
+\textbf{Danang Crysnanto}$^{1}$, Alexander S. Leonard$^{1}$, Zih-Hua Fang$^{1}$, Hubert Pausch$^{1}$ \\
+
+\vspace{0.5em}
+
+$^1$ Animal Genomics, ETH Zurich, Zurich, Switzerland. \\
+
+\bigskip
+Accepted \\
+\emph{Proceedings of the National Academy of Sciences of the United States of America}
 
 \bigskip
 
 \begin{center}\fbox{\begin{minipage}{35em}
 
-
 \emph{Contribution}: I participated in conceiving the study, analysing the results and writing the manuscript. I wrote the multi-assembly graph pipelines. 
-
-
+    
 \end{minipage}}\end{center}
+
+}
 
 \onehalfspacing
 \include{chapters/chapter4}
