@@ -26,11 +26,30 @@
 \usepackage{graphicx}
 
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[C]{\leftmark}
-\fancyfoot{}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[C]{\leftmark}
+% \fancyfoot{}
 % \rfoot{\thepage}
+
+\fancypagestyle{main}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \fancyhead[C]{\leftmark}
+    \fancyfoot[R]{\thepage}
+}
+
+\fancypagestyle{noheadt}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \cfoot{\thepage}
+}
+
+\fancypagestyle{noheadi}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \rfoot{\thepage}
+}
 
 % different left and right numbering 
 
@@ -77,6 +96,7 @@
 \usepackage[shortlabels]{enumitem}
 \setlist[itemize]{noitemsep, topsep=0pt}
 
+
 % add space between paragraph
 % \setlength{\parskip}{\baselineskip}
 
@@ -122,12 +142,13 @@
 \setcounter{tocdepth}{1}
 \hypersetup{linkcolor=black}
 
-% do not count the title page
-% \setcounter{page}{1}
-
 \phantomsection
 \addcontentsline{toc}{chapter}{Table of Contents}
-\tableofcontents
+{
+    \pagestyle{plain}
+    \tableofcontents
+}
+
 
 \newpage
 
@@ -169,7 +190,17 @@ Overall, thesis presents a novel analysis paradigm in livestock genomics by leve
 \addcontentsline{toc}{chapter}{Zusammenfassung}
 \section*{\centering{\LARGE{Zusammenfassung}}}
 
-Deutsch abstract
+Das Assembly der Bos taurus Referenzsequenz war ein Meilenstein für genetische und genomische Forschungsfragen beim Rind. Die Referenzsequenz wurde von einem einzigen Tier der Rasse Hereford erzeugt. Allerdings kann die genetische Diversität der globalen Rinderpopulation nicht durch ein einziges lineares Referenzgenom repräsentiert werden. Dieser Mangel an Diversität ist vor allem problematisch, wenn Sequenzen von genetisch weit entfernten Tieren mit dem Referenzgenom verglichen werden. Pangenome sind interessante neuartige Referenzstrukturen, die das gesamte Spektrum der genetischen Diversität einer Spezies berücksichtigen können. Solche  graph-basierte Referenzstrukturen können mehrere Assemblies sowie deren variable Positionen integrieren. Im Rahmen dieser Dissertation werden erstmals graph-basierte Referenzstrukturen für genetische Analysen in einer Nutztierpopulation verwendet.
+
+Im zweiten Kapitel werden erstmals graph-basierte genomische Analysen beim Rind durchgeführt. Die Genomsequenzen von 49 Original Braunvieh Rindern werden mit einem graph-basierten Ansatz nach polymorphen Positionen durchsucht. Mit der \emph{Graphtyper} software werden diese Positionen genotypisiert. Die so bestimmten Genotypen werden mit Genotypen verglichen, die mit zwei weit verbreiteten Methoden (\emph{SAMtools} und \emph{GATK}) bestimmt wurden, welche strikt auf eine lineare Referenzsequenz angewiesen sind. Im Vergleich mit SNP-Chip basierten Genotypen zeigt sich, dass der graph-basierte Ansatz in \emph{Graphtyper} sowohl \emph{SAMtools} wie auch \emph{GATK} im Hinblick auf die Übereinstimmung, die Sensitivität, die Spezifität und die Genauigkeit der Genotypen überlegen war. Daraus lässt sich schlussfolgern, dass die graph-basierte Genotypisierung von Rindergenomen mit Graphtyper genau, sensitiv und rechnerisch machbar ist.
+
+Im dritten Kapitel werden rassespezifische und rassenübergreifende  graph-basierte Referenzen für vier Europäische Rinderrassen (Original Braunvieh, Brown Swiss, Fleckvieh und Holstein) aufgestellt und verglichen. Das \emph{vg toolkit} wurde verwendet, um die lineare Referenzsequenz mit Variante zu erweitern, die hinsichtlich ihrer Allelfrequenz ausgewählt wurden. Sowohl mit realen wie auch simulierten Sequenzdaten konnte gezeigt werden, dass eine Priorisierung der Varianten für informative graph-basierte Referenzgenome ausschlaggebend ist. So beeinträchtigten viele seltene Varianten den Abgleich der ausgelesenen DNA-Abschnitte mit der Referenz. Zusätzlich zeigt dieses Kapitel, dass rassenübergreifende und rassespezifische Referenzgraphen hinsichtlich des Abgleichs der DNA-Abschnitte eine fast identische Verbesserung gegenüber der linearen Referenzsequenz  aufweisen. Schlussendlich konnte der erste genomweite Referenzgraph für die Rasse Brown Swiss mit rund 14 Millionen Sequenzvarianten konstruiert werden. Dieses Kapitel zeigt dass Referenzgraphen das Zuordnen von ausgelesenen DNA-Abschnitten erleichtern und somit eine unverzerrte Genotypisierung von Sequenzvarianten ermöglichen.
+
+\thispagestyle{plain}
+
+Im vierten Kapitel werden sechs Rindergenome mit dem Programm \emph{minigraph} zu einen Multi-Referenz-Graphen vereinigt. Dieses Pangenom beinhaltet 70 Megabasen, welche im aktuellen \emph{Bos taurus} Referenzgenom (ARS-UCD1.2) nicht vorhanden sind. Durch die Anwendung von komplementären bioinformatischen Ansätzen liefert dieses Kapitel überzeugende Hinweise, dass diese in der Referenz nicht vorhandenen Sequenzen funktionelle und biologisch-relevante Elemente enthalten. Ausserdem enthalten sie tausende bislang  unbekannte Sequenzvarianten, die  sich zwischen  Rinderrassen  unterscheiden. Dieses Kapitel zeigte, dass Multi-Referenzen-Graphen bis anhin nicht berücksichtigte genetische Variation für genetische Untersuchungen zugänglich machen können.
+
+Diese Dissertation präsentiert ein neues Paradigma zur Analyse genomischer Daten mit nicht-linearen Referenzstrukturen. Die verschiedenen Analysen, welche in dieser Arbeit präsentiert werden, sind ein erster Schritt um von linearen zu graphbasierten Referenzgenomen zu wechseln. In dieser Dissertation wurden grundlegende und breit anwendbare Strukturen geschaffen, die es erlauben, mehrere Referenzsequenzen und deren variable Positionen  in eine nicht-lineare Referenzstruktur zu integrieren.
 
 \newpage
 
@@ -204,7 +235,7 @@ Chapter 5 provides a general discussion, and outlook for future research
 
 
 
-
+\pagestyle{main}
 
 \pagenumbering{arabic}
 
@@ -365,7 +396,7 @@ First, I would like to thank Prof. Hubert Pausch for having me as a doctoral stu
 supervising me over the years and providing a great environment for the research. 
 I learned a lot about genomics, programming, problem solving, critical thinking, and scientific writing from your guidances.
 Also, thank you for giving me the freedom to explore research ideas and the trust to organize my time. 
-I really appreciate all opportunities that I was given; including me in the other projects in the lab, introducing me to the international collaborators, providing funding to attend courses, and sending me to many international conferences. 
+I really appreciate all opportunities that I was given: including me in the other projects in the lab, providing funding to attend courses, and sending me to many international conferences. 
 All these have become extremely valuable experiences. \\
 
 I would like to thank to the current and former members of the Animal Genomics Group for being very supportive for my day-to-day as a PhD student. 
@@ -374,7 +405,7 @@ Also to Maya and Meenu who have become helpful peers since starting start my PhD
 I would also like to thank to staff at Agrovet Strickhof that have provided a great research facility. 
 Thank you to Dorota Niedzwiecka for organizing all administrative tasks to ensure my smooth stay in Zurich.  \\
 
-Lastly, I would like to thank my families, especially for my wife who has patiently accompanied me studying abroad.  
+Lastly, I would like to thank my families, especially for my wife who has accompanied me studying abroad.  
 
 \newpage
 
