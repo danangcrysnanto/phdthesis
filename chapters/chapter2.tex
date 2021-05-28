@@ -387,7 +387,7 @@ Whereas \emph{SAMtools} and \emph{GATK} discover variants from a linear referenc
 Our graph-based variant discovery pipeline that is implemented by using the \emph{Graphtyper} software used the existing bovine reference sequence to construct the genome graph. 
 Subsequently, the graph was augmented with variants that were detected from linear alignments of the 49 Original Braunvieh cattle. 
 The use of more sophisticated genome graph-based approaches that have been developed very recently facilitates the mapping of raw sequencing reads directly against a genome graph without the need to first align reads towards a linear reference genome \citep{garrison2018variation}. 
-Whereas genome graph-based variant discovery has been explored recently in mammalian-sized genomes \citep{dilthey2015improved,rakocevic2019fast,garrison2018variation,sibbesen2018accurate}, our work is the first to apply graph-based sequence variant genotyping in cattle.
+Whereas genome graph-based variant discovery has been explored recently in mammalian-sized genomes \citep{Dilthey2015,rakocevic2019fast,garrison2018variation,sibbesen2018accurate}, our work is the first to apply graph-based sequence variant genotyping in cattle.
 
 In order to evaluate graph-based variant discovery in cattle, we compared accuracy and sensitivity of \emph{Graphtyper} to \emph{GATK}, and \emph{SAMtools} , i.e., two state-of-the-art methods on linear reference genomes that have been evaluated thoroughly in many species including cattle \citep{Jansen2013,baes2014evaluation}. 
 We ran each tool with default parameters for variant discovery and applied commonly used or recommended filtration criteria. 
