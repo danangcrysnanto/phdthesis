@@ -125,7 +125,7 @@
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp411.png}
-    \caption[Differential expression of the novel genes]{\textbf{Differential expression of 36 non-reference genes in Mycobacterium bovis-infected cattle.} \\
+    \caption[Differential expression of the novel genes]{\textbf{Differential expression of 36 non-reference genes in \emph{Mycobacterium bovis}-infected cattle.} \\
     \small{Control (C) and \emph{Mycobacterium bovis}-infected (I) cattle are grouped separately for each gene. Y axis indicates the normalized transcript abundance expressed as log$_2$ CPM as reported by EdgeR.}}
     \label{sup_fig:s411}
 \end{figure}
@@ -227,7 +227,7 @@
     \begin{table}
         \centering
         \caption[BLAST hits of differentially expressed novel genes]{\textbf{BLASTX hits of the transcripts from differentially expressed non-reference genes} \\
-        \small{Log$_2$ FC is the difference in expression between Mycobacterium bovis-infected and non-infected control cattle (e.g., a positive value indicates that expression is higher in infected than control cattle), and Adj FDR is the adjusted false discovery rate determined using the Benjamini-Hochberg correction. }}
+        \small{Log$_2$ FC is the difference in expression between \emph{Mycobacterium bovis}-infected and non-infected control cattle (e.g., a positive value indicates that expression is higher in infected than control cattle), and Adj FDR is the adjusted false discovery rate determined using the Benjamini-Hochberg correction. }}
         \bigskip
         \bigskip
         \small
@@ -534,7 +534,7 @@ To investigate if the choice of the backbone assembly influences the properties 
 \bigskip
 \normalsize
 
-The choice of the backbone had, as expected, a major impact on the amount of non-reference bases detected from each of the remaining assemblies (\hyperlink{Table SN45}{Table SN45}). A multi-assembly graph with a \emph{Bos taurus taurus} backbone contains between 10.14 and 19.48 million non-reference bases from the remaining three taurine assemblies. Using the Hereford or Angus assemblies as the backbone resulted in more total non-reference sequences than using the OBV or Highland assemblies. Regardless of backbone choice, the OBV and Highland assemblies also contribute more non-reference sequences to the multi-assembly graph than the Hereford and Angus assembly. These two observations suggest that the OBV and Highland assemblies represent a more comprehensive \emph{Bos taurus taurus} genome, agreeing well with their high completeness, continuity, and correctness (see \ref{sup_not:s41} and \citep{rice2020continuous}). Although selecting a more distant assembly as the backbone identifies more non-reference sequences from each remaining assembly on average (\~40 Mb with Yak compared to \~20 Mb for taurine), this appeared to be a smaller effect compared to the backbone completeness.
+The choice of the backbone had, as expected, a major impact on the amount of non-reference bases detected from each of the remaining assemblies (\hyperlink{Table SN45}{Table SN45}). A multi-assembly graph with a \emph{Bos taurus taurus} backbone contains between 10.14 and 19.48 million non-reference bases from the remaining three taurine assemblies. Using the Hereford or Angus assemblies as the backbone resulted in more total non-reference sequences than using the OBV or Highland assemblies. Regardless of backbone choice, the OBV and Highland assemblies also contribute more non-reference sequences to the multi-assembly graph than the Hereford and Angus assembly. These two observations suggest that the OBV and Highland assemblies represent a more comprehensive \emph{Bos taurus taurus} genome, agreeing well with their high completeness, continuity, and correctness (see \ref{sup_not:s41} and \citep{rice2020continuous}). Although selecting a more distant assembly as the backbone identifies more non-reference sequences from each remaining assembly on average ($\sim$40 Mb with Yak compared to $\sim$20 Mb for taurine), this appeared to be a smaller effect compared to the backbone completeness.
 
 \bigskip
 
@@ -544,7 +544,7 @@ The choice of the backbone had, as expected, a major impact on the amount of non
     \hline
     \multirow{2}{*}{Backbone~} & \multicolumn{7}{c|}{Assembly}                                       \\
     \cline{2-8}
-                               & Hereford~ & Yak~  & Brahman~ & OBV~  & Angus~ & Highland~ & Total1  \\
+                               & Hereford~ & Yak~  & Brahman~ & OBV~  & Angus~ & Highland~ & Total  \\
     \hline
     Hereford~                  & -         & 43.34 & 23.64    & 18.2  & 14.45  & 15.54     & 69.21   \\
     \hline
@@ -659,17 +659,17 @@ We tested 13,085 genes that were expressed $>=$ 1 CPM in at least eight samples 
 \bigskip
 
 
-We found that genes relevant for the immune response were among the top differentially expressed genes with the greatest mean log-fold change (e.g., DEFB10 -8.24-fold, CXCL10 -3.30-fold, IL12B -3.11-fold, CXCL5 7.11-fold, CTLA4 4.25-fold, and CXCL8 5.70-fold), matching observations on an older reference genome annotation by \citet{mcloughlin2014rna} \hyperlink{Table SN48}{Table SN48}. Multidimensional scaling (MDS) representations of transcript abundance estimates from either all 13,085 genes (\hyperlink{Figure SN45}{Figure SN45}b) or 3646 differentially expressed genes (\hyperlink{Figure SN45}{Figure SN45}a) separated Mycobacterium bovis-infected from healthy cattle. We discovered more differentially expressed genes of the Ensembl ARS-UCD1.2 genome annotation than \citet{mcloughlin2014rna} (3610 vs. 3250), likely due to a vastly improved genome assembly (27,115 vs. 24,616 genes are included in build 101 (ARS-UCD1.2) and build 73 (UMD3.1), respectively). Using data from the supplement provided by \citet{mcloughlin2014rna}, we were able to compare the expression levels of 2678 (out of 3250) differentially expressed genes between different genome builds (UMD31, standard and extended ARS-UCD1.2) and annotations (\hyperlink{Figure SN46}{Figure SN46}). Six genes with the greatest fold-change increase in expression reported by \citep{mcloughlin2014rna} had a very similar expression pattern from all assemblies considered.
+We found that genes relevant for the immune response were among the top differentially expressed genes with the greatest mean log-fold change (e.g., DEFB10 -8.24-fold, CXCL10 -3.30-fold, IL12B -3.11-fold, CXCL5 7.11-fold, CTLA4 4.25-fold, and CXCL8 5.70-fold), matching observations on an older reference genome annotation by \citet{mcloughlin2014rna} \hyperlink{Table SN48}{Table SN48}. Multidimensional scaling (MDS) representations of transcript abundance estimates from either all 13,085 genes (\hyperlink{Figure SN45}{Figure SN45}b) or 3646 differentially expressed genes (\hyperlink{Figure SN45}{Figure SN45}a) separated \emph{Mycobacterium bovis}-infected from healthy cattle. We discovered more differentially expressed genes of the Ensembl ARS-UCD1.2 genome annotation than \citet{mcloughlin2014rna} (3610 vs. 3250), likely due to a vastly improved genome assembly (27,115 vs. 24,616 genes are included in build 101 (ARS-UCD1.2) and build 73 (UMD3.1), respectively). Using data from the supplement provided by \citet{mcloughlin2014rna}, we were able to compare the expression levels of 2678 (out of 3250) differentially expressed genes between different genome builds (UMD31, standard and extended ARS-UCD1.2) and annotations (\hyperlink{Figure SN46}{Figure SN46}). Six genes with the greatest fold-change increase in expression reported by \citep{mcloughlin2014rna} had a very similar expression pattern from all assemblies considered.
 
 
 \bigskip 
 
-\textbf{\hypertarget{Table SN48}{Table SN48}: The expression of 6 immune genes reported by McLoughlin \emph{et al.} across different assemblies.}
+\textbf{\hypertarget{Table SN48}{Table SN48}: The expression of 6 immune genes reported by McLoughlin et al. across different assemblies.}
 \begin{center}
         \footnotesize
             \begin{tabular}{|l|l|l|l|l|} 
             \hline
-            \multicolumn{1}{|c|}{\textbf{Ensembl gene ID}} & \multicolumn{1}{c|}{\textbf{Gene symbol}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Log2FC UMD3.1~}\\\textbf{(McLoughlin~\textit{et. al})}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Log2FC~}\\\textbf{Standard}\\\textbf{ARS-UCD1.2}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Log2FC~}\\\textbf{Extended}\\\textbf{ARS-UCD1.2}\end{tabular}}  \\ 
+            \multicolumn{1}{|c|}{\textbf{Ensembl gene ID}} & \multicolumn{1}{c|}{\textbf{Gene symbol}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Log2FC UMD3.1~}\\\textbf{(McLoughlin et al.)}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Log2FC~}\\\textbf{Standard}\\\textbf{ARS-UCD1.2}\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}\textbf{Log2FC~}\\\textbf{Extended}\\\textbf{ARS-UCD1.2}\end{tabular}}  \\ 
             \hline
             ENSBTAG00000019716                             & CXCL8                                     & 2.435                                                                                                                       & 2.512                                                                                                                 & 2.512                                                                                                                  \\ 
             \hline
@@ -690,7 +690,7 @@ We found that genes relevant for the immune response were among the top differen
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp418.pdf}
-    \caption*{\textbf{\hypertarget{Figure SN44}{Figure SN44}: Smear plot from the differential expression analysis.} Grey, green, and purple color indicates genes with no expression difference, significant up-regulation, and down-regulation in peripheral blood leukocytes of \emph{ Mycobacterium bovis}-infected cattle. Diamonds indicate 272 putatively novel genes assembled from RNA sequencing reads mapping to non-reference sequences. Six genes reported by \citet{mcloughlin2014rna} are indicated with the text labels.}
+    \caption*{\textbf{\hypertarget{Figure SN44}{Figure SN44}: Smear plot from the differential expression analysis.} Grey, green, and purple color indicates genes with no expression difference, significant up-regulation, and down-regulation in peripheral blood leukocytes of \emph{Mycobacterium bovis}-infected cattle. Diamonds indicate 272 putatively novel genes assembled from RNA sequencing reads mapping to non-reference sequences. Six genes reported by \citet{mcloughlin2014rna} are indicated with the text labels.}
 \end{figure}
 
 \bigskip
@@ -704,7 +704,7 @@ We found that genes relevant for the immune response were among the top differen
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{paper3/supplement/sp420.png}
-    \caption*{\textbf{\hypertarget{Figure SN46}{Figure SN46}: Log2FC expression of 2678 genes between UMD3.1 (as reported in McLoughlin \emph{et. al}), the standard ARS-UCD1.2, and extended ARS-UCD1.2 reference.} Each point indicates the expression of a gene.}
+    \caption*{\textbf{\hypertarget{Figure SN46}{Figure SN46}: Log2FC expression of 2678 genes between UMD3.1 (as reported in McLoughlin et al.), the standard ARS-UCD1.2, and extended ARS-UCD1.2 reference.} Each point indicates the expression of a gene.}
 \end{figure}
 
 \clearpage
